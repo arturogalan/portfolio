@@ -3,7 +3,15 @@ module.exports = {
   env: {
     node: true
   },
-  extends: ["plugin:vue/essential", "eslint:recommended", "@vue/prettier"],
+  // extends: ["plugin:vue/essential", "eslint:recommended", "@vue/prettier"],
+  extends: ["plugin:vue/essential"],
+  rules: {
+    "no-console": process.env.NODE_ENV === "production" ? "off" : "off",
+    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
+    "comma-dangle": [2, "always-multiline"],
+    "comma-spacing": 2,
+    "comma-style": 2,
+  },
   parserOptions: {
     parser: "babel-eslint"
   },
