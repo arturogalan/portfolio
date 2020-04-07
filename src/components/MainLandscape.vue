@@ -1,20 +1,22 @@
 <script>
 import Sea from './Sea';
-import Stones from './Stones';
+// import Stones from './Stones';
 
 export default {
   name: "MainLandscape",
   components: {
     Sea,
-    Stones,
+    // Stones,
   },
 };
 </script>
 <template>
 <article>
 
-    <stones/>
-    <sea/>
+    <!-- <stones/> -->
+    <div class="sea-position">
+    <sea class="upside-down"/>
+    </div>
 </article>
   <!-- <div class="hello"> -->
     <!-- <h1>Landscape</h1> -->
@@ -34,5 +36,11 @@ li {
 }
 a {
   color: #42b983;
+}
+.sea-position {
+  margin-top: 12rem;
+}
+.upside-down {
+  transform: rotate(180deg)
 }
 </style>

@@ -6,19 +6,24 @@ export default {
       seaAnimations: {
         waveLines: [
           {
-            topValue: 480
+            topValue: 0,
+            magnification: 1.7
           },
           {
-            topValue: 510
+            topValue: 20,
+            magnification: 1.5
           },
           {
-            topValue: 540
+            topValue: 50,
+            magnification: 1.3
           },
           {
-            topValue: 560
+            topValue: 80,
+            magnification: 1.2
           },
           {
-            topValue: 600
+            topValue: 110,
+            magnification: 1
           },
         ]
       }
@@ -28,12 +33,15 @@ export default {
       // Wave animation up and down
     const waveAnimationMovement = {
       targets: '.wave-path',
-      translateY: ['100%', '0%'],
-      opacity: [1, .7, 0],
-      strokeWidth: [.1, .2, .1, .4],
-      stroke: ['#FFF','#CCC'],
+      translateY: ['80%', '0%'],
+      opacity: [
+        {value: 1, duration: 3000},
+        {value: 0, duration: 500, endDelay: 6500},
+      ],
+      strokeWidth: [.5, 4],
+      stroke: ['#CCC','#FFF'],
       // direction: 'linear',
-      easing: 'easeInOutQuad',
+      easing: 'easeInQuart',
       duration: 3500,
       endDelay: 6500,
       loop: true,
@@ -55,13 +63,12 @@ export default {
     const slimWaveFoamAnimation = {
       targets: '.wave-foam-svg',
       filter: [
-        {value: 'drop-shadow(0px -20px 6px white)', duration: 1500, delay: 2500},
-        {value: 'drop-shadow(0px 0px 6px white)', duration: 2000},
-        {value: 'drop-shadow(0px 0px 0px white)', duration: 4000},
+        {value: 'drop-shadow(0px -20px 6px white)', duration: 1750, delay: 3250},
+        {value: 'drop-shadow(0px 0px 6px white)', duration: 5000},
       ],
       opacity: [
         {value: 1, duration: 1500, delay: 2500},
-        {value: 0.2, duration: 2000},
+        {value: 1, duration: 2000},
         {value: 0, duration: 4000},
       ],
       loop: true,
@@ -72,12 +79,13 @@ export default {
     const slimWaveMorphAnimation = {
       targets: '.wave-foam-path',
       d: [
-      {value: 'M1600.02,12.917c-74.616,0 -135.482,1.799 -192.001,1.845c-82.939,0.067 -151.482,-4.68 -234.5,-4.588c-54.623,0.06 -117.113,6.48 -188.44,6.518c-54.311,0.03 -115.895,-8.047 -186.647,-8.043c-70.837,0 -133.054,4.795 -188.244,4.767c-78.486,-0.04 -142.771,3.422 -202.436,3.355c-63.658,-0.071 -123.684,-5.257 -183.633,-5.319c-46.967,-0.048 -94.088,4.782 -148.789,4.763c-23.888,-0.009 -48.679,-3.297 -75.246,-3.297l-0.182,16.999l1600.11,0c0,0 0.011,-14.35 0.011,-17Z'},
+        {value: 'M-0.011,11.919C310.984,11.919 400.931,5.375 802.033,5.625C1202.04,5.625 1310.82,11.925 1599.82,11.925L1600,198L0,198C0,198 -0.011,40.919 -0.011,11.919Z'},
+        {value: 'M-0.011,11.919C310.984,11.919 400.931,30.375 802.033,30.625C1202.04,25.625 1310.82,11.925 1599.82,11.925L1600,198L0,198C0,198 -0.011,40.919 -0.011,11.919Z'},
       ],
-      duration: 3000,
+      duration: 10000,
       loop: true,
       easing: 'easeInOutQuad',
-      direction: 'alternate',
+      direction: 'normal',
     };
     this.$anime(waveAnimationMovement);
     this.$anime(waveAnimationWaves);
@@ -86,14 +94,15 @@ export default {
     const pennersFunctions = ['easeInOutQuad','easeInOutCubic','easeInOutQuart','easeInOutQuint','easeInOutSine','easeInOutExpo','easeInOutCirc','easeInOutBack','easeInOutBounce'];
     const strokeColors = [
       ['#FFF','#CCC'],
+      ['#FFF','#CCC'],
       ['#143C44', '#184A4E'],
       ['#143C44', '#184A4E'],
       ['#143C44', '#184A4E'],
       ['#143C44', '#184A4E'],
     ]
     const strokeWidths = [
-      [.1, .2],
-      [.1, 1],
+      [.1, .7],
+      [.1, .8],
       [.1, 1],
       [.1, 1],
       [.1, 1],
@@ -105,30 +114,32 @@ export default {
           targets: `.sea-path-${firstElementIndex}`,
           d:[
             {value: 'M-0.011,11.919C310.984,11.919 400.935,17.622 802.037,17.872C1202.04,17.872 1310.82,11.925 1599.82,11.925L1600,198L0,198C0,198 -0.011,40.919 -0.011,11.919Z'},
-            {value: 'M-0.011,11.919C310.984,11.919 400.931,5.375 802.033,5.625C1202.04,5.625 1310.82,11.925 1599.82,11.925L1600,198L0,198C0,198 -0.011,40.919 -0.011,11.919Z'}
+            {value: 'M-0.011,11.919C310.984,11.919 400.931,5.375 802.033,5.625C1202.04,5.625 1310.82,11.925 1599.82,11.925L1600,198L0,198C0,198 -0.011,40.919 -0.011,11.919Z'},
+            {value: 'M-0.011,11.919C310.984,11.919 400.935,17.622 802.037,17.872C1202.04,17.872 1310.82,11.925 1599.82,11.925L1600,198L0,198C0,198 -0.011,40.919 -0.011,11.919Z'},
           ],
           ...(index > 0) && {opacity: [1, .7]},
           ...(index < 3) && {strokeWidth: strokeWidths[index]},
           ...(index < 3) && {stroke: strokeColors[index]},
-          delay: firstElementIndex * 1000,
+          delay: firstElementIndex * 50,
           easing: pennersFunctions[index],
-          duration: this.$anime.random(3000,6000),
-          direction: 'alternate',
+          duration: 5000,
+          direction: 'normal',
           loop: true,
         };
       let seaAnimation2 = {
           targets: `.sea-path-${secondElementIndex}`,
           d:[
-        {value: 'M-0.011,11.919C134.968,11.919 228.892,15.173 324.156,15.738C448.385,16.473 574.134,7.252 801.149,7.393C1087.75,7.393 1224.91,15.696 1385.92,17.529C1449.62,18.255 1517.89,11.925 1599.82,11.925L1600,198L0,198C0,198 -0.011,40.919 -0.011,11.919Z'},
-        {value: 'M-0.011,11.919C134.968,11.919 229.156,6.321 324.421,6.885C448.65,7.62 575.27,14.577 802.286,14.718C1088.89,14.718 1225.48,4.24 1386.48,6.073C1450.18,6.799 1517.89,11.925 1599.82,11.925L1600,198L0,198C0,198 -0.011,40.919 -0.011,11.919Z'}
+            {value: 'M-0.011,11.919C134.968,11.919 228.892,15.173 324.156,15.738C448.385,16.473 574.134,7.252 801.149,7.393C1087.75,7.393 1224.91,15.696 1385.92,17.529C1449.62,18.255 1517.89,11.925 1599.82,11.925L1600,198L0,198C0,198 -0.011,40.919 -0.011,11.919Z'},
+            {value: 'M-0.011,11.919C134.968,11.919 229.156,6.321 324.421,6.885C448.65,7.62 575.27,14.577 802.286,14.718C1088.89,14.718 1225.48,4.24 1386.48,6.073C1450.18,6.799 1517.89,11.925 1599.82,11.925L1600,198L0,198C0,198 -0.011,40.919 -0.011,11.919Z'},
+            {value: 'M-0.011,11.919C134.968,11.919 228.892,15.173 324.156,15.738C448.385,16.473 574.134,7.252 801.149,7.393C1087.75,7.393 1224.91,15.696 1385.92,17.529C1449.62,18.255 1517.89,11.925 1599.82,11.925L1600,198L0,198C0,198 -0.011,40.919 -0.011,11.919Z'},
           ],
           ...(index > 0) && {opacity: [1, .7]},
-          ...(index < 3) && {strokeWidth: [.1, 1]},
+          ...(index < 3) && {strokeWidth: strokeWidths[index]},
           ...(index < 3) && {stroke: strokeColors[index]},
-          delay: firstElementIndex * 1000,
+          delay: firstElementIndex * 100,
           easing: pennersFunctions[index],
           duration: 5000,
-          direction: 'alternate',
+          direction: 'normal',
           loop: true,
         };
         this.$anime(seaAnimation);
@@ -136,8 +147,6 @@ export default {
 
       }
     )
-
-    // this.$anime(seaAnimation);
   },
 };
 </script>
@@ -146,10 +155,24 @@ export default {
 
 <div>
   <svg class="wave-foam-svg">
-    <!-- <g> -->
-      <g transform="matrix(2.3,0,0,1,0,0)">
-
-    <path class="wave-foam-path" d="M1600.02,13.089c-74.616,0 -136.509,0.03 -193.028,0.075c-82.939,0.068 -154.305,0.169 -237.323,0.261c-54.623,0.06 -114.29,0.116 -185.616,0.154c-54.311,0.03 -115.383,0.049 -186.134,0.053c-70.837,0 -132.541,-0.017 -187.731,-0.045c-78.486,-0.04 -143.797,-0.102 -203.463,-0.169c-63.657,-0.071 -120.889,-0.148 -180.838,-0.21c-46.967,-0.048 -95.603,-0.087 -150.304,-0.106c-23.888,-0.008 -48.932,-0.013 -75.499,-0.013l-0.182,17l1600.11,0c0,0 0.011,-14.351 0.011,-17Z" style="fill:url(#_Linear1);"/>
+      <g transform="matrix(1,0,0,2,0,0)">
+    <path class="wave-foam-path"
+    d="M-0.011,11.919C310.984,11.919 400.935,17.622 802.037,17.872C1202.04,17.872 1310.82,11.925 1599.82,11.925L1600,198L0,198C0,198 -0.011,40.919 -0.011,11.919Z" 
+    style="fill:url(#_Linear1);"/>
+      </g>
+      <defs>
+        <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.34527e-14,219.699,-219.699,1.34527e-14,800,-21.6992)"><stop offset="0" style="stop-color:rgb(28, 87, 90);stop-opacity:0.75"/><stop offset="1" style="stop-color:rgb(1,88,113);stop-opacity:1"/></linearGradient>
+        <filter id="f1" x="0" y="0">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="155" />
+        </filter>
+      </defs>
+    </svg>
+    
+    <svg class="wave-foam-svg-2">
+      <g transform="matrix(1,0,0,2,0,0)">
+    <path class="wave-foam-path2"
+    d="M-0.011,11.919C134.968,11.919 229.156,6.321 324.421,6.885C448.65,7.62 575.27,14.577 802.286,14.718C1088.89,14.718 1225.48,4.24 1386.48,6.073C1450.18,6.799 1517.89,11.925 1599.82,11.925L1600,198L0,198C0,198 -0.011,40.919 -0.011,11.919Z" 
+    style="fill:url(#_Linear1);"/>
       </g>
       <defs>
         <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.34527e-14,219.699,-219.699,1.34527e-14,800,-21.6992)"><stop offset="0" style="stop-color:rgb(28, 87, 90);stop-opacity:0.75"/><stop offset="1" style="stop-color:rgb(1,88,113);stop-opacity:1"/></linearGradient>
@@ -175,9 +198,8 @@ export default {
 
 <div>
     <!-- at the same line as foam -->
-    <svg width="100%" height="100%" class="sea-svg">
-
-      <g v-for="(waveLine, index) in seaAnimations.waveLines" :key="index" :transform="`matrix(1,0,0,${index === 0 ? '1.3' : '1'},0,${waveLine.topValue})`">
+    <svg class="sea-svg">
+      <g v-for="(waveLine, index) in seaAnimations.waveLines" :key="index" :transform="`matrix(1,0,0,${waveLine.magnification},0,${waveLine.topValue})`">
         <path
           :class="`sea-path-${((index + 1) * 2) - 1}`"
           d="M-0.011,11.919C310.984,11.919 400.935,17.622 802.037,17.872C1202.04,17.872 1310.82,11.925 1599.82,11.925L1600,198L0,198C0,198 -0.011,40.919 -0.011,11.919Z"
@@ -204,12 +226,13 @@ export default {
 
 <style lang="scss" scoped>
 .sea-svg {
+  width: 100%;
   position: absolute;
   left: 0;
+  bottom: 0;
 }
-.wave-foam-svg {
+.wave-foam-svg, .wave-foam-svg-2 {
   width: 100%;
-  // height: 25%;
   bottom: 0;
   left: 0;
   position: absolute;
@@ -218,19 +241,18 @@ export default {
 }
 .wave-svg {
   width: 100%;
-  // height: 100%;
   bottom: 0;
   left: 0;
   position: absolute;
   opacity: .6;
-  // z-index: 5;
+}
+.wave-path {
+  opacity: 0;
 }
 .ocean {
-  // height: 5%;
   width: 100%;
   position:absolute;
   bottom: 0;
   left: 0;
-  // background: #015871;
 }
 </style>
