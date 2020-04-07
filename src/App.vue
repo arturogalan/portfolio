@@ -9,12 +9,32 @@
 </template>
 
 <style lang="scss">
+//Fonts
+@font-face {
+  font-family: "Beauty";
+  src: url("./assets/fonts/BandB.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+//Fonts
+@font-face {
+  font-family: "August";
+  src: url("./assets/fonts/HeyAugust.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "July";
+  src: url("./assets/fonts/ThisJuly.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
 body, html {
   margin: 0;
   // padding: 5em;
   box-sizing: border-box;
   // width: 100%;
-  height: 100%;
+  // height: 100%;
   background: #887434;
   // overflow: hidden;
 }
