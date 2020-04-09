@@ -34,10 +34,11 @@ export default {
   position: absolute;
   top: 0;
   width: 100%;
-  font-size: 4rem;
-  font-family: "Beauty";
-  color: #52754f;
-  opacity: .5;
+  font-size: 3rem;
+  font-family: "Beauty"; 
+  color: #000000;
+  opacity: .7;
+  // -webkit-text-stroke: 1px rgb(80, 79, 79);
   // font-family: "August";
   // font-family: "July";
 

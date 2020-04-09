@@ -30,10 +30,12 @@
 <style lang="scss" scoped>
 .yoga {
   position: absolute;
-  width: 35rem;
-  bottom: -5rem;
-  left: 32%;
+  width: 50rem;
+  bottom: -4rem;
+  left: 25%;
   z-index: 20;
+  opacity: .8;
+  // transform: rotateX(10deg) rotateY(40deg) rotateZ(0deg);
 }
 .sand-main {
   width:100%;
@@ -45,30 +47,34 @@
 }
 .vue-sand-logo {
   position: absolute;
-  width: 7rem;
-  bottom: 3rem;
+  width: 9rem;
+  bottom: 1rem;
   left: 4rem;
-  transform: rotateX(-50deg) rotateZ(-20deg);
+  transform: rotateX(-60deg) rotateZ(-20deg);
+  opacity: .4;
 }
 .noisebox-sand-logo {
   position: absolute;
-  width: 7rem;
+  width: 9rem;
   bottom: 6rem;
-  left: 20rem;
-  transform: rotateX(-50deg) rotateZ(20deg);
+  left: 12rem;
+  transform: rotateX(-60deg) rotateZ(20deg);
+  opacity: .4;
 }
 .clarity-sand-logo {
   position: absolute;
-  width: 7rem;
-  bottom: 3rem;
+  width: 9rem;
+  bottom: 1rem;
   right: 4rem;
-  transform: rotateX(-40deg) rotateZ(20deg);
+  transform: rotateX(-60deg) rotateZ(20deg);
+  opacity: .4;
 }
 .clave-sol-sand-logo {
   position: absolute;
-  width: 5rem;
+  width: 6rem;
   bottom: 4rem;
-  right: 20rem;
-  transform: rotateX(-50deg) rotateZ(20deg);
+  right: 15rem;
+  transform: rotateX(-70deg) rotateZ(20deg);
+  opacity: .4;
 }
 </style>
