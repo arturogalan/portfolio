@@ -22,6 +22,7 @@ module.exports = {
       }),
     ],
   },
+
   css: {
     loaderOptions: {
       scss: {
@@ -30,6 +31,7 @@ module.exports = {
       },
     },
   },
+
   chainWebpack(config){
     config.module.rule('md')
       .test(/\.md/)
@@ -41,5 +43,16 @@ module.exports = {
       .options({
         raw: true
       })
-  }
+  },
+
+  pluginOptions: {
+    quasar: {
+      importStrategy: 'manual',
+      rtlSupport: false
+    }
+  },
+
+  transpileDependencies: [
+    'quasar'
+  ]
 };

@@ -3,6 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import VueAnime from "vue-animejs";
+import './quasar'
 
 Vue.use(VueAnime);
 Vue.config.productionTip = false;
