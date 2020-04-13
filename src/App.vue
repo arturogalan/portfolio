@@ -15,18 +15,19 @@
   src: url("./assets/fonts/BandB.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
+  font-stretch: expanded;
 }
 //Fonts
 @font-face {
   font-family: "August";
   src: url("./assets/fonts/HeyAugust.ttf") format("truetype");
-  font-weight: 400;
+  font-weight: lighter;
   font-style: normal;
 }
 @font-face {
-  font-family: "July";
-  src: url("./assets/fonts/ThisJuly.ttf") format("truetype");
-  font-weight: 400;
+  font-family: "Thorn";
+  src: url("./assets/fonts/THORN.ttf") format("truetype");
+  font-weight: lighter;
   font-style: normal;
 }
 body, html {
@@ -36,11 +37,11 @@ body, html {
   // width: 100%;
   // height: 100%;
   background: #887434;
-  // overflow: hidden;
+  overflow: hidden;
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  // font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -51,7 +52,7 @@ body, html {
   padding: 30px;
 
   a {
-    font-weight: bold;
+    // font-weight: bold;
     color: #2c3e50;
 
     &.router-link-exact-active {

@@ -1,7 +1,9 @@
 <script>
 import Sky from './Sky';
+import Birds from './Birds';
 import Sea from './Sea';
 import Sand from './Sand';
+import LateralMenu from './LateralMenu';
 
 // import Stones from './Stones';
 
@@ -11,37 +13,44 @@ export default {
     Sky,
     Sea,
     Sand,
+    Birds,
+    LateralMenu,
     // Stones,
   },
 };
 </script>
 <template>
-<article>
-
-  <div class="title z-index-5">
-    <h1>[Arturo Galán]</h1>
-  </div>
-    <!-- <stones/> -->
+  <article>
+    <div class="title">
+      <img class="title-img" src="../assets/png/font.png" alt="">
+    </div>
+    <birds class="birds"/>
     <sky/>
-    <div class="sea-position">
     <sea class="upside-down z-index-2"/>
     <sand/>
-    </div>
-</article>
+    <lateral-menu class="lateral-menu"/>
+  </article>
 </template>
 <style scoped lang="scss">
+.lateral-menu {
+  position: absolute;
+}
+.birds {
+  z-index: 1;
+  position: absolute;
+}
 .title {
   position: absolute;
-  top: 0;
+  top: 3rem;
   width: 100%;
-  font-size: 3rem;
-  font-family: "Beauty"; 
-  color: #000000;
   opacity: .7;
-  // -webkit-text-stroke: 1px rgb(80, 79, 79);
-  // font-family: "August";
-  // font-family: "July";
-
+  font-weight: normal;
+  z-index: 2;
+  display: block;
+  margin: auto;
+}
+.title-img{
+  width: 53rem;
 }
 h3 {
   margin: 40px 0 0;
@@ -58,7 +67,6 @@ a {
   color: #42b983;
 }
 .upside-down {
-  // z-index: 3;
   transform: rotate(180deg);
 }
 </style>
