@@ -1,6 +1,6 @@
 <script>
 // @ is an alias to /src
-import MainLandscape from "@/components/MainLandscape.vue";
+import MainLandscape from "@/components/main-landscape/MainLandscape.vue";
 
 export default {
   name: "Home",

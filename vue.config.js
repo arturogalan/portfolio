@@ -5,18 +5,24 @@ module.exports = {
       new FriendlyErrorsPlugin({
         compilationSuccessInfo: {
           messages: [`
-              _  _     ___     ___     ___     ___             ___     ___   __  __  
-             | \\| |   / _ \\   |_ _|   / __|   | __|    ___    | _ )   / _ \\  \\ \\/ /  
-             | .| |  | (_) |   | |    \\__ \\   | _|    |___|   | _ \\  | (_) |  >  <   
-             |_|\\_|   \\___/   |___|   |___/   |___|           |___/   \\___/  /_/\\_\\
-             
-                                                              arturo.galan@gmail.com
+                                                     __     
+          .-----.-----.----.-----.-----.-----.---.-.|  |    
+          |  _  |  -__|   _|__ --|  _  |     |  _  ||  |    
+          |   __|_____|__| |_____|_____|__|__|___._||__|    
+          |__|                                              
+                             __    ___         __ __        
+          .-----.-----.----.|  |_.'  _|.-----.|  |__|.-----.
+          |  _  |  _  |   _||   _|   _||  _  ||  |  ||  _  |
+          |   __|_____|__|  |____|__|  |_____||__|__||_____|
+          |__|                                              
+           arturo.galan@gmail.com
           `],
           notes: [],
         },
       }),
     ],
   },
+
   css: {
     loaderOptions: {
       scss: {
@@ -25,4 +31,28 @@ module.exports = {
       },
     },
   },
+
+  chainWebpack(config){
+    config.module.rule('md')
+      .test(/\.md/)
+      .use('vue-loader')
+      .loader('vue-loader')
+      .end()
+      .use('vue-markdown-loader')
+      .loader('vue-markdown-loader/lib/markdown-compiler')
+      .options({
+        raw: true
+      })
+  },
+
+  pluginOptions: {
+    quasar: {
+      importStrategy: 'manual',
+      rtlSupport: false
+    }
+  },
+
+  transpileDependencies: [
+    'quasar'
+  ]
 };

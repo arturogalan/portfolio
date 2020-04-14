@@ -5,7 +5,7 @@
 </script>
 <template>
   <div class="stones-main">
-    <img src="../assets/svg/stonesSvgFinal.svg" alt="">
+    <img src="@/assets/svg/stonesSvgFinal.svg" alt="">
   </div>
 </template>
 
