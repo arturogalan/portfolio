@@ -1,6 +1,6 @@
 
 <script>
-import MenuContents from './MenuContents';
+import MenuContents from '@/components/main-landscape/MenuContents';
 
   export default {
     name: 'LateralMenu',

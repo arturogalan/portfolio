@@ -20,25 +20,25 @@
 <template>
 <div>
   <div class="sand-main">
-    <img src="../assets/svg/sand.svg" alt="">
+    <img src="@/assets/svg/sand.svg" alt="">
   </div>
   <div class="sea-shell sea-shell-1">
-    <img src="../assets/svg/seaShell.svg" alt="">
+    <img src="@/assets/svg/seaShell.svg" alt="">
   </div>
   <div class="sea-shell sea-shell-2">
-    <img src="../assets/svg/seaShell2.svg" alt="">
+    <img src="@/assets/svg/seaShell2.svg" alt="">
   </div>
   <div class="sea-shell sea-shell-3">
-    <img src="../assets/svg/seaShell3.svg" alt="">
+    <img src="@/assets/svg/seaShell3.svg" alt="">
   </div>
     <div class="sea-shell sea-shell-4">
-    <img src="../assets/svg/seaShell4.svg" alt="">
+    <img src="@/assets/svg/seaShell4.svg" alt="">
   </div>
     <div class="sea-shell sea-shell-5">
-    <img src="../assets/svg/seaShell5.svg" alt="">
+    <img src="@/assets/svg/seaShell5.svg" alt="">
   </div>
   <div>
-    <img class="yoga" src="../assets/svg/yoga.svg" alt="">
+    <img class="yoga" src="@/assets/svg/yoga.svg" alt="">
   </div>
     </div>
 </template>

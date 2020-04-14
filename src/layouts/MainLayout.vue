@@ -1,4 +1,23 @@
-
+<script>
+import LateralMenuContents from '@/components/blog/LateralMenuContents'
+export default {
+  name: 'MainLayout',
+  components: {
+    LateralMenuContents,
+  },
+  data () {
+    return {
+      left: true,
+    }
+  },
+  computed: {
+    color () {
+      const { id, tag } = this.$route.params
+      return this.$colors[id || tag] || 'cyan'
+    }
+  }
+}
+</script>
 <template>
   <q-layout view="hHh lpR fFf">
 
@@ -14,10 +33,8 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer show-if-above v-model="left" side="left" bordered>
-      <ul>
-        <li>this is a link</li>
-      </ul>
+    <q-drawer content-class="bg-blue-3" show-if-above v-model="left" side="left" bordered>
+    <lateral-menu-contents/>
       <!-- drawer content -->
     </q-drawer>
 
@@ -27,31 +44,6 @@
 
   </q-layout>
 </template>
-
-<script>
-// import SideNav from 'components/SideNav'
-// import Tail from 'components/Tail'
-
-export default {
-  name: 'MainLayout',
-  created () {
-    console.log('main layout');
-  },
-  // components: { SideNav, Tail },
-  data () {
-    return {
-      drawerOpened: false,
-      left: true,
-    }
-  },
-  computed: {
-    color () {
-      const { id, tag } = this.$route.params
-      return this.$colors[id || tag] || 'cyan'
-    }
-  }
-}
-</script>
 
 <style lang="stylus" scoped>
 </style>

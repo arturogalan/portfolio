@@ -5,7 +5,7 @@
 </script>
 <template>
   <div class="sky-style">
-    <img src="../assets/svg/sky.svg" alt="">
+    <img src="@/assets/svg/sky.svg" alt="">
   </div>
 </template>
 <style lang="scss" scoped>

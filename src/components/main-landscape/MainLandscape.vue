@@ -1,9 +1,9 @@
 <script>
-import Sky from './Sky';
-import Birds from './Birds';
-import Sea from './Sea';
-import Sand from './Sand';
-import LateralMenu from './LateralMenu';
+import Sky from '@/components/main-landscape/Sky';
+import Birds from '@/components/main-landscape/Birds';
+import Sea from '@/components/main-landscape/Sea';
+import Sand from '@/components/main-landscape/Sand';
+import LateralMenu from '@/components/main-landscape/LateralMenu';
 
 // import Stones from './Stones';
 
@@ -20,9 +20,9 @@ export default {
 };
 </script>
 <template>
-  <article>
+  <article class="main-layout">
     <div class="title">
-      <img class="title-img" src="../assets/png/font.png" alt="">
+      <img class="title-img" src="@/assets/png/font.png" alt="">
     </div>
     <birds class="birds"/>
     <sky/>
@@ -32,6 +32,9 @@ export default {
   </article>
 </template>
 <style scoped lang="scss">
+.main-layout {
+  text-align: center;
+}
 .lateral-menu {
   position: absolute;
 }
