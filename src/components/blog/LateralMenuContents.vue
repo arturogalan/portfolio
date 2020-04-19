@@ -1,7 +1,7 @@
 <script>
-  export default {
-    
-  }
+export default {
+
+}
 </script>
 <template>
   <div class="main-lateral">
@@ -12,8 +12,6 @@
     </ul>
   </div>
 </template>
-
-
 
 <style lang="scss" scoped>
   .main-lateral {

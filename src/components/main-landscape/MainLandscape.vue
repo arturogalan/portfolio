@@ -1,14 +1,14 @@
 <script>
-import Sky from '@/components/main-landscape/Sky';
-import Birds from '@/components/main-landscape/Birds';
-import Sea from '@/components/main-landscape/Sea';
-import Sand from '@/components/main-landscape/Sand';
-import LateralMenu from '@/components/main-landscape/LateralMenu';
+import Sky from 'components/main-landscape/Sky'
+import Birds from 'components/main-landscape/Birds'
+import Sea from 'components/main-landscape/Sea'
+import Sand from 'components/main-landscape/Sand'
+import LateralMenu from 'components/main-landscape/LateralMenu'
 
 // import Stones from './Stones';
 
 export default {
-  name: "MainLandscape",
+  name: 'MainLandscape',
   components: {
     Sky,
     Sea,
@@ -17,12 +17,14 @@ export default {
     LateralMenu,
     // Stones,
   },
-};
+}
 </script>
 <template>
   <article class="main-layout">
+    <div class="landscape-bg">
+    </div>
     <div class="title">
-      <img class="title-img" src="@/assets/png/font.png" alt="">
+      <img class="title-img" src="~assets/png/font.png" alt="">
     </div>
     <birds class="birds"/>
     <sky/>
@@ -35,8 +37,15 @@ export default {
 .main-layout {
   text-align: center;
 }
+.landscape-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #887434;
+}
 .lateral-menu {
   position: absolute;
+  overflow: hidden;
 }
 .birds {
   z-index: 1;

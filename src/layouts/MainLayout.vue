@@ -1,49 +1,100 @@
-<script>
-import LateralMenuContents from '@/components/blog/LateralMenuContents'
-export default {
-  name: 'MainLayout',
-  components: {
-    LateralMenuContents,
-  },
-  data () {
-    return {
-      left: true,
-    }
-  },
-  computed: {
-    color () {
-      const { id, tag } = this.$route.params
-      return this.$colors[id || tag] || 'cyan'
-    }
-  }
-}
-</script>
 <template>
-  <q-layout view="hHh lpR fFf">
-
-    <q-header elevated class="bg-primary text-white">
+  <q-layout view="hHh Lpr lFf">
+    <q-header elevated>
       <q-toolbar>
-        <q-btn dense flat round icon="menu" @click="left = !left" />
+        <q-btn
+          flat
+          dense
+          round
+          icon="menu"
+          aria-label="Menu"
+          @click="leftDrawerOpen = !leftDrawerOpen"
+        />
+
         <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
-          </q-avatar>
-          Title
+          {{$t('BLOG.TITLE.TEXT')}}
         </q-toolbar-title>
+
+        <div>v{{ $t('BLOG.VERSION') }}</div>
       </q-toolbar>
     </q-header>
 
-    <q-drawer content-class="bg-blue-3" show-if-above v-model="left" side="left" bordered>
-    <lateral-menu-contents/>
-      <!-- drawer content -->
+    <q-drawer
+      v-model="leftDrawerOpen"
+      show-if-above
+      bordered
+      content-class="primary-light"
+    >
+      <q-list>
+        <q-item-label
+          header />
+
+        <!-- <q-item-label
+          header
+          class="text-grey-8"
+        > -->
+          <!-- left drawer title text here -->
+        <!-- </q-item-label> -->
+        <EssentialLink
+          v-for="link in essentialLinks"
+          :key="link.title"
+          v-bind="link"
+        />
+      </q-list>
     </q-drawer>
 
     <q-page-container>
       <router-view />
     </q-page-container>
-
   </q-layout>
 </template>
 
-<style lang="stylus" scoped>
-</style>
+<script>
+import EssentialLink from 'components/EssentialLink'
+
+export default {
+  name: 'MainLayout',
+
+  components: {
+    EssentialLink,
+  },
+
+  data() {
+    return {
+      leftDrawerOpen: false,
+      essentialLinks: [
+        {
+          title: this.$t('BLOG.LEFT_DRAWER.LINK_ABOUT.TITLE'),
+          caption: this.$t('BLOG.LEFT_DRAWER.LINK_ABOUT.CAPTION'),
+          icon: 'school',
+          link: 'https://quasar.dev',
+        },
+        {
+          title: this.$t('BLOG.LEFT_DRAWER.LINK_POSTS.TITLE'),
+          caption: this.$t('BLOG.LEFT_DRAWER.LINK_POSTS.CAPTION'),
+          icon: 'code',
+          link: '#/blog',
+        },
+        {
+          title: this.$t('BLOG.LEFT_DRAWER.LINK_PROJECTS.TITLE'),
+          caption: this.$t('BLOG.LEFT_DRAWER.LINK_PROJECTS.CAPTION'),
+          icon: 'chat',
+          link: 'https://chat.quasar.dev',
+        },
+        {
+          title: this.$t('BLOG.LEFT_DRAWER.LINK_MUSIC.TITLE'),
+          caption: this.$t('BLOG.LEFT_DRAWER.LINK_MUSIC.CAPTION'),
+          icon: 'record_voice_over',
+          link: 'https://forum.quasar.dev',
+        },
+        {
+          title: this.$t('BLOG.LEFT_DRAWER.LINK_LINKS.TITLE'),
+          caption: this.$t('BLOG.LEFT_DRAWER.LINK_LINKS.CAPTION'),
+          icon: 'rss_feed',
+          link: 'https://twitter.quasar.dev',
+        },
+      ],
+    }
+  },
+}
+</script>

@@ -1,27 +1,28 @@
 <script>
-  export default {
-    name: 'MenuContents',
-    data() {
-      return {
-        menuItems: ['About', 'Tech', 'Music', 'Job']
-      }
-    },
-    props: {
-    },
-  }
+export default {
+  name: 'MenuContents',
+  data() {
+    return {
+      menuItems: ['About', 'Tech', 'Music', 'Job'],
+      homecontent: require('../../blog-entries/homecontent.md').default,
+    }
+  },
+  props: {
+  },
+}
 </script>
 <template>
   <div class="menu-contents">
-    <ul class="menu-items">
+     <q-markdown content-class="home-content-class" :src="homecontent"/>
+    <!-- <ul class="menu-items">
       <li class="menu-item" v-for="(item, index) in menuItems" :key="index">
           {{item}}
       </li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 
-
-<style lang="scss" scoped>
+<style lang="scss">
   .menu-contents {
     position: absolute;
     top: 0;
@@ -45,5 +46,19 @@
     &:hover {
       filter: drop-shadow(0px -2px 16px darkred);
     }
+  }
+  .home-content-class {
+    font-family: 'WalkwaySemiBold';
+    font-size: 1.5rem;
+    color: $primary;
+    width: 80%;
+    margin-top: 5rem;
+    text-align: justify;
+
+  .q-markdown--link-external{
+    &:after {
+      content: '';
+    }
+  }
   }
 </style>
