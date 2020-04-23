@@ -54,7 +54,21 @@ export default {
     width: 80%;
     margin-top: 5rem;
     text-align: justify;
-
+  .q-markdown--link{
+    color:$color2;
+  }     
+  /* Unvisited link  */
+  .q-markdown--link:visited {
+    color:$color2;
+  } 
+  /* Visited link    */
+  .q-markdown--link:hover {
+    color: white;
+  }   
+  /* Mouse over link */
+  .q-markdown--link:active {
+    color:$color2;
+  }
   .q-markdown--link-external{
     &:after {
       content: '';

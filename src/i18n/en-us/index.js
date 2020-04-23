@@ -7,7 +7,7 @@ export default {
   BLOG: {
     VERSION: '0.0.1',
     TITLE: {
-      TEXT: 'Arturo Galán\'s Blog',
+      TEXT: 'Arturo Galan',
     },
     LEFT_DRAWER: {
       LINK_ABOUT: {

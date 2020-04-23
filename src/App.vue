@@ -16,19 +16,13 @@ body, html {
   box-sizing: border-box;
   // width: 100%;
   // height: 100%;
-  background: lightgray;
+  background:rgba(255, 255, 255, 1);
   // overflow: hidden;
+  font-family: 'Conforta';
+
 }
-a {
-  color:$color4;
-}         /* Unvisited link  */
-a:visited {
-  color:$color4;
-} /* Visited link    */
-a:hover {
-  color:$color4;
-}   /* Mouse over link */
-a:active {
-  color:$color4;
-}  /* Selected link   */
+// a:-webkit-any-link {
+//     text-decoration: none;
+// }
+ /* Selected link   */
 </style>
