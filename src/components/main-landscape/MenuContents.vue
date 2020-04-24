@@ -3,7 +3,6 @@ export default {
   name: 'MenuContents',
   data() {
     return {
-      menuItems: ['About', 'Tech', 'Music', 'Job'],
       homecontent: require('../../blog-entries/homecontent.md').default,
     }
   },
@@ -14,11 +13,6 @@ export default {
 <template>
   <div class="menu-contents">
      <q-markdown content-class="home-content-class" :src="homecontent"/>
-    <!-- <ul class="menu-items">
-      <li class="menu-item" v-for="(item, index) in menuItems" :key="index">
-          {{item}}
-      </li>
-    </ul> -->
   </div>
 </template>
 

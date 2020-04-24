@@ -1,5 +1,8 @@
 <template>
-  <q-layout view="hHh Lpr lFf">
+  <q-layout view="hhh Lpr lFf">
+    <!-- lhr lpr fff -->
+  <!-- <q-layout view="lhr Lpr lFf"> -->
+
     <!-- <q-header elevated class="header-bg row" style="height: 6rem"> -->
     <q-header header elevated class="row">
       <q-toolbar>
@@ -65,27 +68,24 @@
     <q-drawer
       v-model="leftDrawerOpen"
       show-if-above
-      bordered
-      content-class="seconday-color-bg"
+      class="front-index"
     >
-      <q-list>
-        <q-item-label
-          header />
-
-        <!-- <q-item-label
-          header
-          class="text-grey-8"
-        > -->
-          <!-- left drawer title text here -->
-        <!-- </q-item-label> -->
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          :id="link.title"
-
-          v-bind="link"
-        />
-      </q-list>
+    <div class="absolute fit">
+      <div class="absolute skew menu-bg" v-if="false">
+      </div>
+    </div>
+    <div class="absolute fit-extend skew border-bg" v-if="false">
+      <div class="top-menu-thing"></div>
+      <div class="bottom-menu-thing"></div>
+    </div>
+    <q-list class="menu-position" v-if="true">
+      <EssentialLink
+        v-for="link in essentialLinks"
+        :key="link.title"
+        :id="link.title"
+        v-bind="link"
+      />
+    </q-list>
     </q-drawer>
 
     <q-page-container>
@@ -152,6 +152,59 @@ export default {
 }
 </script>
   <style lang="scss" scoped>
+  .fit-auto {
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+  }
+  .menu-bg{
+    border: solid 2px black;
+    z-index: 1;
+    top: 15px;
+    bottom: 15px;
+    width: 100%;
+    height: auto;
+    background-color: white;
+  }
+  .border-bg {
+    z-index: 0;
+  }
+  .fit-extend {
+    height: 100%;
+    width: 100%;
+    // top: -3%;
+  }
+  .skew {
+    transform: skewy($angle);
+  }
+  .front-index {
+    z-index: 2001;
+  }
+  .top-menu-thing {
+    position: absolute;
+    width: 100%;
+    height: 18%;
+    top: -10%;
+    // top: -0.6rem;
+    background-image: linear-gradient(45deg, rgba(0, 0, 119, 0.5), rgba(0, 0, 51, 0.73));
+  }
+  .bottom-menu-thing {
+    position: absolute;
+    width: 100%;
+    height:25%;
+    bottom: -1rem;
+    background-image: linear-gradient(45deg, rgba(0, 0, 119, 0.5), rgba(0, 0, 51, 0.73));
+  }
+  .menu-position {
+    position: absolute;
+    padding-top: $skew-padding;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    z-index: 3;
+  }
   a:-webkit-any-link {
     text-decoration: none;
 }
@@ -181,8 +234,6 @@ export default {
   .header-flex {
     display: flex;
     flex-wrap: nowrap;
-    // background: url("~assets/svg/header-sky.svg") no-repeat;
-    // background-size: cover;
   }
   .title-index {
     z-index: 2;

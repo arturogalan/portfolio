@@ -1,38 +1,54 @@
 <template>
-  <q-item
-    clickable
-    tag="a"
-    :href="`#${link}`"
-    :class="isSelected ? 'link-item-selected' : 'link-item-unselected'"
+<router-link
+  :to="link">
+  <div
+    class="diagonal-box clickable"
+    :class="[
+      `bg-${title.toLowerCase()}`, 
+      isHover && 'hover-item', 
+      isSelected ? 'diagonal-box-selected' : 'diagonal-box-unselected'
+    ]"
+    @mousemove="hoverMenuItem(true)" 
+    @mouseenter="hoverMenuItem(true)" 
+    @mouseleave="hoverMenuItem(false)"
   >
-    <q-item-section
-      v-if="icon"
-      avatar
-    >
-      <!-- <transition :name="'bounce-tiny'"> -->
+    <!-- :style="{minHeight: isSelected ? '19.6%' : '18%'}" -->
+    <div class="content"> 
+      <!-- <div class="content-wrapper"> -->
+      <!-- <q-item
+        tag="a"
+        :href="`#${link}`"
+        class="link-item"
+      > -->
+        <div
+        class="row q-item link-item"
+        >
+        <q-item-section avatar>
+          <q-icon
+            :class="[`item-${title.toLowerCase()}`, isSelected ? 'text-selected' : 'text-unselected']"
+            :name="icon"
+          >
+          </q-icon>
+        </q-item-section>
 
-      <transition :name="isSelected ? 'bounce-tiny' : ''">
-      <q-icon
-        :class="isSelected ? 'item-selected' : 'item-unselected'"
-        :name="icon"
-        :key="`link${isSelected ? 'selected' : ''}`"
-        class="q-ml-md"
-      />
-        <!-- :size="isSelected ? 'xl' : 'md'" -->
-      </transition>
-    </q-item-section>
+        <q-item-section>
+          <q-item-label
+            :class="[`item-${title.toLowerCase()}`, isSelected ? 'text-selected' : 'text-unselected']"
+          >
+          {{ title }}
+          </q-item-label>
+          <q-item-label caption>
+            {{ caption }}
+          </q-item-label>
+        </q-item-section>
+      <!-- </q-item> -->
+        </div>
 
-    <q-item-section class="q-ml-md">
-      <q-item-label
-        :class="isSelected ? 'text-selected' : 'text-unselected'"
-      >
-      {{ title }}
-      </q-item-label>
-      <q-item-label caption>
-        {{ caption }}
-      </q-item-label>
-    </q-item-section>
-  </q-item>
+      <!-- </div> -->
+    </div>
+  </div>
+        </router-link>
+  
 </template>
 
 <script>
@@ -64,9 +80,13 @@ export default {
   },
   data() {
     return {
-      // actualRoute: this.$router.currentRoute.path,
-      // selected: false,
+      isHover: false,
     }
+  },
+  methods: {
+    hoverMenuItem(value) {
+      this.isHover = value
+    },
   },
   computed: {
     isSelected() {
@@ -76,67 +96,142 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  .link-item-selected {
-    font-size: 1.8rem;
-    font-weight: bold;
-    // margin-top: 2rem;
-    transition: font-size margin .5s;
-    transition-timing-function: cubic-bezier(1,.2,.26,.7);
-    min-height: 6rem;
-  }
-  .link-item-unselected {
-    font-size: 1.8rem;
-    font-weight: bold;
-    // margin-top: 2.2rem;
-    transition: all .5s;
-    transition-timing-function: cubic-bezier(1,.2,.26,.7);
-    min-height: 6rem;
-
-  }
-  .item-selected {
-    font-size: 3rem;
-    filter: drop-shadow(0px -2px 3px lightgrey);
-    margin-left: -.1rem;
-
-    // border: solid 2px lightgrey;
-    // border-spacing: 25px;
-    // border-radius: 50%;
-    // box-sizing: border-box;
-    // -moz-box-sizing: border-box;
-    // -webkit-box-sizing: border-box;
-    // width: 4rem;
-    // height: 4rem;
-    // border: 1px solid black;
-    // background: $color3;
-    // margin: 2px;
-    // font-size: 5rem;
-  }
-  .item-unselected {
-    // margin-left: -.1rem;
-    // font-size: 1.8rem;
+  .link-item{
+    font-family: 'Anime';
   }
   .text-selected{
-    margin-left: -.5rem;
-    font-size: 2.5rem;
-    transition: all .5s;
+    font-size: 2.1rem;
+    transition: font-size .5s;
     transition-timing-function: cubic-bezier(1,.2,.26,.7);
-    filter: drop-shadow(0px -2px 3px lightgrey);
+    filter: drop-shadow(0px -2px 3px rgb(232, 210, 47));
   }
   .text-unselected{
-    margin-left: 0;
-    font-size: 2rem;
-    transition: all .5s;
+    font-size: 1.8rem;
+    transition: font-size .5s;
     transition-timing-function: cubic-bezier(1,.2,.26,.7);
+  }
+
+.diagonal-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transform: skewy($angle);
+    transform-origin: 50% 0;
+    outline: 1px solid transparent;
+    backface-visibility: hidden;
+    border-bottom: 3px dashed black;
+    border-right: 3px dashed black;
+  }
+
+}
+.diagonal-box-selected {
+  height: 40%;
+  transition: all 1s;
+  transition-timing-function: ease;
+  min-height: auto;
+}
+.diagonal-box-unselected {
+  min-height: 14.5%;
+  height: 14.5%;
+  transition: all .2s;
+  transition-timing-function: ease-out;
+}
+.hover-item {
+	opacity: .8;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.hover-item:before {
+  transition: background-color 0.8s cubic-bezier(0.25, 0.8, 0.5, 1), opacity 0.6s cubic-bezier(0.25, 0.8, 0.5, 1);
+}
+.bg-posts:before{
+  border-top: 3px dashed black;
+  background-image: linear-gradient(45deg, rgba(250, 250, 250, 0.5), rgba(117, 19, 93, 0.73)), url('~assets/svg/bg-posts.svg');
+}
+.bg-projects:before {
+  background-image:linear-gradient(45deg, rgba(8, 135, 4, 0.5), rgba(111, 86, 4, 0.73)), url('~assets/svg/bg-projects.svg');
+}
+.item-projects {
+  color: white;
+}
+.bg-music:before {
+  background-image: linear-gradient(45deg, rgba(0, 0, 119, 0.5), rgba(0, 0, 51, 0.73)), url('~assets/svg/bg-music.svg');
+}
+.bg-links:before {
+  background-image: linear-gradient(45deg, rgba(240, 233, 29, 0.372), rgba(242, 239, 60, 0.73)),
+  url('~assets/svg/bg-links.svg');
+  background-size:     cover;                      /* <------ */
+  background-repeat:   no-repeat;
+  background-position: center left;  
+}
+.bg-about:before {
+  background-image: linear-gradient(-135deg, rgba(255, 98, 0, 0.44), rgba(51, 0, 27, .7)),
+    url('~assets/svg/bg-about.svg');
+      background-size:     cover;                      /* <------ */
+  background-repeat:   no-repeat;
+  background-position: center top;  
+}
+.content {
+  max-width: $width;
+  margin: 0 .2rem;
+  position: relative;
+  /* -----------
+  enable the border to see, that the content
+  perfectly fits into the section withou
+  bleeding into the adjecting areas:
+  ------------ */
+  // border: 2px dashed #fff8;
+}
+
+
+// .boxes {
+//   display: grid;
+//   grid-template-columns: repeat(4, 1fr);
+//   grid-gap: 3%;
+//   margin: 2em 0;
+  
+  
+//   .box {
+//     width: 100%;
+//     height: 0;
+//     padding-bottom: 100%;
+//     border: 1px solid #fff;
+//     background: #fff3;
+//     transform: translateY( $translation );
+//     animation: translate 3s ease-in-out infinite;
+    
+//     &:nth-child(1) { --translation: calc($skew-padding * 1.5)}
+//     &:nth-child(2) { --translation: calc($skew-padding * 1)}
+//     &:nth-child(3) { --translation: calc($skew-padding * 0.5)}
+//     &:nth-child(4) { --translation: calc($skew-padding * 0)}    
+//   }
+// }
+
+  @keyframes translate {
+    0%, 20%, 100% { transform: translateY(0); }
+    50%, 70% { transform: translateY($translation); }
+  }
+
+  a {
+    text-decoration: none;
   }
   /* Visited link    */
   a:hover {
     color:black;
-    font-weight: bold;
-    // font-size: 2.2rem;
-    // margin-top: .7rem;
   }   
   /* Mouse over link */
   a:active {
+    color: black;
+  }
+  a {
     color: black;
   }
 </style>
