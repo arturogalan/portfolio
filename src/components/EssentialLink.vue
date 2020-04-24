@@ -4,7 +4,8 @@
   <div
     class="diagonal-box clickable"
     :class="[
-      `bg-${title.toLowerCase()}`, 
+      `bg-${title.toLowerCase()}`,
+      isSelected && `bg-selected`, 
       isHover && 'hover-item', 
       isSelected ? 'diagonal-box-selected' : 'diagonal-box-unselected'
     ]"
@@ -129,6 +130,9 @@ export default {
     backface-visibility: hidden;
     border-bottom: 3px dashed black;
     border-right: 3px dashed black;
+    background-size: 130% 130%;         
+    background-position: inherit;
+    background-position: center center;
   }
 
 }
@@ -140,7 +144,7 @@ export default {
 }
 .diagonal-box-unselected {
   min-height: 14.5%;
-  height: 14.5%;
+  // height: 14.5%;
   transition: all .2s;
   transition-timing-function: ease-out;
 }
@@ -158,6 +162,7 @@ export default {
 }
 .bg-projects:before {
   background-image:linear-gradient(45deg, rgba(8, 135, 4, 0.5), rgba(111, 86, 4, 0.73)), url('~assets/svg/bg-projects.svg');
+
 }
 .item-projects {
   color: white;
@@ -168,16 +173,16 @@ export default {
 .bg-links:before {
   background-image: linear-gradient(45deg, rgba(240, 233, 29, 0.372), rgba(242, 239, 60, 0.73)),
   url('~assets/svg/bg-links.svg');
-  background-size:     cover;                      /* <------ */
-  background-repeat:   no-repeat;
-  background-position: center left;  
 }
 .bg-about:before {
   background-image: linear-gradient(-135deg, rgba(255, 98, 0, 0.44), rgba(51, 0, 27, .7)),
     url('~assets/svg/bg-about.svg');
-      background-size:     cover;                      /* <------ */
-  background-repeat:   no-repeat;
-  background-position: center top;  
+}
+.bg-selected:before {
+  background-size: 220% 220%;
+  transition: all .5s;
+  transition-timing-function: ease-out;
+  background-position: center center;  
 }
 .content {
   max-width: $width;

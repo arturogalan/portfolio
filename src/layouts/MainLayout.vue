@@ -64,17 +64,16 @@
         <!-- <div>v{{ $t('BLOG.VERSION') }}</div> -->
       </q-toolbar>
     </q-header>
-
     <q-drawer
       v-model="leftDrawerOpen"
       show-if-above
       class="front-index"
     >
     <div class="absolute fit">
-      <div class="absolute skew menu-bg" v-if="false">
+      <div class="absolute skew menu-bg" v-if="true">
       </div>
     </div>
-    <div class="absolute fit-extend skew border-bg" v-if="false">
+    <div class="absolute fit-extend skew border-bg" v-if="true">
       <div class="top-menu-thing"></div>
       <div class="bottom-menu-thing"></div>
     </div>
@@ -178,27 +177,27 @@ export default {
   .skew {
     transform: skewy($angle);
   }
-  .front-index {
-    z-index: 2001;
-  }
   .top-menu-thing {
     position: absolute;
     width: 100%;
     height: 18%;
     top: -10%;
     // top: -0.6rem;
-    background-image: linear-gradient(45deg, rgba(0, 0, 119, 0.5), rgba(0, 0, 51, 0.73));
+    background-color: white;
+
+    // background-image: linear-gradient(45deg, rgba(0, 0, 119, 0.5), rgba(0, 0, 51, 0.73));
   }
   .bottom-menu-thing {
     position: absolute;
     width: 100%;
     height:25%;
     bottom: -1rem;
-    background-image: linear-gradient(45deg, rgba(0, 0, 119, 0.5), rgba(0, 0, 51, 0.73));
+    background-color: white;
+    // background-image: linear-gradient(45deg, rgba(0, 0, 119, 0.5), rgba(0, 0, 51, 0.73));
   }
   .menu-position {
     position: absolute;
-    padding-top: $skew-padding;
+    padding-top: 15px;
     top: 0;
     bottom: 0;
     width: 100%;
