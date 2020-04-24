@@ -3,12 +3,13 @@
   :to="link">
   <div
     class="diagonal-box clickable"
-    :class="[
-      `bg-${title.toLowerCase()}`,
-      isSelected && `bg-selected`, 
-      isHover && 'hover-item', 
-      isSelected ? 'diagonal-box-selected' : 'diagonal-box-unselected'
-    ]"
+    :class="{
+      [`bg-${title.toLowerCase()}`]: true,
+      [`bg-selected`]: isSelected, 
+      ['hover-item']: isHover,
+      ['diagonal-box-selected']: isSelected,
+      ['diagonal-box-unselected']: !isSelected,
+    }"
     @mousemove="hoverMenuItem(true)" 
     @mouseenter="hoverMenuItem(true)" 
     @mouseleave="hoverMenuItem(false)"
@@ -133,25 +134,22 @@ export default {
     background-size: 130% 130%;         
     background-position: inherit;
     background-position: center center;
+    transition: background-size .3s;
+    transition-timing-function: ease-out;
   }
-
 }
 .diagonal-box-selected {
-  height: 40%;
-  transition: all 1s;
-  transition-timing-function: ease;
-  min-height: auto;
+  height: 38%;
+  transition: height .3s;
+  transition-timing-function: linear;
 }
 .diagonal-box-unselected {
-  min-height: 14.5%;
-  // height: 14.5%;
-  transition: all .2s;
-  transition-timing-function: ease-out;
+  height: 15%;
+  transition: all .3s;
+  transition-timing-function: linear;
 }
 .hover-item {
 	opacity: .8;
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
 }
 .hover-item:before {
   transition: background-color 0.8s cubic-bezier(0.25, 0.8, 0.5, 1), opacity 0.6s cubic-bezier(0.25, 0.8, 0.5, 1);
@@ -162,7 +160,6 @@ export default {
 }
 .bg-projects:before {
   background-image:linear-gradient(45deg, rgba(8, 135, 4, 0.5), rgba(111, 86, 4, 0.73)), url('~assets/svg/bg-projects.svg');
-
 }
 .item-projects {
   color: white;
@@ -180,7 +177,7 @@ export default {
 }
 .bg-selected:before {
   background-size: 220% 220%;
-  transition: all .5s;
+  transition: background-size .3s;
   transition-timing-function: ease-out;
   background-position: center center;  
 }
