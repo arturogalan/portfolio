@@ -92,7 +92,7 @@ export default {
   },
   computed: {
     isSelected() {
-      return this.$route.path === this.link;
+      return this.$route.path.includes(this.link);
     },
   },
 }

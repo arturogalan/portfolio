@@ -1,11 +1,11 @@
 <template>
   <!-- <q-page class="flex flex-center"> -->
-  <q-page class="">
+  <q-page class="q-ml-xl">
     <!-- <h4>{{$t('BLOG.INDEX.INTRO_TEXT')}}</h4> -->
   <q-markdown>
-    # Posts
+    # **Blog**
 
-    Recent posts :beers: :
+    Hi!, here is where I have my posts about tech and other things, hope you find useful any of them :beers: :
   </q-markdown>
 
     <div class="q-pa-md row items-start q-gutter-md">
@@ -137,5 +137,5 @@ export default {
 					border-right-width: 12px;
 				}
 			}
-	}
+  }
 </style>

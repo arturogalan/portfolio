@@ -25,4 +25,19 @@ body, html {
 //     text-decoration: none;
 // }
  /* Selected link   */
+ .q-drawer {
+   z-index: 3000;
+   background: none;
+   &--top-padding > * > .menu-position {
+     padding-top: 25px;
+   }
+ }
+ .q-drawer--top-padding {
+  .q-drawer__content .menu-position {
+    padding-top: 25px;
+  }
+  .q-drawer__content .menu-bg{
+    top: 1rem;
+  }
+ }
 </style>

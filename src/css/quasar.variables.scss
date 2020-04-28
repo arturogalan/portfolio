@@ -229,6 +229,117 @@ $z-index-10: 10;
   }
 }
 
+// .confetti-button:after
+.confetti-button:before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 100%;
+  height: auto;
+  left: 90%;
+  top: 0;
+  bottom: 15px;
+  z-index: -1000;
+  transition: all ease-in-out 0.5s;
+  background-repeat: no-repeat;
+  // border: solid 3px red;
+  transform: skewy(4deg);
+  // z-index: 3002;
+}
+
+
+// .confetti-button:before {
+//   display: none;
+//   top: -75%;
+//   background-image: 
+//     radial-gradient(circle, #ff0081 20%, transparent 20%), 
+//     radial-gradient(circle, transparent 20%, #ff0081 20%, transparent 30%), 
+//     radial-gradient(circle, #ff0081 20%, transparent 20%), 
+//     radial-gradient(circle, #ff0081 20%, transparent 20%), 
+//     radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), 
+//     radial-gradient(circle, #ff0081 20%, transparent 20%), 
+//     radial-gradient(circle, #ff0081 20%, transparent 20%), 
+//     radial-gradient(circle, #ff0081 20%, transparent 20%), 
+//     radial-gradient(circle, #ff0081 20%, transparent 20%);
+//   background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+// }
+// .confetti-button.animate:before {
+//   display: block;
+//   animation: topBubbles ease-in-out 0.75s forwards;
+// }
+
+// @keyframes
+// topBubbles {  0% {
+//  background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+// }
+//  50% {
+//  background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+// }
+//  100% {
+//  background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+//  background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+// }
+// }
+
+
+.confetti-button:before {
+  visibility: hidden;
+
+
+
+  .bg-posts:before{
+    background-image: linear-gradient(45deg, rgba(250, 250, 250, 0.5), rgba(117, 19, 93, 0.73))
+  }
+  .bg-projects:before {
+    background-image:linear-gradient(45deg, rgba(8, 135, 4, 0.5), rgba(111, 86, 4, 0.73))
+  }
+  .bg-music:before {
+    background-image: linear-gradient(45deg, rgba(0, 0, 119, 0.5), rgba(0, 0, 51, 0.73))
+  }
+  .bg-links:before {
+    background-image: linear-gradient(45deg, rgba(240, 233, 29, 0.372), rgba(242, 239, 60, 0.73)),
+  }
+  .bg-about:before {
+    background-image: linear-gradient(-135deg, rgba(255, 98, 0, 0.44), rgba(51, 0, 27, .7)),
+  }
+
+
+
+  // top: -75%;
+  background-image: 
+    radial-gradient(circle, rgba(117, 19, 93, 0.73) 20%, transparent 20%), 
+    radial-gradient(circle, transparent 20%, rgba(8, 135, 4, 0.5) 20%, transparent 30%), 
+    radial-gradient(circle, rgba(8, 135, 4, 0.5) 20%, transparent 20%), 
+    radial-gradient(circle, #ff0081 20%, transparent 20%), 
+    radial-gradient(circle, transparent 10%, rgba(0, 0, 119, 0.5) 15%, transparent 20%), 
+    radial-gradient(circle, rgba(242, 239, 60, 0.73) 20%, transparent 20%), 
+    radial-gradient(circle, rgba(0, 0, 119, 0.5) 20%, transparent 20%), 
+    radial-gradient(circle, #ff0081 20%, transparent 20%), 
+    radial-gradient(circle, rgba(242, 239, 60, 0.73) 20%, transparent 20%);
+  background-size: 5% 5%;
+  // border: solid 3px red;
+}
+.confetti-button.animate:before {
+  -webkit-animation: topBubbles ease-in-out 1s forwards;
+  animation: topBubbles ease-in-out 1s forwards;
+}
+
+@keyframes
+topBubbles {  
+  0% {
+    visibility: visible;
+    background-position: 0%  5%, 0% 10%  , 0%  28%,  0%  30%,  0%  44%,  0%  55%,  0%  70%,  0%  75%,  0%  88%;
+  }
+  50% {
+    background-position: 15% 0%, 10% 13%,  18% 34%,  10% 37%,  25% 48%,  12% 60%,  20% 72%,  12% 80%,  14% 90%;
+  }
+  100% {
+    background-position: 17% 1%, 12% 15%,  22% 36%,  12% 44%,  27% 50%,  14% 65%,  22% 75%,  14% 83%,  18%  95%;
+    background-size: 0% 0%;
+    visibility: hidden;
+  }
+}
+
 //Fonts
 @font-face {
   font-family: "Beauty";
