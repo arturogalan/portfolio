@@ -23,7 +23,7 @@
   <br/>
 
   <q-markdown>
-    Unfortunately we had to stop years ago but I keep playing guitar at home and I'd like to record more stuff and songs that I have written during this years. I'm also starting to learn Violin, an incredible instrument that I have always wanted to play, it's extremely difficult but I keep the faith 😅.
+    Unfortunately we had to stop years ago but I keep playing guitar at home and I'd like to record more stuff and songs that I've been writing during this years. I'm also starting to learn Violin, an incredible instrument that I have always wanted to play, it's extremely difficult but I keep the faith 😅.
 
     # Recommended Bands and Songs
   </q-markdown>

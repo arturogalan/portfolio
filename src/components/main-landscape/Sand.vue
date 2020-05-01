@@ -1,4 +1,7 @@
 <script>
+import { EventBus } from '../../store/event-bus.js';
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'Sand',
   mounted() {
@@ -13,6 +16,16 @@ export default {
       direction: 'normal',
     }
     this.$anime(yogaShadowAnimation)
+  },
+  methods: {
+    openMenu() {
+      EventBus.$emit('open-lateral-menu');
+    },
+  },
+    computed: {
+    ...mapGetters('ui', [
+      'fetchLateralMenuOpened',
+    ]),
   },
 }
 </script>
@@ -37,12 +50,26 @@ export default {
     <img src="~assets/svg/seaShell5.svg" alt="">
   </div>
   <div>
-    <img class="yoga" src="~assets/svg/yoga.svg" alt="">
+      <img class="yoga" src="~assets/svg/yoga.svg" alt="">
+        <div @click="openMenu" class="clickable-zone" :class="!fetchLateralMenuOpened && 'clickable'">
+        </div>
   </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
+.clickable-zone {
+  width: 50%;
+  height: 40%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+.clickable {
+  cursor: pointer;
+}
 .yoga {
   position: absolute;
   width: 50%;

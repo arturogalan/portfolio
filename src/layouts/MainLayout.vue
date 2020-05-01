@@ -1,9 +1,12 @@
 <template>
-  <q-layout view="hHh Lpr lFf">
+  <!-- <q-layout view="hHh Lpr lFf"> -->
     <!-- Had <q-layout view="hHh lpR fFf">
 needed <q-layout view="hHh Lpr fFf"> -->
     <!-- lhr lpr fff -->
   <!-- <q-layout view="lhr Lpr lFf"> -->
+<!-- <q-layout view="hHh Lpr fFf">
+   -->
+  <q-layout view="hHh Lpr lFf">
 
     <!-- <q-header elevated class="header-bg row" style="height: 6rem"> -->
     <q-header header elevated class="header-style">
@@ -41,7 +44,7 @@ needed <q-layout view="hHh Lpr fFf"> -->
               transition="slide-right"
             />
             <router-link
-              to="/about"
+              to="/"
             >
             <h2 class="blog-title q-mt-lg q-mb-lg q-ml-md" >
               {{$t('BLOG.TITLE.TEXT')}}
@@ -82,7 +85,6 @@ needed <q-layout view="hHh Lpr fFf"> -->
     <q-drawer
       v-model="leftDrawerOpen"
       show-if-above
-      overlay
       @input="test"
     >
     <div 
@@ -112,13 +114,13 @@ needed <q-layout view="hHh Lpr fFf"> -->
     </q-list>
     </q-drawer>
 
-    <q-page-container>
+    <q-page-container class="router-view">
       <transition
         appear
         enter-active-class="animated fadeIn"
       >
 
-      <router-view/>
+      <router-view />
       </transition>
     </q-page-container>
   </q-layout>
@@ -250,6 +252,14 @@ export default {
 }
 </script>
   <style lang="scss" scoped>
+  .router-view {
+    background: repeating-linear-gradient(
+      45deg,
+      rgba(232, 228, 228, 0.2),
+      rgba(17, 149, 210, 0.08) 5rem,
+      rgba(145, 144, 144, 0.153) 5rem,
+    );
+  }
   .menu-button {
     font-size: 5rem;
     cursor: pointer;
@@ -258,6 +268,14 @@ export default {
   .header-style {
     -webkit-mask-image: url("~assets/png/grit.png");
     mask-image: url("~assets/png/grit.png");
+    // background: repeating-linear-gradient(
+    //   45deg,
+    //   rgba(143, 62, 62, 0.2),
+    //   rgba(61, 189, 119, 0.2) 20px,
+    //   rgba(191, 58, 58, 0.3) 20px,
+    //   rgba(0, 0, 0, 0.3) 30px
+    // ),
+    // url("~assets/png/grit.png");
   }
   .menu-position {
     position: absolute;
@@ -345,7 +363,5 @@ export default {
     display: flex;
     flex-wrap: nowrap;
   }
-  .title-left {
-    // z-index: 2;
-  }
+
 </style>

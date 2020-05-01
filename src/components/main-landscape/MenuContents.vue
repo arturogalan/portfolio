@@ -1,4 +1,6 @@
 <script>
+import { openURL } from 'quasar'
+
 export default {
   name: 'MenuContents',
   data() {
@@ -6,14 +8,56 @@ export default {
       homecontent: require('../../blog-entries/homecontent.md').default,
     }
   },
-  props: {
+  methods: {
+    open(url) {
+      openURL(url);
+    },
   },
 }
 </script>
 <template>
+<section>
   <div class="menu-contents">
      <q-markdown content-class="home-content-class" :src="homecontent"/>
   </div>
+  <div class="media-links">
+
+    <q-btn class="media-icon" @click="$router.push('blog')" round>
+      <img
+        class="media-icon"
+        src="~assets/svg/avatarSvgWhite.svg"
+      >
+      <span class="button-label">Blog</span>
+    </q-btn>
+     <q-btn
+      flat
+      dense
+      round
+      icon="fab fa-linkedin-in"
+      class="media-icon"
+      @click="open('https://quasar.dev/')"
+    ><span class="button-label">Linkedin</span>
+    </q-btn>
+    <q-btn
+      flat
+      dense
+      round
+      icon="fab fa-twitter"
+      class="media-icon"
+      @click="open('https://twitter.com/turugalan')"
+    ><span class="button-label">Twitter</span>
+    </q-btn>
+    <q-btn
+      flat
+      dense
+      round
+      icon="fab fa-github"
+      class="media-icon"
+      @click="open('https://github.com/arturogalan')"
+    ><span class="button-label">Github</span>
+    </q-btn>
+  </div>
+</section>
 </template>
 
 <style lang="scss">
@@ -25,7 +69,32 @@ export default {
     z-index: 5;
     display: flex;
     align-items: center;
+    justify-content: center;  
+  }
+  .media-links {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 50%;
+    z-index: 5;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
+    color: white;
+    fill: white;
+  }
+  .media-icon {
+    flex: 0 50%;
+    font-size: 3rem;
+    height: 12rem;;
+  }
+  .button-label {
+    font-size: 1.5rem;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0rem;
+    font-family: 'Kobe';
   }
   .menu-items {
     color: white;
@@ -42,18 +111,34 @@ export default {
     }
   }
   .home-content-class {
-    font-family: 'WalkwaySemiBold';
+    font-family: 'Kobe';
     font-size: 1.5rem;
-    color: $primary;
+    color: whitesmoke;
     width: 80%;
-    margin-top: 5rem;
+    margin-top: 2rem;
     text-align: justify;
+    line-height: 1.5rem;
+  .q-markdown--heading-h1 {
+    font-size: 5rem;
+  }
+  .q-markdown--heading-h2 {
+    font-size: 2.2rem;
+  }
   .q-markdown--link{
-    color:$color2;
-  }     
+    color:$color3;
+    font-size: 2rem;
+    font-weight: 100;
+    text-decoration: underline;
+    border-bottom: none;
+  }   
+  a:-webkit-any-link{
+    text-decoration-color: white;
+  }    
   /* Unvisited link  */
   .q-markdown--link:visited {
-    color:$color2;
+    color: white;
+    text-decoration: underline;
+    border-bottom: none;
   } 
   /* Visited link    */
   .q-markdown--link:hover {
@@ -61,7 +146,7 @@ export default {
   }   
   /* Mouse over link */
   .q-markdown--link:active {
-    color:$color2;
+    color: white;
   }
   .q-markdown--link-external{
     &:after {

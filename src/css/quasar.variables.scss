@@ -385,7 +385,12 @@ topBubbles {
   font-weight: normal;
   font-style: normal;
 }
-
+@font-face {
+  font-family: "Kobe";
+  src: url("~assets/fonts/Kobe.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 $width: 100vw;
 $full-width: 30vw;
