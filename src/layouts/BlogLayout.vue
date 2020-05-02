@@ -6,12 +6,12 @@
 </template>
 
 <script>
-import BLOGS from '../statics/data/blogs.json'
+import BLOGS from 'statics/data/blogs.json'
 
 export default {
   name: 'BlogLayout',
   mounted () {
-    console.log('bloglayout mounted');
+    console.log('bloglayout mounted')
   },
   computed: {
     entry () {
@@ -27,16 +27,16 @@ export default {
     fullUrl () {
       const hostname = window.location.hostname
       return `${hostname}${this.$route.fullPath}`
-    }
+    },
   },
   meta () {
     return {
       title: `| Blog - ${this.entry.title}`,
       meta: {
-        description: { name: 'description', content: this.entry.description }
-      }
+        description: { name: 'description', content: this.entry.description },
+      },
     }
-  }
+  },
 }
 </script>
 
