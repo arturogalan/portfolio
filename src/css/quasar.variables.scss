@@ -1,0 +1,425 @@
+// Quasar SCSS (& Sass) Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass/SCSS variables found in Quasar's source Sass/SCSS files.
+
+// Check documentation for full list of Quasar variables
+
+// Your own variables (that are declared here) and Quasar's own
+// ones will be available out of the box in your .vue/.scss/.sass files
+
+// It's highly recommended to change the default colors
+// to match your app's branding.
+// Tip: Use the "Theme Builder" on Quasar's documentation website.
+
+/* HSL */
+$color1: hsla(84%, 14%, 40%, 1);
+$color2: hsla(185%, 77%, 22%, 1);
+$color3: hsla(77%, 27%, 48%, 1);
+$color4: hsla(66%, 40%, 65%, 1);
+$color5: hsla(8%, 76%, 30%, 1);
+
+/* RGB */
+$color1: rgba(105, 116, 88, 1);
+$color2: rgba(13, 92, 99, 1);
+$color3: rgba(136, 155, 89, 1);
+$color4: rgba(194, 201, 130, 1);
+$color5: rgba(135, 33, 18, 1);
+$color6: #09b3af;
+// $primary   : #1976D2;
+
+$primary   : rgb(38, 131, 160);
+$primary-light   : rgba(38, 131, 160, .8);
+// $primary   : rgba(13, 92, 99, 1);
+// $primary-light   : rgba(13, 92, 99, .9);
+
+
+$secondary : #26A69A;
+$accent    : #9C27B0;
+
+$dark      : #1D1D1D;
+
+$positive  : #21BA45;
+$negative  : #C10015;
+$info      : #31CCEC;
+$warning   : #F2C037;
+
+$z-index-0: 0;
+$z-index-1: 1;
+$z-index-2: 2;
+$z-index-3: 3;
+$z-index-4: 4;
+$z-index-5: 5;
+$z-index-6: 6;
+$z-index-7: 7;
+$z-index-8: 8;
+$z-index-9: 9;
+$z-index-10: 10;
+
+// .seconday-color-bg {
+//   background-color: $primary;
+// }
+.z-index-1 {
+  z-index: $z-index-1;
+}
+
+.z-index-2 {
+  z-index: $z-index-2;
+}
+
+.z-index-3 {
+  z-index: $z-index-3;
+}
+
+.z-index-4 {
+  z-index: $z-index-4;
+}
+
+.z-index-5 {
+  z-index: $z-index-5;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 7s
+}
+.fade-enter,
+.fade-leave-to {
+    opacity: 0
+}
+
+.fade-in-enter-active {
+  opacity: 1;
+  animation-name: fadeIn;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: .8s;
+}
+.fade-in-leave-active {
+  opacity: 1;
+  animation-name: fadeOut;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 1s;
+}
+// .fade-in-fast-enter-active {
+//   opacity: 1;
+//   animation-name: fadeIn;
+//   animation-iteration-count: 1;
+//   animation-timing-function: ease-out;
+//   animation-duration: .4s;
+// }
+.fade-in-fast-leave-active {
+  opacity: 1;
+  animation-name: fadeOut;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: .4s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fade-out {
+  opacity: 1;
+  animation-name: fadeOutOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 1s;
+}
+@keyframes fadeOutOpacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.bounce-enter-active {
+  animation: pulse_animation 0.5s;
+}
+.bounce-tiny-enter-active {
+  animation: pulse_animation_tiny 0.5s;
+}
+.bounce-tiny-slow-enter-active {
+  animation: pulse_animation_tiny .75s;
+}
+@keyframes pulse_animation {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.2);
+  }
+  30% {
+    transform: scale(1.7);
+  }
+  40% {
+    transform: scale(2);
+  }
+  50% {
+    transform: scale(2.4);
+  }
+  60% {
+    transform: scale(2);
+  }
+  70% {
+    transform: scale(1.7);
+  }
+  80% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse_animation_tiny {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.1);
+  }
+  30% {
+    transform: scale(1.2);
+  }
+  40% {
+    transform: scale(1.3);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  60% {
+    transform: scale(1.3);
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// .confetti-button:after
+.confetti-button:before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 100%;
+  height: auto;
+  left: 90%;
+  top: 0;
+  bottom: 15px;
+  z-index: -1000;
+  transition: all ease-in-out 0.5s;
+  background-repeat: no-repeat;
+  // border: solid 3px red;
+  transform: skewy(4deg);
+  // z-index: 3002;
+}
+
+
+// .confetti-button:before {
+//   display: none;
+//   top: -75%;
+//   background-image: 
+//     radial-gradient(circle, #ff0081 20%, transparent 20%), 
+//     radial-gradient(circle, transparent 20%, #ff0081 20%, transparent 30%), 
+//     radial-gradient(circle, #ff0081 20%, transparent 20%), 
+//     radial-gradient(circle, #ff0081 20%, transparent 20%), 
+//     radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), 
+//     radial-gradient(circle, #ff0081 20%, transparent 20%), 
+//     radial-gradient(circle, #ff0081 20%, transparent 20%), 
+//     radial-gradient(circle, #ff0081 20%, transparent 20%), 
+//     radial-gradient(circle, #ff0081 20%, transparent 20%);
+//   background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+// }
+// .confetti-button.animate:before {
+//   display: block;
+//   animation: topBubbles ease-in-out 0.75s forwards;
+// }
+
+// @keyframes
+// topBubbles {  0% {
+//  background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+// }
+//  50% {
+//  background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+// }
+//  100% {
+//  background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+//  background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+// }
+// }
+
+
+.confetti-button:before {
+  visibility: hidden;
+
+
+
+  .bg-posts:before{
+    background-image: linear-gradient(45deg, rgba(250, 250, 250, 0.5), rgba(117, 19, 93, 0.73))
+  }
+  .bg-projects:before {
+    background-image:linear-gradient(45deg, rgba(8, 135, 4, 0.5), rgba(111, 86, 4, 0.73))
+  }
+  .bg-music:before {
+    background-image: linear-gradient(45deg, rgba(0, 0, 119, 0.5), rgba(0, 0, 51, 0.73))
+  }
+  .bg-links:before {
+    background-image: linear-gradient(45deg, rgba(240, 233, 29, 0.372), rgba(242, 239, 60, 0.73)),
+  }
+  .bg-about:before {
+    background-image: linear-gradient(-135deg, rgba(255, 98, 0, 0.44), rgba(51, 0, 27, .7)),
+  }
+
+
+
+  // top: -75%;
+  background-image: 
+    radial-gradient(circle, rgba(117, 19, 93, 0.73) 20%, transparent 20%), 
+    radial-gradient(circle, transparent 20%, rgba(8, 135, 4, 0.5) 20%, transparent 30%), 
+    radial-gradient(circle, rgba(8, 135, 4, 0.5) 20%, transparent 20%), 
+    radial-gradient(circle, #ff0081 20%, transparent 20%), 
+    radial-gradient(circle, transparent 10%, rgba(0, 0, 119, 0.5) 15%, transparent 20%), 
+    radial-gradient(circle, rgba(242, 239, 60, 0.73) 20%, transparent 20%), 
+    radial-gradient(circle, rgba(0, 0, 119, 0.5) 20%, transparent 20%), 
+    radial-gradient(circle, #ff0081 20%, transparent 20%), 
+    radial-gradient(circle, rgba(242, 239, 60, 0.73) 20%, transparent 20%);
+  background-size: 5% 5%;
+  // border: solid 3px red;
+}
+.confetti-button.animate:before {
+  -webkit-animation: topBubbles ease-in-out 1s forwards;
+  animation: topBubbles ease-in-out 1s forwards;
+}
+
+@keyframes
+topBubbles {  
+  0% {
+    visibility: visible;
+    background-position: 0%  5%, 0% 10%  , 0%  28%,  0%  30%,  0%  44%,  0%  55%,  0%  70%,  0%  75%,  0%  88%;
+  }
+  50% {
+    background-position: 15% 0%, 10% 13%,  18% 34%,  10% 37%,  25% 48%,  12% 60%,  20% 72%,  12% 80%,  14% 90%;
+  }
+  100% {
+    background-position: 17% 1%, 12% 15%,  22% 36%,  12% 44%,  27% 50%,  14% 65%,  22% 75%,  14% 83%,  18%  95%;
+    background-size: 0% 0%;
+    visibility: hidden;
+  }
+}
+
+//Fonts
+@font-face {
+  font-family: "Beauty";
+  src: url("~assets/fonts/BandB.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: expanded;
+}
+//Fonts
+@font-face {
+  font-family: "August";
+  src: url("~assets/fonts/HeyAugust.ttf") format("truetype");
+  font-weight: lighter;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Anime";
+  src: url("~assets/fonts/animeace2_reg.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Anime";
+  src: url("~assets/fonts/animeace2_bld.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "WalkwaySemiBold";
+  src: url("~assets/fonts/WalkwaySemiBold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "WalkwayUltraBold";
+  src: url("~assets/fonts/WalkwayUltraBold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: bold;
+}
+@font-face {
+  font-family: "Conforta";
+  src: url("~assets/fonts/Comfortaa-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Edos";
+  src: url("~assets/fonts/edosz.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Blow";
+  src: url("~assets/fonts/blowbrush.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Street";
+  src: url("~assets/fonts/street.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+$width: 100vw;
+$full-width: 30vw;
+
+@media (min-width: 42em) {
+  $width: 42rem;
+}
+
+$angle: 4deg;
+/*-----------------
+Magic Number Alert:
+
+the 0.09719 is calculated by this formula:
+tan(11°) / 2
+11° is the current skewY value.
+------------------*/
+$magic-number: 0.09719;
+$skew-padding: $magic-number * 15vw;
+// $clip-padding: $full-width * $magic-number;
+$translation: 0;

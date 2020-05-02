@@ -1,34 +1,18 @@
 <template>
-  <div id="app">
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div> -->
+  <div id="q-app">
     <router-view />
   </div>
 </template>
 
-<style lang="scss">
-//Fonts
-@font-face {
-  font-family: "Beauty";
-  src: url("./assets/fonts/BandB.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: expanded;
+<script >
+export default {
+  name: 'App',
 }
-//Fonts
-@font-face {
-  font-family: "August";
-  src: url("./assets/fonts/HeyAugust.ttf") format("truetype");
-  font-weight: lighter;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Thorn";
-  src: url("./assets/fonts/THORN.ttf") format("truetype");
-  font-weight: lighter;
-  font-style: normal;
+</script>
+<style  lang="scss">
+a:-webkit-any-link {
+  text-decoration-color: white;
+  color: white;
 }
 body, html {
   margin: 0;
@@ -36,27 +20,91 @@ body, html {
   box-sizing: border-box;
   // width: 100%;
   // height: 100%;
-  background: #887434;
-  overflow: hidden;
+  background:rgba(255, 255, 255, 1);
+  // overflow: hidden;
+  font-family: 'Conforta';
+
 }
+// a:-webkit-any-link {
+//     text-decoration: none;
+// }
+ /* Selected link   */
+ .q-drawer {
+   z-index: 3000;
+   background: none;
+   &--top-padding > * > .menu-position {
+     padding-top: 25px;
+   }
+ }
+ .q-drawer--top-padding {
+  .q-drawer__content .menu-position {
+    padding-top: 25px;
+  }
+  .q-drawer__content .menu-bg{
+    top: 1rem;
+  }
+ }
 
-#app {
-  // font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-}
+ .q-page-container{
+  .markdown-container{
+    padding-left: 2rem;
+  }
+  .q-markdown {
+    font-family: 'Conforta';
+    font-size: 1rem;
+    color: black;
+    width: 80%;
+    // margin-top: 5rem;
+    text-align: justify;
+  }
+  .q-markdown--link{
+    color:black;
+    text-decoration: underline;
+    border-bottom: none !important;
+    text-decoration-style: solid;
+  }
+  .q-markdown--heading-h2 {
+    font-weight: 800 !important;
+  }
+  /* Unvisited link  */
+  .q-markdown--link:visited {
+    color:black;
+    text-decoration: underline;
+    border-bottom: none;
+  } 
+  /* Visited link    */
+  .q-markdown--link:hover {
+    color: black;
+    text-decoration: underline;
+    border-bottom: none;
+  }   
+  /* Mouse over link */
+  .q-markdown--link:active {
+    color:black;
+    text-decoration: underline;
+    border-bottom: none;
+    text-decoration-style: solid;
 
-#nav {
-  padding: 30px;
-
-  a {
-    // font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+  }
+  .q-markdown--link.q-markdown--link-external{
+    text-decoration-style: solid;
+    text-decoration: underline;
+    &:after {
+      content: '';
     }
   }
-}
+  // p:has(* > .q-markdown--image) {
+  //   background-color: red;
+  // } 
+  .q-markdown--image {
+    max-width: 75% !important;
+  }
+  // a:-webkit-any-link {
+  //   text-decoration: none;
+  //   border-bottom: none;
+  // }
+  
+  }
+
+
 </style>

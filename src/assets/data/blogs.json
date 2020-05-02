@@ -1,0 +1,35 @@
+[
+  {
+    "id": "ntfs-in-mac",
+    "type": "md",
+    "date": "2020-04-01",
+    "lasUpdated": "2020-05-01",
+    "readTime": "15min",
+    "tags": ["learnings", "mac"],
+    "title": "Making usb sticks readable on Mac",
+    "description": "Making an AppleScript to automatically open and make writable NTFS volumes",
+    "image": "statics/images/ntfs-in-mac/preview.jpg"
+  },
+  {
+    "id": "nabaztag-first",
+    "type": "md",
+    "date": "2021-12-01",
+    "lasUpdated": "2020-05-01",
+    "readTime": "30min",
+    "tags": ["nabaztag", "python", "raspberry"],
+    "title": "Raspberry powered rabbit robot (Nabaztag)",
+    "description": "Steps and working in progress of my small raspberry robot",
+    "image": "statics/images/nabaztag-first/preview.jpg"
+  },
+  {
+    "id": "vue-custom-tooltip",
+    "type": "vmd",
+    "date": "2020-05-01",
+    "lasUpdated": "2020-05-01",
+    "readTime": "10min",
+    "tags": ["learnings", "vue"],
+    "title": "Vue tooltip as a directive",
+    "description": "Using the vue directive to make a tooltip component playing with the DOM",
+    "image": "statics/images/vue-custom-tooltip/preview.jpg"
+  }
+]
