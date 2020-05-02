@@ -98,7 +98,7 @@ $z-index-10: 10;
   animation-name: fadeIn;
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
-  animation-duration: 1s;
+  animation-duration: .8s;
 }
 .fade-in-leave-active {
   opacity: 1;
@@ -386,8 +386,20 @@ topBubbles {
   font-style: normal;
 }
 @font-face {
-  font-family: "Kobe";
-  src: url("~assets/fonts/Kobe.ttf") format("truetype");
+  font-family: "Edos";
+  src: url("~assets/fonts/edosz.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Blow";
+  src: url("~assets/fonts/blowbrush.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Street";
+  src: url("~assets/fonts/street.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }

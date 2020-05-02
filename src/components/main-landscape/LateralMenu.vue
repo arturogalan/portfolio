@@ -164,7 +164,7 @@ export default {
     <transition
       name="fade-in"
     >
-      <MenuContents v-if="isOpen"/>
+      <MenuContents v-show="isOpen"/>
     </transition>
     <svg class="menu-wave" viewBox="0 0 100 600" width="100%" height="100%">
       <g @mousemove="hoverMenu(true)" @mouseenter="hoverMenu(true)" @mouseleave="hoverMenu(false)" :class="isHover ? 'no-opacity' : 'opacity'" class="main-graph" transform="matrix(1,0,0,1,-748,0.00710406)">

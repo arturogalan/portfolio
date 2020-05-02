@@ -94,7 +94,7 @@ export default {
     position: absolute;
     bottom: 0;
     margin-bottom: 0rem;
-    font-family: 'Kobe';
+    font-family: 'Edos';
   }
   .menu-items {
     color: white;
@@ -111,7 +111,7 @@ export default {
     }
   }
   .home-content-class {
-    font-family: 'Kobe';
+    font-family: 'Edos';
     font-size: 1.5rem;
     color: whitesmoke;
     width: 80%;
@@ -119,7 +119,9 @@ export default {
     text-align: justify;
     line-height: 1.5rem;
   .q-markdown--heading-h1 {
-    font-size: 5rem;
+    font-size: 8rem;
+    font-family: 'Blow';
+
   }
   .q-markdown--heading-h2 {
     font-size: 2.2rem;

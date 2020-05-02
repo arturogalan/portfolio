@@ -5,14 +5,21 @@ I work in [**Clarity.ai**](https://clarity.ai/), a cool company where we're maki
 If you want to know more about my tech career you can also look into my timeline profile.
 
 Let's get connected: -->
+
+<!-- I enjoy mixing music, javascript, css animations and HTML altogether in my never finished pet projects.
+&nbsp;
+You can visit my [Blog](#/blog) to see the stuff I'm interested in... -->
+
 <!-- `Arturo` -->
 &nbsp;
-# <center> Arturo Galan </center>
-## <center> Javascript developer from Spain </center>
+# <center> ArturO GAlán </center>
 &nbsp;
-I enjoy mixing music, javascript, css animations and HTML altogether in my never finished pet projects.
+## <center> Javascript DEVELOPER FROM Spain </center>
 &nbsp;
-You can visit my [Blog](#/blog) to see the stuff I'm interested in...
+I ENJOY MIXIN MUSIC, JAVASCRIPT, CSS ANIMATIONS AND HTML ALTOGETHER IN MY NEVER FINISHED PET PROJECTS.
+&nbsp;
+YOU CAN VISIT MY [Blog](#/blog) TO SEE THE STUFF I'M INTERESTED IN...
+
 
 
 
