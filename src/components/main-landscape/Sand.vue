@@ -109,7 +109,7 @@ export default {
 .sea-shell-4 {
   width: 4rem;
   bottom: 14rem;
-  right: 1rem;
+  right: 3rem;
 }
 .sea-shell-5 {
   width: 5rem;
