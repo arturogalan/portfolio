@@ -3,7 +3,7 @@ export default {
   name: 'Birds',
   data() {
     return {
-      animationOn: false,
+      animationOn: true,
     }
   },
   mounted() {

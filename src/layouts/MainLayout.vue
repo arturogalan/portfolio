@@ -7,19 +7,9 @@ needed <q-layout view="hHh Lpr fFf"> -->
 <!-- <q-layout view="hHh Lpr fFf">
    -->
   <q-layout view="hHh Lpr lFf">
-
     <!-- <q-header elevated class="header-bg row" style="height: 6rem"> -->
     <q-header header elevated class="header-style">
       <q-toolbar>
-        <!-- <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          size="xl"
-          @click="leftDrawerOpen = !leftDrawerOpen"
-        /> -->
     <svg @click="makeTransition" class="menu-button" viewBox="-300 -40 800 240" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
         <g>
             <path class="line1" d="M180.519,6.275C180.519,2.812 177.707,0 174.244,0L6.275,0C2.812,0 0,2.812 0,6.275L0,18.826C0,22.289 2.812,25.101 6.275,25.101L174.244,25.101C177.707,25.101 180.519,22.289 180.519,18.826L180.519,6.275Z" style="fill:rgb(235,235,235);"/>
@@ -27,13 +17,6 @@ needed <q-layout view="hHh Lpr fFf"> -->
             <path class="line3" d="M180.519,109.234C180.519,105.77 177.707,102.959 174.244,102.959L6.275,102.959C2.812,102.959 0,105.77 0,109.234L0,121.784C0,125.247 2.812,128.059 6.275,128.059L174.244,128.059C177.707,128.059 180.519,125.247 180.519,121.784L180.519,109.234Z" style="fill:rgb(235,235,235);"/>
         </g>
     </svg>
-        <!-- <img src="~assets/svg/vento.svg" class="menu-button"/> -->
-        <!-- <q-icon clickable 
-        class="menu-button" 
-        name="menu"
-        @click="leftDrawerOpen = !leftDrawerOpen"
-        > -->
-        <!-- </q-icon> -->
         <q-toolbar-title class="row no-wrap justify-left items-center content-center">
           <div class="header-flex">
             <q-img
@@ -58,8 +41,8 @@ needed <q-layout view="hHh Lpr fFf"> -->
           round
           icon="fab fa-linkedin-in"
           aria-label="Menu"
-          size="lg"
-          @click="console.log('bla')"
+          class="med-icon"
+          @click="open('https://www.linkedin.com/in/arturo-gal%C3%A1n-blanco-86b6a73a/')"
         />
         <q-btn
           flat
@@ -67,17 +50,17 @@ needed <q-layout view="hHh Lpr fFf"> -->
           round
           icon="fab fa-twitter"
           aria-label="Menu"
-          size="lg"
-          @click="console.log('bla')"
+          class="med-icon"
+          @click="open('https://twitter.com/turugalan')"
         />
         <q-btn
           flat
           dense
           round
-          icon="fab fa-codepen"
+          icon="fab fa-github"
           aria-label="Menu"
-          size="lg"
-          @click="console.log('bla')"
+          class="med-icon"
+          @click="open('https://github.com/arturogalan')"
         />
         <!-- <div>v{{ $t('BLOG.VERSION') }}</div> -->
       </q-toolbar>
@@ -85,7 +68,6 @@ needed <q-layout view="hHh Lpr fFf"> -->
     <q-drawer
       v-model="leftDrawerOpen"
       show-if-above
-      @input="test"
     >
     <div 
     class="absolute fit"
@@ -127,6 +109,7 @@ needed <q-layout view="hHh Lpr fFf"> -->
 </template>
 
 <script>
+import { openURL } from 'quasar'
 import EssentialLink from 'components/EssentialLink'
 export default {
   name: 'MainLayout',
@@ -134,10 +117,6 @@ export default {
   components: {
     EssentialLink,
   },
-  // beforeRouteEnter(to, from, next) {
-  //   console.log('bla');
-  //   next();
-  // },
   data() {
     return {
       firstTime: true,
@@ -195,8 +174,8 @@ export default {
     },
   },
   methods: {
-    test() {
-      console.log('bla')
+    open(url) {
+      openURL(url);
     },
     // makeInitialTransition() {
     //   console.log('entra')
@@ -252,6 +231,9 @@ export default {
 }
 </script>
   <style lang="scss" scoped>
+  .med-icon {
+    font-size: 2rem;
+  }
   .router-view {
     background: repeating-linear-gradient(
       45deg,
@@ -319,9 +301,6 @@ export default {
     top: -1rem;
     left: 0;
     right: 0;
-    // background-color: black;
-    // -webkit-mask-image: url("~assets/png/grit.png");
-    // mask-image: url("~assets/png/grit.png");
   }
   .bottom-menu-thing {
     position: absolute;

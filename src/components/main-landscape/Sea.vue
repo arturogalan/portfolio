@@ -3,7 +3,7 @@ export default {
   name: 'Sea',
   data() {
     return {
-      animationOn: false,
+      animationOn: true,
       seaAnimations: {
         waveLines: [
           {
