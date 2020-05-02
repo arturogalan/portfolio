@@ -11,14 +11,12 @@ Let's get connected: -->
 You can visit my [Blog](#/blog) to see the stuff I'm interested in... -->
 
 <!-- `Arturo` -->
-&nbsp;
 # <center> ArturO GAlán </center>
-&nbsp;
 ## <center> Javascript DEVELOPER FROM Spain </center>
 &nbsp;
-I ENJOY MIXIN MUSIC, JAVASCRIPT, CSS ANIMATIONS AND HTML ALTOGETHER IN MY NEVER FINISHED PET PROJECTS.
+I ENJOY MIXING MUSIC, JAVASCRIPT, SVG, CSS ANIMATIONS AND HTML ALTOGETHER IN MY NEVER FINISHED PET PROJECTS.
 &nbsp;
-YOU CAN VISIT MY [Blog](#/blog) TO SEE THE STUFF I'M INTERESTED IN...
+YOU CAN VISIT MY [Blog](#/blog) TO SEE THE STUFF I'M INTERESTED IN. . .
 
 
 

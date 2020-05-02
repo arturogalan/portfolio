@@ -27,7 +27,7 @@ export default {
         class="media-icon"
         src="~assets/svg/avatarSvgWhite.svg"
       >
-      <span class="button-label">Blog</span>
+      <span class="button-label-blog">Blog</span>
     </q-btn>
      <q-btn
       flat
@@ -75,7 +75,7 @@ export default {
     position: absolute;
     bottom: 0;
     right: 0;
-    height: 50%;
+    height: 40%;
     z-index: 5;
     display: flex;
     flex-wrap: wrap;
@@ -85,15 +85,22 @@ export default {
     fill: white;
   }
   .media-icon {
-    flex: 0 50%;
-    font-size: 3rem;
-    height: 12rem;;
+    flex: 0 40%;
+    font-size: 2rem;
+    max-height: 12rem;;
   }
   .button-label {
     font-size: 1.5rem;
     position: absolute;
     bottom: 0;
-    margin-bottom: 0rem;
+    margin-bottom: -1.5rem;
+    font-family: 'Edos';
+  }
+  .button-label-blog {
+    font-size: 1.5rem;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0;
     font-family: 'Edos';
   }
   .menu-items {
@@ -119,9 +126,9 @@ export default {
     text-align: justify;
     line-height: 1.5rem;
   .q-markdown--heading-h1 {
-    font-size: 8rem;
+    font-size: 7rem;
     font-family: 'Blow';
-
+    line-height: 5rem;;
   }
   .q-markdown--heading-h2 {
     font-size: 2.2rem;

@@ -23,9 +23,6 @@ export default {
   <article class="main-layout">
     <div  class="landscape-bg">
     </div>
-    <!-- <div class="title">
-      <img class="title-img" src="~assets/png/font.png" alt="">
-    </div> -->
     <birds  class="birds"/>
     <sky/>
     <sea class="upside-down z-index-2"/>
