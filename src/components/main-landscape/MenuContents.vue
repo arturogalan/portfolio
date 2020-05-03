@@ -5,13 +5,16 @@ export default {
   name: 'MenuContents',
   data() {
     return {
-      homecontent: require('../../blog-entries/homecontent.md').default,
+      homecontent: '',
     }
   },
   methods: {
     open(url) {
       openURL(url);
     },
+  },
+  created() {
+    this.homecontent = this.$q.platform.is.mobile ? require('../../blog-entries/homecontent-mobile.md').default : require('../../blog-entries/homecontent.md').default;
   },
 }
 </script>
@@ -29,12 +32,16 @@ export default {
     class="media-links"
     :class="$q.platform.is.mobile ? 'media-links--mobile' : 'media-links--desktop'"
   >
-    <q-btn class="media-icon" @click="$router.push('blog')" round>
+    <q-btn class="media-icon"
+    :class="$q.platform.is.mobile ? 'media-icon--mobile' : 'media-icon--desktop'" 
+    @click="$router.push('blog')" round>
       <img
-        class="media-icon"
+        :class="$q.platform.is.mobile && 'media-blog--mobile'"
         src="~assets/svg/avatarSvgWhite.svg"
       >
-      <span class="button-label-blog">Blog</span>
+      <span 
+      :class="$q.platform.is.mobile ? 'button-label-blog--mobile' : 'button-label-blog--desktop'"
+      >Blog</span>
     </q-btn>
      <q-btn
       flat
@@ -42,6 +49,7 @@ export default {
       round
       icon="fab fa-linkedin-in"
       class="media-icon"
+      :class="$q.platform.is.mobile ? 'media-icon--mobile' : 'media-icon--desktop'"
       @click="open('https://quasar.dev/')"
     ><span class="button-label">Linkedin</span>
     </q-btn>
@@ -51,6 +59,7 @@ export default {
       round
       icon="fab fa-twitter"
       class="media-icon"
+      :class="$q.platform.is.mobile ? 'media-icon--mobile' : 'media-icon--desktop'"
       @click="open('https://twitter.com/turugalan')"
     ><span class="button-label">Twitter</span>
     </q-btn>
@@ -60,6 +69,7 @@ export default {
       round
       icon="fab fa-github"
       class="media-icon"
+      :class="$q.platform.is.mobile ? 'media-icon--mobile' : 'media-icon--desktop'"
       @click="open('https://github.com/arturogalan')"
     ><span class="button-label">Github</span>
     </q-btn>
@@ -99,14 +109,28 @@ export default {
       height: 50%;
     }
     &--mobile {
-      height: 20%;
-      top: 70%;
+      // height: 20%;
+      bottom: 0;
+      top: 55%;
+      height: 35%;
+      width: 100%;
+      // top: 50%;
     }
   }
   .media-icon {
     flex: 0 40%;
-    font-size: 2rem;
-    max-height: 12rem;;
+    &--mobile {
+      font-size: 1.5rem;
+      max-height: 6rem;
+    }
+    &--desktop {
+      font-size: 2rem;
+      max-height: 12rem;
+    }
+  }
+  .media-blog--mobile {
+    width: 30%;
+    // top: -2rem;
   }
   .button-label {
     font-size: 1.5rem;
@@ -115,12 +139,19 @@ export default {
     margin-bottom: -1.5rem;
     font-family: 'Edos';
   }
-  .button-label-blog {
+  .button-label-blog--desktop {
     font-size: 1.5rem;
     position: absolute;
     bottom: 0;
     margin-bottom: 0;
     font-family: 'Edos';
+  }
+  .button-label-blog--mobile {
+    font-size: 1.5rem;
+    position: absolute;
+    bottom: 0;
+    font-family: 'Edos';
+    height: 35%;
   }
   .menu-items {
     color: white;
@@ -138,7 +169,7 @@ export default {
   }
   .home-content-class {
     font-family: 'Edos';
-    font-size: 1.5rem;
+    // font-size: 1.5rem;
     color: whitesmoke;
     width: 80%;
     margin-top: 2rem;
@@ -152,26 +183,37 @@ export default {
         font-family: 'Blow';
         line-height: 5rem;;
       }
+      .q-markdown--heading-h2 {
+        font-size: 2.2rem;
+      }
+      .q-markdown--link{
+        color:$color3;
+        font-size: 2rem;
+        font-weight: 100;
+        text-decoration: underline;
+        border-bottom: none;
+      }  
     }
     &--mobile {
-      font-size: 1rem;
+      font-size: .7rem;
       .q-markdown--heading-h1 {
         font-size: 5rem;
         font-family: 'Blow';
         line-height: 5rem;;
       }
+      .q-markdown--heading-h2 {
+        font-size: 1rem;
+      }    
+      .q-markdown--link{
+        color:$color3;
+        font-size: 1.4rem;
+        font-weight: 100;
+        text-decoration: underline;
+        border-bottom: none;
+      }    
     }
 
-    .q-markdown--heading-h2 {
-      font-size: 2.2rem;
-    }
-    .q-markdown--link{
-      color:$color3;
-      font-size: 2rem;
-      font-weight: 100;
-      text-decoration: underline;
-      border-bottom: none;
-    }   
+ 
     a:-webkit-any-link{
       text-decoration-color: white;
     }    
