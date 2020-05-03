@@ -12,8 +12,8 @@ export default {
           waveTranslate: ['80%', '0%'],
         },
         mobile: {
-          seaSvg: '0 0 300 300',
-          waveSvg: '0 0 150 300',
+          seaSvg: '0 0 400 300',
+          waveSvg: '0 0 200 300',
           waveTranslate: ['90%', '40%'],
         },
       },
