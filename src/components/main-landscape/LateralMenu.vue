@@ -166,7 +166,11 @@ export default {
     >
       <MenuContents v-show="isOpen"/>
     </transition>
-    <svg class="menu-wave" viewBox="0 0 100 600" width="100%" height="100%">
+    <svg
+      :class="$q.platform.is.mobile ? 'menu-wave--mobile' : 'menu-wave--desktop'"
+      class="menu-wave" 
+      viewBox="0 0 100 600"
+    >
       <g @mousemove="hoverMenu(true)" @mouseenter="hoverMenu(true)" @mouseleave="hoverMenu(false)" :class="isHover ? 'no-opacity' : 'opacity'" class="main-graph" transform="matrix(1,0,0,1,-748,0.00710406)">
         <path :class="[!isOpen && 'pointer']" @click.prevent="!isOpen && makeTransition()" class="menu-path " d="M799.636,0.493C799.636,0.493 784.879,57.444 771.91,125.009C766.973,150.73 762.296,177.99 758.79,204.231C755.096,231.886 752.704,258.41 752.682,280.811C752.658,305.023 755.426,336.325 759.629,369.83C763.376,399.7 768.262,431.322 773.327,461.235C785.927,535.645 799.629,599.482 799.629,599.482L799.636,0.493Z" style="stroke:black;stroke-width:1px;"/>
         <g @click.prevent="makeTransition" class="close-path" :class="[isHover ? 'no-opacity' : 'opacity', !isOpen && 'pointer']" transform="matrix(1.2346,0,0,1.81972,-184.507,-233.658)">
@@ -205,6 +209,15 @@ export default {
   z-index: 2;
   -webkit-mask-image: url("~assets/png/grit.png");
   mask-image: url("~assets/png/grit.png");
+  &--mobile {
+    width: 200%; 
+    height: 100%;
+    left: 0;
+  }
+  &--desktop {
+    width: 100%; 
+    height: 100%;
+  }
 }
 svg path {
   // fill: #000;
@@ -230,7 +243,7 @@ svg path {
   z-index: 6;
 }
 .close-filter-svg {
-    position: absolute;
+  position: absolute;
   top: 0;
   right: 0;
   height: 5rem;

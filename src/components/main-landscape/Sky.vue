@@ -1,11 +1,19 @@
 <script>
 export default {
   name: 'Sky',
+  data() {
+    return {
+      svgSrc: 'sky',
+    }
+  },
+  created() {
+    if (this.$q.platform.is.mobile) this.svgSrc = 'skySvgMobile';
+  },
 }
 </script>
 <template>
   <div class="sky-style">
-    <img src="~assets/svg/sky.svg" alt="">
+    <img :src="`statics/images/svg/${svgSrc}.svg`" alt="">
   </div>
 </template>
 <style lang="scss" scoped>

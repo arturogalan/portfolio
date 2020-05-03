@@ -4,17 +4,33 @@ export default {
   data() {
     return {
       animationOn: true,
+      platform: 'desktop',
+      size: {
+        desktop: {
+          values: [
+            ['100rem', '65rem'],
+            ['-7rem', '35rem'],
+            ['100rem', '55rem'],
+            ['-7rem', '45rem'],
+            ['100rem', '75rem'],
+          ],
+        },
+        mobile: {
+          values: [
+            ['10rem', '6rem'],
+            ['-7rem', '3rem'],
+            ['10rem', '5rem'],
+            ['-7rem', '4rem'],
+            ['10rem', '7rem'],
+          ],
+        },
+      },
     }
   },
   mounted() {
     const movementXPaths = (index) => {
-      const values = [
-        ['100rem', '65rem'],
-        ['-7rem', '35rem'],
-        ['100rem', '55rem'],
-        ['-7rem', '45rem'],
-        ['100rem', '75rem'],
-      ]
+      if (this.$q.platform.is.mobile) this.platform = 'mobile';
+      const values = this.size[this.platform].values;
       return values[index % values.length]
     }
     const birdAnimationMovement = (index) => {

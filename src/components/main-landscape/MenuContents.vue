@@ -17,11 +17,18 @@ export default {
 </script>
 <template>
 <section>
-  <div class="menu-contents">
-     <q-markdown content-class="home-content-class" :src="homecontent"/>
+  <div
+    class="menu-contents"
+    :class="$q.platform.is.mobile ? 'menu-contents--mobile' : 'menu-contents--desktop'"
+  >
+     <q-markdown 
+     :content-class="$q.platform.is.mobile ? 'home-content-class home-content-class--mobile' : 'home-content-class home-content-class--desktop'" 
+     :src="homecontent"/>
   </div>
-  <div class="media-links">
-
+  <div
+    class="media-links"
+    :class="$q.platform.is.mobile ? 'media-links--mobile' : 'media-links--desktop'"
+  >
     <q-btn class="media-icon" @click="$router.push('blog')" round>
       <img
         class="media-icon"
@@ -63,19 +70,24 @@ export default {
 <style lang="scss">
   .menu-contents {
     position: absolute;
-    top: 0;
     right: 0;
-    width: 50%;
     z-index: 5;
     display: flex;
     align-items: center;
-    justify-content: center;  
+    justify-content: center;
+    &--mobile {
+      top: 0%;
+      width: 100%;
+    }
+    &--desktop {
+      top: 0;
+      width: 50%;
+    }
   }
   .media-links {
     position: absolute;
     bottom: 0;
     right: 0;
-    height: 40%;
     z-index: 5;
     display: flex;
     flex-wrap: wrap;
@@ -83,6 +95,13 @@ export default {
     justify-content: center;
     color: white;
     fill: white;
+    &--desktop {
+      height: 50%;
+    }
+    &--mobile {
+      height: 20%;
+      top: 70%;
+    }
   }
   .media-icon {
     flex: 0 40%;
@@ -125,42 +144,55 @@ export default {
     margin-top: 2rem;
     text-align: justify;
     line-height: 1.5rem;
-  .q-markdown--heading-h1 {
-    font-size: 7rem;
-    font-family: 'Blow';
-    line-height: 5rem;;
-  }
-  .q-markdown--heading-h2 {
-    font-size: 2.2rem;
-  }
-  .q-markdown--link{
-    color:$color3;
-    font-size: 2rem;
-    font-weight: 100;
-    text-decoration: underline;
-    border-bottom: none;
-  }   
-  a:-webkit-any-link{
-    text-decoration-color: white;
-  }    
-  /* Unvisited link  */
-  .q-markdown--link:visited {
-    color: white;
-    text-decoration: underline;
-    border-bottom: none;
-  } 
-  /* Visited link    */
-  .q-markdown--link:hover {
-    color: white;
-  }   
-  /* Mouse over link */
-  .q-markdown--link:active {
-    color: white;
-  }
-  .q-markdown--link-external{
-    &:after {
-      content: '';
+
+    &--desktop {
+      font-size: 1.5rem;
+      .q-markdown--heading-h1 {
+        font-size: 7rem;
+        font-family: 'Blow';
+        line-height: 5rem;;
+      }
     }
-  }
+    &--mobile {
+      font-size: 1rem;
+      .q-markdown--heading-h1 {
+        font-size: 5rem;
+        font-family: 'Blow';
+        line-height: 5rem;;
+      }
+    }
+
+    .q-markdown--heading-h2 {
+      font-size: 2.2rem;
+    }
+    .q-markdown--link{
+      color:$color3;
+      font-size: 2rem;
+      font-weight: 100;
+      text-decoration: underline;
+      border-bottom: none;
+    }   
+    a:-webkit-any-link{
+      text-decoration-color: white;
+    }    
+    /* Unvisited link  */
+    .q-markdown--link:visited {
+      color: white;
+      text-decoration: underline;
+      border-bottom: none;
+    } 
+    /* Visited link    */
+    .q-markdown--link:hover {
+      color: white;
+    }   
+    /* Mouse over link */
+    .q-markdown--link:active {
+      color: white;
+    }
+    .q-markdown--link-external{
+      &:after {
+        content: '';
+      }
+    }
   }
 </style>

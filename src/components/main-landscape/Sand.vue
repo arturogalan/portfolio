@@ -34,24 +34,53 @@ export default {
   <div class="sand-main">
     <img src="~assets/svg/sand.svg" alt="">
   </div>
-  <div class="sea-shell sea-shell-1">
-    <img src="~assets/svg/seaShell.svg" alt="">
-  </div>
-  <div class="sea-shell sea-shell-2">
-    <img src="~assets/svg/seaShell2.svg" alt="">
-  </div>
-  <div class="sea-shell sea-shell-3">
-    <img src="~assets/svg/seaShell3.svg" alt="">
-  </div>
-    <div class="sea-shell sea-shell-4">
-    <img src="~assets/svg/seaShell4.svg" alt="">
-  </div>
-    <div class="sea-shell sea-shell-5">
-    <img src="~assets/svg/seaShell5.svg" alt="">
+  <div
+    class="sea-shell-container"
+    :class="[$q.platform.is.mobile ? 'sea-shell-container--mobile' : 'sea-shell-container--desktop']"
+  >
+    <div class="side-shell-container">
+      <div 
+      :class="$q.platform.is.mobile && 'sea-shell--mobile'"
+      class="sea-shell sea-shell-1">
+        <img src="~assets/svg/seaShell.svg" alt="">
+      </div>
+      <div 
+      :class="$q.platform.is.mobile && 'sea-shell--mobile'"
+      class="sea-shell sea-shell-2">
+        <img src="~assets/svg/seaShell2.svg" alt="">
+      </div>
+      <div 
+      :class="$q.platform.is.mobile && 'sea-shell--mobile'"
+      class="sea-shell sea-shell-5">
+        <img src="~assets/svg/seaShell5.svg" alt="">
+      </div>
+    </div>
+    <div class="side-shell-container">
+      <div 
+      :class="$q.platform.is.mobile && 'sea-shell--mobile'"
+      class="sea-shell sea-shell-3">
+        <img src="~assets/svg/seaShell3.svg" alt="">
+      </div>
+        <div 
+        :class="$q.platform.is.mobile && 'sea-shell--mobile'"
+        class="sea-shell sea-shell-4">
+        <img src="~assets/svg/seaShell4.svg" alt="">
+      </div>
+    </div>
+
+
+
   </div>
   <div>
-      <img class="yoga" src="~assets/svg/yoga.svg" alt="">
-        <div @click="openMenu" class="clickable-zone" :class="!fetchLateralMenuOpened && 'clickable'">
+      <img 
+        class="yoga"
+        :class="$q.platform.is.mobile ? 'yoga--mobile' : 'yoga--desktop'"
+        src="~assets/svg/yoga.svg" alt=""
+      >
+        <div
+        @click="openMenu"
+        class="clickable-zone"
+        :class="[!fetchLateralMenuOpened && 'clickable', $q.platform.is.mobile ? 'clickable-zone--mobile' : 'clickable-zone--desktop']">
         </div>
   </div>
     </div>
@@ -59,13 +88,18 @@ export default {
 
 <style lang="scss" scoped>
 .clickable-zone {
-  width: 50%;
   height: 40%;
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   z-index: 5;
+  &--desktop {
+    width: 50%;
+  }
+  &--mobile {
+    width: 100%;
+  }
 }
 .clickable {
   cursor: pointer;
@@ -78,7 +112,14 @@ export default {
   z-index: 3;
   opacity: .8;
   transform: translateX(-50%);
+  &--desktop {
+    width: 50%;
+  }
+  &--mobile {
+    width: 90%;
+  }
 }
+
 .sand-main {
   width:100%;
   height: 48%;
@@ -86,34 +127,48 @@ export default {
   top: 57%;
   left: 0;
 }
-.sea-shell {
+.sea-shell-container {
   position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30%;
+
+  display: flex;
+  flex-direction: row;
+  &--desktop {
+    top: 60%;
+  }
+  &--mobile {
+    top: 70%;
+  }
+}
+.side-shell-container {
+  width: 50%;
+}
+.sea-shell {
   transform: rotateX(40deg);
   filter: drop-shadow(0px -2px 6px black)
 }
+.sea-shell--mobile {
+  transform: scale(1.5);
+  margin-top: 5%;
+}
 .sea-shell-1 {
-  width: 3rem;
-  bottom: 16rem;
-  left: 4rem;
+  width: 9%;
 }
 .sea-shell-2 {
-  width: 3rem;
-  bottom: 18rem;
-  left: 6rem;
-}
-.sea-shell-3 {
-  width: 3rem;
-  bottom: 16rem;
-  right: 4rem;
-}
-.sea-shell-4 {
-  width: 4rem;
-  bottom: 14rem;
-  right: 3rem;
+  width: 9%;
+  margin-left: 4%;
 }
 .sea-shell-5 {
-  width: 5rem;
-  bottom: 17rem;
-  left: .5rem;
+  width: 12%;
+}
+.sea-shell-3 {
+  width: 7%;
+  margin-left: 80%;
+}
+.sea-shell-4 {
+  width: 11%;
+  margin-left: 85%;
 }
 </style>

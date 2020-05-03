@@ -4,6 +4,15 @@ export default {
   data() {
     return {
       animationOn: true,
+      platform: 'desktop',
+      size: {
+        desktop: {
+          seaSvg: '0 0 1200 180',
+        },
+        mobile: {
+          seaSvg: '0 0 350 300',
+        },
+      },
       seaAnimations: {
         waveLines: [
           {
@@ -29,6 +38,9 @@ export default {
         ],
       },
     }
+  },
+  created() {
+    if (this.$q.platform.is.mobile) this.platform = 'mobile';
   },
   mounted() {
     // Wave animation up and down
@@ -155,7 +167,7 @@ export default {
 </script>
 <template>
 <div class="main-sea-style">
-  <svg class="wave-foam-svg" viewBox="0 0 1200 180">
+  <svg class="wave-foam-svg" :viewBox="size[platform].seaSvg">
       <g transform="matrix(1,0,0,2,0,0)">
     <path class="wave-foam-path"
     d="M-0.011,11.919C134.968,11.919 228.892,15.173 324.156,15.738C448.385,16.473 574.134,7.252 801.149,7.393C1087.75,7.393 1224.91,15.696 1385.92,17.529C1449.62,18.255 1517.89,11.925 1599.82,11.925L1600,198L0,198C0,198 -0.011,40.919 -0.011,11.919Z"
@@ -168,7 +180,7 @@ export default {
         </filter>
       </defs>
     </svg>
-    <svg class="wave-svg z-index-3" viewBox="0 0 1200 180">
+    <svg class="wave-svg z-index-3" :viewBox="size[platform].seaSvg">
       <g>
         <path
           class="wave-path"
@@ -181,7 +193,7 @@ export default {
     </svg>
 
     <!-- at the same line as foam -->
-    <svg class="sea-svg" viewBox="0 0 1200 180">
+    <svg class="sea-svg" :viewBox="size[platform].seaSvg">
       <g v-for="(waveLine, index) in seaAnimations.waveLines" :key="index" :transform="`matrix(1,0,0,${waveLine.magnification},0,${waveLine.topValue})`">
         <path
           :class="`sea-path-${((index + 1) * 2) - 1}`"
