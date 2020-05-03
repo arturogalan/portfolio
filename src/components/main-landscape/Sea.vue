@@ -8,9 +8,13 @@ export default {
       size: {
         desktop: {
           seaSvg: '0 0 1200 180',
+          waveSvg: '0 0 1200 180',
+          waveTranslate: ['80%', '0%'],
         },
         mobile: {
-          seaSvg: '0 0 350 300',
+          seaSvg: '0 0 300 300',
+          waveSvg: '0 0 150 300',
+          waveTranslate: ['90%', '40%'],
         },
       },
       seaAnimations: {
@@ -46,7 +50,7 @@ export default {
     // Wave animation up and down
     const waveAnimationMovement = {
       targets: '.wave-path',
-      translateY: ['80%', '0%'],
+      translateY: this.size[this.platform].waveTranslate,
       opacity: [
         { value: 1, duration: 3000 },
         { value: 0, duration: 500, endDelay: 6500 },
@@ -180,7 +184,7 @@ export default {
         </filter>
       </defs>
     </svg>
-    <svg class="wave-svg z-index-3" :viewBox="size[platform].seaSvg">
+    <svg class="wave-svg z-index-3" :viewBox="size[platform].waveSvg">
       <g>
         <path
           class="wave-path"
