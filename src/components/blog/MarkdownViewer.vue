@@ -1,21 +1,24 @@
 <template>
 <section class="markdown-section">
   <q-img
-    :src="`statics/images/${id}/paralax.png`" class="paralax-img q-mb-xl"
+    :src="`statics/images/${id}/paralax.png`"
+    class="paralax-img q-mb-xl"
     style="width: 100%; max-height: 20rem;"
     :ratio="16/9"
     native-context-menu>
   
-    <h2 class="text-white text-bold">{{ title }}</h2>
+    <div class="post-title text-white text-bold"><p>{{ title }}</p></div>
   </q-img>
 
   <div class="row">
-    <div class="col-12 col-md-2">
+    <div v-if="!$q.platform.is.mobile" class="col-12 col-md-2">
     </div>
-    <div class="col-10 col-md-10">
+    <div
+      class="col-md-10 col-sm-12 col-xs-12"
+    >
       <q-markdown :src="markdown" toc class="markdown-container"/>
     </div>
-    <div class="col-12 col-md-2">
+    <div v-if="!$q.platform.is.mobile" class="col-12 col-md-2">
     </div>
   </div>
 
@@ -66,6 +69,9 @@ export default {
 }
 </script>
  <style lang="scss" scoped>
+ .post-title {
+   font-size: 3em;
+ }
  .markdown-section {
  }
 //   .markdown-container{

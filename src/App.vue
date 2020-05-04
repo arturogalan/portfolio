@@ -44,16 +44,41 @@ body, html {
     top: 1rem;
   }
  }
-
- .q-page-container{
+.q-page-container--desktop{
+  .q-markdown {
+    font-size: 1.3em;
+    width: 90%;
+  }
   .markdown-container{
     padding-left: 2rem;
   }
+}
+.q-page-container--mobile{
+  .q-markdown {
+    font-size: .8em;
+    width: 95%;
+  }
+  .markdown-container{
+    padding-left: 1rem;
+  }
+  .q-markdown--heading-h1 {
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+  }
+  .q-markdown--heading-h2 {
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+  }
+  .q-markdown--code {
+    font-size: .8em;
+  }
+}
+ .q-page-container{
   .q-markdown {
     font-family: 'Conforta';
-    font-size: 1rem;
     color: black;
-    width: 80%;
     // margin-top: 5rem;
     text-align: justify;
   }

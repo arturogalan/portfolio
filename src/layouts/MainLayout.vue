@@ -18,24 +18,25 @@ needed <q-layout view="hHh Lpr fFf"> -->
         </g>
     </svg>
         <q-toolbar-title class="row no-wrap justify-left items-center content-center">
-          <div class="header-flex">
+          <div class="flex no-wrap items-center">
             <q-img
               class="q-mb-xs"
               src="~assets/svg/avatarSvg.svg"
               spinner-color="white"
-              style="width: 90px; z-index: 4;"
+              style="width: 5vw; height: 5vw;"
               transition="slide-right"
             />
             <router-link
               to="/"
             >
-            <h2 class="blog-title q-mt-lg q-mb-lg q-ml-md" >
+            <div class="blog-title q-mt-lg q-mb-lg q-ml-md" >
               {{$t('BLOG.TITLE.TEXT')}}
-            </h2>
+            </div>
             </router-link>
           </div>
         </q-toolbar-title>
         <q-btn
+          v-if="!$q.platform.is.mobile"
           flat
           dense
           round
@@ -45,6 +46,7 @@ needed <q-layout view="hHh Lpr fFf"> -->
           @click="open('https://www.linkedin.com/in/arturo-gal%C3%A1n-blanco-86b6a73a/')"
         />
         <q-btn
+          v-if="!$q.platform.is.mobile"
           flat
           dense
           round
@@ -54,6 +56,7 @@ needed <q-layout view="hHh Lpr fFf"> -->
           @click="open('https://twitter.com/turugalan')"
         />
         <q-btn
+          v-if="!$q.platform.is.mobile"
           flat
           dense
           round
@@ -62,6 +65,7 @@ needed <q-layout view="hHh Lpr fFf"> -->
           class="med-icon"
           @click="open('https://github.com/arturogalan')"
         />
+
         <!-- <div>v{{ $t('BLOG.VERSION') }}</div> -->
       </q-toolbar>
     </q-header>
@@ -96,7 +100,10 @@ needed <q-layout view="hHh Lpr fFf"> -->
     </q-list>
     </q-drawer>
 
-    <q-page-container class="router-view">
+    <q-page-container
+      class="router-view"
+      :class="$q.platform.is.mobile ? 'q-page-container--mobile' : 'q-page-container--desktop'"
+    >
       <transition
         appear
         enter-active-class="animated fadeIn"
@@ -232,7 +239,7 @@ export default {
 </script>
   <style lang="scss" scoped>
   .med-icon {
-    font-size: 2rem;
+    font-size: 2vw;
   }
   .router-view {
     background: repeating-linear-gradient(
@@ -245,7 +252,7 @@ export default {
   .menu-button {
     font-size: 5rem;
     cursor: pointer;
-    width: 300px;
+    width: 15vw;
   }
   .header-style {
     -webkit-mask-image: url("~assets/png/grit.png");
@@ -316,7 +323,7 @@ export default {
 }
   .blog-title {
     font-family: "Anime";
-    font-size: 4.5rem;
+    font-size: 4.5vw;
     color: black;
       /* Unvisited link  */
     text-decoration: none;
