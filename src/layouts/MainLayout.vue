@@ -23,13 +23,16 @@ needed <q-layout view="hHh Lpr fFf"> -->
               class="q-mb-xs"
               src="~assets/svg/avatarSvg.svg"
               spinner-color="white"
-              style="width: 5vw; height: 5vw;"
+              :class="$q.platform.is.mobile ? 'header-logo--mobile' : 'header-logo--desktop'"
               transition="slide-right"
             />
             <router-link
               to="/"
             >
-            <div class="blog-title q-mt-lg q-mb-lg q-ml-md" >
+            <div 
+              class="blog-title q-mt-lg q-mb-lg q-ml-md"
+              :class="$q.platform.is.mobile ? 'blog-title--mobile' : 'blog-title--desktop'"
+              >
               {{$t('BLOG.TITLE.TEXT')}}
             </div>
             </router-link>
@@ -321,12 +324,26 @@ export default {
   a:-webkit-any-link {
     text-decoration: none;
 }
+.header-logo--mobile {
+  width: 10vw; 
+  height: 10vw;
+}
+.header-logo--desktop {
+  width: 5vw; 
+  height: 5vw;
+}
   .blog-title {
     font-family: "Anime";
-    font-size: 4.5vw;
     color: black;
       /* Unvisited link  */
     text-decoration: none;
+    &--mobile {
+      font-size: 7vw;
+      margin: 0;
+    }
+    &--desktop {
+      font-size: 3.5vw;
+    }
   &:visited {
     text-decoration: none;
   } 
