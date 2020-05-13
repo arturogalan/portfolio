@@ -97,15 +97,15 @@ $z-index-10: 10;
   opacity: 1;
   animation-name: fadeIn;
   animation-iteration-count: 1;
-  animation-timing-function: ease-out;
-  animation-duration: .8s;
+  animation-timing-function: ease-in;
+  animation-duration: .9s;
 }
 .fade-in-leave-active {
-  opacity: 1;
-  animation-name: fadeOut;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-out;
-  animation-duration: 1s;
+  // opacity: 0;
+  // animation-name: fadeOut;
+  // animation-iteration-count: 1;
+  // animation-timing-function: ease-out;
+  // animation-duration: .7s;
 }
 // .fade-in-fast-enter-active {
 //   opacity: 1;

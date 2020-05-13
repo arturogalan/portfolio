@@ -61,7 +61,7 @@ export default {
       }
       const menuButtonLine1 = {
         targets: '.line1',
-        translateY: ['0', '-28.5rem'],
+        translateY: ['0', '-31.5rem'],
         translateX: ['0', '3rem'],
         width: ['100%', '80%'],
         rotateZ: ['0', '45deg'],
@@ -71,7 +71,7 @@ export default {
       }
       const menuButtonLine2 = {
         targets: '.line2',
-        translateY: ['0', '-28rem'],
+        translateY: ['0', '-31rem'],
         opacity: [1, 0],
         easing: 'easeInOutExpo',
         duration: 1500,
@@ -79,7 +79,7 @@ export default {
       }
       const menuButtonLine3 = {
         targets: '.line3',
-        translateY: ['0', '-26rem'],
+        translateY: ['0', '-29rem'],
         translateX: ['0', '0'],
         width: ['100%', '80%'],
         rotateZ: ['0', '-45deg'],
@@ -91,7 +91,7 @@ export default {
       this.$anime(menuButtonLine1)
       this.$anime(menuButtonLine2)
       this.$anime(menuButtonLine3)
-      this.isOpen = true
+      this.isOpen = true;
     },
     undoTransition() {
       this.toggleLateralMenuOpened()
@@ -110,7 +110,7 @@ export default {
       }
       const menuButtonLine1 = {
         targets: '.line1',
-        translateY: ['-28.5rem', '0'],
+        translateY: ['-31.5rem', '0'],
         translateX: ['3rem', '0'],
         width: ['80%', '100%'],
         rotateZ: ['45deg', '0'],
@@ -118,9 +118,11 @@ export default {
         duration: 1500,
         loop: false,
       }
+
+
       const menuButtonLine2 = {
         targets: '.line2',
-        translateY: ['-28rem', '0'],
+        translateY: ['-31rem', '0'],
         opacity: [0, 1],
         easing: 'easeInOutExpo',
         duration: 1500,
@@ -128,7 +130,7 @@ export default {
       }
       const menuButtonLine3 = {
         targets: '.line3',
-        translateY: ['-26rem', '0'],
+        translateY: ['-29rem', '0'],
         translateX: ['0', '0'],
         width: ['80%', '100%'],
         rotateZ: ['-45deg', '0'],
@@ -150,8 +152,8 @@ export default {
       this.$anime(menuButtonLine2)
       this.$anime(menuButtonLine3)
 
-      this.isOpen = false
-      // setTimeout(()=> this.isHover = false, 1500);
+      // this.isOpen = false
+      setTimeout(()=> this.isOpen = false, 500);
     },
   },
 }
@@ -235,7 +237,7 @@ svg path {
 }
 .close-click-zone {
   position: absolute;
-  top: 2rem;
+  top: 0;
   right: 0;
   height: 5rem;
   width: 5rem;

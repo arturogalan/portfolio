@@ -10,7 +10,11 @@ needed <q-layout view="hHh Lpr fFf"> -->
     <!-- <q-header elevated class="header-bg row" style="height: 6rem"> -->
     <q-header header elevated class="header-style">
       <q-toolbar>
-    <svg @click="makeTransition" class="menu-button" viewBox="-300 -40 800 240" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <svg @click="makeTransition" 
+      class="menu-button"
+      :class="$q.platform.is.mobile ? 'menu-button--mobile' : 'menu-button--desktop'"
+      :viewBox="$q.platform.is.mobile ? '0 0 200 140' : '-300 -40 800 240'" 
+      version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
         <g>
             <path class="line1" d="M180.519,6.275C180.519,2.812 177.707,0 174.244,0L6.275,0C2.812,0 0,2.812 0,6.275L0,18.826C0,22.289 2.812,25.101 6.275,25.101L174.244,25.101C177.707,25.101 180.519,22.289 180.519,18.826L180.519,6.275Z" style="fill:rgb(235,235,235);"/>
             <path class="line2" d="M180.519,57.534C180.519,54.071 177.707,51.259 174.244,51.259L6.275,51.259C2.812,51.259 0,54.071 0,57.534L0,70.084C0,73.548 2.812,76.36 6.275,76.36L174.244,76.36C177.707,76.36 180.519,73.548 180.519,70.084L180.519,57.534Z" style="fill:rgb(235,235,235);"/>
@@ -253,9 +257,15 @@ export default {
     );
   }
   .menu-button {
-    font-size: 5rem;
+    font-size: 5vw;
     cursor: pointer;
-    width: 15vw;
+    &--mobile {
+      width: 10vw;
+    }
+    &--desktop {
+      width: 15vw;
+    }
+
   }
   .header-style {
     -webkit-mask-image: url("~assets/png/grit.png");

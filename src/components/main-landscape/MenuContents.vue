@@ -171,7 +171,7 @@ export default {
     font-family: 'Edos';
     // font-size: 1.5rem;
     color: whitesmoke;
-    width: 80%;
+    width: 85%;
     margin-top: 2rem;
     text-align: justify;
     line-height: 1.5rem;

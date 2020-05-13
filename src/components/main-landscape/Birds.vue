@@ -101,7 +101,7 @@ export default {
 <style lang="scss" scoped>
 .bird-main {
   top: 10rem;
-  width: 14rem;;
+  width: 14rem;
 }
 .bird1 {
   position: absolute;
