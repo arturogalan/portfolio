@@ -12,7 +12,7 @@ You can visit my [Blog](#/blog) to see the stuff I'm interested in... -->
 
 <!-- `Arturo` -->
 # <center> ArturO GAlán </center>
-## <center> Javascript DEVELOPER FROM Spain </center>
+## <center> DEVELOPER (Spain) </center>
 &nbsp;
 I ENJOY MIXING MUSIC, JAVASCRIPT, SVG, CSS ANIMATIONS AND HTML ALTOGETHER IN MY NEVER FINISHED PET PROJECTS.
 &nbsp;

@@ -1,5 +1,5 @@
 
-# 🧙‍♂️Utility to write on NTFS volumes in MAC for free!
+<!-- # 🧙‍♂️Utility to write on NTFS volumes in MAC for free! -->
 
 This is the explanation about an AppleScript that you can install in your mac to automatically **make NTFS volumes writable** 👹.
 

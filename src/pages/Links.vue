@@ -1,4 +1,5 @@
 <template>
+  <gradient-layout>
   <div class="q-ml-xl">
   <q-markdown>
     # **Links**
@@ -7,7 +8,17 @@
     
   </q-markdown>
   </div>
+  </gradient-layout>
 </template>
+<script>
+import GradientLayout from 'layouts/GradientLayout'
+
+export default {
+  components: {
+    GradientLayout,
+  },
+}
+</script>
 <style lang="scss" scoped>
 
 </style>

@@ -1,24 +1,21 @@
 <template>
-  <!-- <q-layout view="hHh Lpr lFf"> -->
-    <!-- Had <q-layout view="hHh lpR fFf">
-needed <q-layout view="hHh Lpr fFf"> -->
-    <!-- lhr lpr fff -->
-  <!-- <q-layout view="lhr Lpr lFf"> -->
-<!-- <q-layout view="hHh Lpr fFf">
-   -->
   <q-layout view="hHh Lpr lFf">
-    <!-- <q-header elevated class="header-bg row" style="height: 6rem"> -->
-    <q-header header elevated class="header-style">
+    <q-header
+      header
+      elevated
+      class="header-style"
+      :class="$q.platform.is.mobile ? 'header-style--mobile' : 'header-style--desktop'"
+    >
       <q-toolbar>
     <svg @click="makeTransition" 
       class="menu-button"
       :class="$q.platform.is.mobile ? 'menu-button--mobile' : 'menu-button--desktop'"
-      :viewBox="$q.platform.is.mobile ? '0 0 200 140' : '-300 -40 800 240'" 
+      :viewBox="$q.platform.is.mobile ? '0 0 200 140' : '-150 -40 800 240'" 
       version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
         <g>
-            <path class="line1" d="M180.519,6.275C180.519,2.812 177.707,0 174.244,0L6.275,0C2.812,0 0,2.812 0,6.275L0,18.826C0,22.289 2.812,25.101 6.275,25.101L174.244,25.101C177.707,25.101 180.519,22.289 180.519,18.826L180.519,6.275Z" style="fill:rgb(235,235,235);"/>
-            <path class="line2" d="M180.519,57.534C180.519,54.071 177.707,51.259 174.244,51.259L6.275,51.259C2.812,51.259 0,54.071 0,57.534L0,70.084C0,73.548 2.812,76.36 6.275,76.36L174.244,76.36C177.707,76.36 180.519,73.548 180.519,70.084L180.519,57.534Z" style="fill:rgb(235,235,235);"/>
-            <path class="line3" d="M180.519,109.234C180.519,105.77 177.707,102.959 174.244,102.959L6.275,102.959C2.812,102.959 0,105.77 0,109.234L0,121.784C0,125.247 2.812,128.059 6.275,128.059L174.244,128.059C177.707,128.059 180.519,125.247 180.519,121.784L180.519,109.234Z" style="fill:rgb(235,235,235);"/>
+            <path class="line1" d="M180.519,6.275C180.519,2.812 177.707,0 174.244,0L6.275,0C2.812,0 0,2.812 0,6.275L0,18.826C0,22.289 2.812,25.101 6.275,25.101L174.244,25.101C177.707,25.101 180.519,22.289 180.519,18.826L180.519,6.275Z"/>
+            <path class="line2" d="M180.519,57.534C180.519,54.071 177.707,51.259 174.244,51.259L6.275,51.259C2.812,51.259 0,54.071 0,57.534L0,70.084C0,73.548 2.812,76.36 6.275,76.36L174.244,76.36C177.707,76.36 180.519,73.548 180.519,70.084L180.519,57.534Z"/>
+            <path class="line3" d="M180.519,109.234C180.519,105.77 177.707,102.959 174.244,102.959L6.275,102.959C2.812,102.959 0,105.77 0,109.234L0,121.784C0,125.247 2.812,128.059 6.275,128.059L174.244,128.059C177.707,128.059 180.519,125.247 180.519,121.784L180.519,109.234Z"/>
         </g>
     </svg>
         <q-toolbar-title class="row no-wrap justify-left items-center content-center">
@@ -34,7 +31,7 @@ needed <q-layout view="hHh Lpr fFf"> -->
               to="/"
             >
             <div 
-              class="blog-title q-mt-lg q-mb-lg q-ml-md"
+              class="blog-title q-ml-md"
               :class="$q.platform.is.mobile ? 'blog-title--mobile' : 'blog-title--desktop'"
               >
               {{$t('BLOG.TITLE.TEXT')}}
@@ -73,7 +70,7 @@ needed <q-layout view="hHh Lpr fFf"> -->
           @click="open('https://github.com/arturogalan')"
         />
 
-        <!-- <div>v{{ $t('BLOG.VERSION') }}</div> -->
+        <div v-if="!$q.platform.is.mobile" class="blog-version">v{{ $t('BLOG.VERSION') }}</div>
       </q-toolbar>
     </q-header>
     <q-drawer
@@ -115,7 +112,6 @@ needed <q-layout view="hHh Lpr fFf"> -->
         appear
         enter-active-class="animated fadeIn"
       >
-
       <router-view />
       </transition>
     </q-page-container>
@@ -245,39 +241,72 @@ export default {
 }
 </script>
   <style lang="scss" scoped>
+    $c: red; // #4B384C;
+		$s: 19px;
+
   .med-icon {
-    font-size: 2vw;
+    font-size: 2.7vw;
+    color: black;
   }
   .router-view {
-    background: repeating-linear-gradient(
-      45deg,
-      rgba(232, 228, 228, 0.2),
-      rgba(17, 149, 210, 0.08) 5rem,
-      rgba(145, 144, 144, 0.153) 5rem,
-    );
+    &--background {
+      position: absolute;
+    &:before, &:after {
+      --p: 0;
+      --s: calc(1 - 2*var(--p));
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      -webkit-mask: var(--m);
+              mask: var(--m);
+      content: ''
+    }
+    &:before, &:after {
+      --p: 0;
+      --s: calc(1 - 2*var(--p));
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background: linear-gradient(calc(var(--s)*45deg), 
+          transparent calc(50% - 1px), $c 0, $c calc(50% + 1px), transparent 0) 
+        0 0/ #{$s $s};
+      --m: linear-gradient(red 50%, transparent 50%) 
+            0 calc(var(--p)*#{$s})/ 100% #{2*$s};
+      content: ''
+    }
+	  &:after { --p: 1 }
+    }
+	
   }
   .menu-button {
     font-size: 5vw;
     cursor: pointer;
+    color: black;
     &--mobile {
       width: 10vw;
     }
     &--desktop {
-      width: 15vw;
+      width: 20vw;
     }
 
   }
   .header-style {
     -webkit-mask-image: url("~assets/png/grit.png");
     mask-image: url("~assets/png/grit.png");
-    // background: repeating-linear-gradient(
-    //   45deg,
-    //   rgba(143, 62, 62, 0.2),
-    //   rgba(61, 189, 119, 0.2) 20px,
-    //   rgba(191, 58, 58, 0.3) 20px,
-    //   rgba(0, 0, 0, 0.3) 30px
-    // ),
-    // url("~assets/png/grit.png");
+    &--mobile {
+      // border: dashed 3px black;
+      border-top: dashed 3px black;
+      border-bottom: dashed 3px black;
+      border-left: dashed 2px black;
+      border-right: dashed 2px black;
+
+      margin-top: -1px;
+    }
+    &--desktop {
+      ::after {
+        border-top: dashed .3rem black;
+        border-bottom: dashed .3rem black;
+        margin-top: -.05rem;
+      }
+    }
   }
   .menu-position {
     position: absolute;
@@ -295,7 +324,6 @@ export default {
     height: 100%;
   }
   .menu-bg{
-    // border: solid 2px black;
     z-index: 1;
     top: -.6rem;
     bottom: 1rem;
@@ -309,7 +337,6 @@ export default {
   .fit-extend {
     height: 100%;
     width: 100%;
-    // top: -3%;
   }
   .skew {
     transform: skewy($angle);
@@ -339,21 +366,21 @@ export default {
   height: 10vw;
 }
 .header-logo--desktop {
-  width: 5vw; 
-  height: 5vw;
+  width: 6vw; 
+  height: 6vw;
 }
-  .blog-title {
-    font-family: "Anime";
-    color: black;
-      /* Unvisited link  */
-    text-decoration: none;
-    &--mobile {
-      font-size: 7vw;
-      margin: 0;
-    }
-    &--desktop {
-      font-size: 3.5vw;
-    }
+.blog-title {
+  font-family: "Anime";
+  color: black;
+    /* Unvisited link  */
+  text-decoration: none;
+  &--mobile {
+    font-size: 7vw;
+    margin: 0;
+  }
+  &--desktop {
+    font-size: 4.5vw;
+  }
   &:visited {
     text-decoration: none;
   } 
@@ -376,5 +403,12 @@ export default {
     display: flex;
     flex-wrap: nowrap;
   }
-
+  .blog-version {
+    position: absolute;
+    right: .3rem;
+    bottom: .3rem;
+    color: black;
+    font-family: "Anime";
+    font-size: .8vw;
+  }
 </style>

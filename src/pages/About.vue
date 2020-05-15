@@ -1,4 +1,5 @@
 <template>
+  <gradient-layout>
   <div class="q-ml-xl">
   <q-markdown>
     # **About**
@@ -45,7 +46,17 @@
 
   </q-markdown>
   </div>
+  </gradient-layout>
 </template>
+<script>
+import GradientLayout from 'layouts/GradientLayout'
+
+export default {
+  components: {
+    GradientLayout,
+  },
+}
+</script>
 <style lang="scss" scoped>
 .iframe-style {
   border: dashed 3px black;

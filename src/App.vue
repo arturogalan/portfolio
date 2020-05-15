@@ -47,10 +47,11 @@ body, html {
 .q-page-container--desktop{
   .q-markdown {
     font-size: 1.3em;
-    width: 90%;
+    width: 95%;
   }
   .markdown-container{
     padding-left: 2rem;
+    padding-top: 2rem;
   }
 }
 .q-page-container--mobile{
@@ -60,6 +61,7 @@ body, html {
   }
   .markdown-container{
     padding-left: 1rem;
+    padding-top: 1rem;
   }
   .q-markdown--heading-h1 {
     font-size: 1.5em;

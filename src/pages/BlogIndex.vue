@@ -1,7 +1,6 @@
 <template>
-  <!-- <q-page class="flex flex-center"> -->
+  <gradient-layout>
   <q-page class="q-ml-xl">
-    <!-- <h4>{{$t('BLOG.INDEX.INTRO_TEXT')}}</h4> -->
   <q-markdown>
     # **Blog**
 
@@ -55,13 +54,19 @@
       src="~assets/quasar-logo-full.svg"
     > -->
   </q-page>
+  </gradient-layout>
+
 </template>
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
+import GradientLayout from 'layouts/GradientLayout'
 
 export default {
   name: 'PageIndex',
+  components: {
+    GradientLayout,
+  },
   created() {
     this.fetchBlogData()
   },

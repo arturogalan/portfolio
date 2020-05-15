@@ -1,4 +1,5 @@
 <template>
+  <gradient-layout>
   <div class="q-ml-xl">
   <q-markdown>
     # **Music**
@@ -10,14 +11,14 @@
     Now I can say that I listen to a wide variety of styles includind classical music, emo, punk-rock, progressive metal and even dark music.
     
     # Records
+   I started playing guitar with eleven or twelve years old, and I recorded a couple of demo tapes with my two best friends both self produced at home and in the rehearsal room. Our band is called **`xInerzia`** The first demo was recorded in 2007 and the second one in 2015. They are available in [Spotify](https://open.spotify.com/artist/73ERX68cf82PuX4fdhLRq4?si=u6I72TZrSWeHcC0LToodqg).
   </q-markdown>
   <div class="row ">
     <div class="col-4">
       <q-markdown>
-   I started playing guitar with eleven or twelve years old, and I recorded a couple of demo tapes with my two best friends both self produced at home and in the rehearsal room. Our band is called **`xInerzia`** The first demo was recorded in 2007 and the second one in 2015. They are available in [Spotify](https://open.spotify.com/artist/73ERX68cf82PuX4fdhLRq4?si=u6I72TZrSWeHcC0LToodqg).
       </q-markdown>
     </div>
-    <iframe class="col-auto iframe-style" src="https://open.spotify.com/embed/artist/73ERX68cf82PuX4fdhLRq4" width="300" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    <iframe class="col-auto iframe-style" src="https://open.spotify.com/embed/artist/73ERX68cf82PuX4fdhLRq4" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
   </div>
   <br/>
   <br/>
@@ -28,9 +29,22 @@
     # Recommended Bands and Songs
   </q-markdown>
   </div>
+  </gradient-layout>
+
 </template>
+<script>
+import GradientLayout from 'layouts/GradientLayout'
+
+export default {
+  components: {
+    GradientLayout,
+  },
+}
+</script>
 <style lang="scss" scoped>
 .iframe-style {
   border: dashed 3px black;
+  width: 20rem;
+  height: 20rem;
 }
 </style>
