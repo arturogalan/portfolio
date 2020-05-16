@@ -2,7 +2,6 @@
 <section class="markdown-section">
   <q-img
     :src="`statics/images/${id}/paralax.png`"
-    class="paralax-img"
     style="width: 100%; max-height: 15rem;"
     :ratio="16/9"
     native-context-menu>
@@ -51,9 +50,6 @@ export default {
 }
 </script>
  <style lang="scss" scoped>
- .paralax-img {
-
- }
  .post-title {
    position: absolute;
    width: 100%;

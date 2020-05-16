@@ -1,9 +1,11 @@
 <script>
+import { mapGetters } from 'vuex'
+
+
 export default {
   name: 'Birds',
   data() {
     return {
-      animationOn: true,
       platform: 'desktop',
       size: {
         desktop: {
@@ -27,44 +29,68 @@ export default {
       },
     }
   },
-  mounted() {
-    const movementXPaths = (index) => {
-      if (this.$q.platform.is.mobile) this.platform = 'mobile';
-      const values = this.size[this.platform].values;
-      return values[index % values.length]
-    }
-    const birdAnimationMovement = (index) => {
-      this.$anime({
-        targets: '.bird-main',
-        translateY: ['0', '-11rem'],
-        // translateX: movementXPaths[Math.random() * 4],
-        translateX: movementXPaths(index),
-        width: ['17rem', '5rem'],
-        // height: '+=2px',
-        opacity: [
-          { value: 1, duration: 15000 },
-          { value: 0 },
+  computed: {
+    ...mapGetters('ui', [
+      'fetchAnimationsOn',
+    ]),
+  },
+  methods: {
+    animeBirths() {
+      // This method is being called recursively with index + 1 between 0 and the values.length
+      const movementXPaths = (index) => {
+        if (this.$q.platform.is.mobile) this.platform = 'mobile';
+        const values = this.size[this.platform].values;
+        return values[index % values.length]
+      }
+      const birdAnimationMovement = (index) => {
+        this.$anime({
+          targets: '.bird-main',
+          translateY: ['0', '-11rem'],
+          // translateX: movementXPaths[Math.random() * 4],
+          translateX: movementXPaths(index),
+          width: ['17rem', '5rem'],
+          // height: '+=2px',
+          opacity: [
+            { value: 1, duration: 15000 },
+            { value: 0 },
+          ],
+          easing: 'easeOutQuint',
+          duration: 15000,
+          complete: () => birdAnimationMovement(index + 1),
+        },
+        )
+      }
+
+      const birdMorphAnimation = {
+        targets: '.bird1-path',
+        d: [
+          { value: 'M0.5,53.327C0.5,53.327 95.08,95.146 144.886,78C191.17,62.066 193.878,37.414 205,36.777C218.306,36.015 253.447,79.853 317.042,67C350.389,60.261 400.967,23.776 400.967,23.776C400.967,23.776 310.791,44.944 284.293,41.567C225.374,34.059 205.012,-0.123 201.3,0.509C197.063,1.229 186.019,31.899 129.5,50.082C52.362,74.899 0.5,53.327 0.5,53.327Z' },
         ],
-        easing: 'easeOutQuint',
-        duration: 15000,
-        complete: () => birdAnimationMovement(index + 1),
+        duration: 1000,
+        loop: true,
+        easing: 'easeInOutQuad',
+        direction: 'alternate',
+      }
+      birdAnimationMovement(0)
+      this.$anime(birdMorphAnimation)
+
+    },
+  },
+  watch: {
+    'fetchAnimationsOn': {
+      inmediate: true,
+      handler(newValue, oldValue) {
+        newValue && this.animeBirths()
       },
-      )
+    },
+  },
+  mounted() {
+    if(this.fetchAnimationsOn) this.animeBirths()
+  },
+  destroyed() {
+    for (let i = this.$anime.running.length; i > 0; i--) {
+      this.$anime.running.pop();
     }
-
-    const birdMorphAnimation = {
-      targets: '.bird1-path',
-      d: [
-        { value: 'M0.5,53.327C0.5,53.327 95.08,95.146 144.886,78C191.17,62.066 193.878,37.414 205,36.777C218.306,36.015 253.447,79.853 317.042,67C350.389,60.261 400.967,23.776 400.967,23.776C400.967,23.776 310.791,44.944 284.293,41.567C225.374,34.059 205.012,-0.123 201.3,0.509C197.063,1.229 186.019,31.899 129.5,50.082C52.362,74.899 0.5,53.327 0.5,53.327Z' },
-      ],
-      duration: 1000,
-      loop: true,
-      easing: 'easeInOutQuad',
-      direction: 'alternate',
-    }
-
-    this.animationOn === true && birdAnimationMovement(0)
-    this.animationOn === true && this.$anime(birdMorphAnimation)
   },
 }
 </script>

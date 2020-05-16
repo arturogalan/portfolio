@@ -1,16 +1,24 @@
 <template>
+  <section>
+  <q-img
+    src="~assets/svg/bg-posts.svg"
+    style="width: 100%; max-height: 10rem; color: none"
+    :img-style="{opacity: 0.1}"
+    :ratio="16/9">
+    <div class="post-title absolute-full text-subtitle2 flex flex-center text-black">
+      <p>Blog</p>
+    </div>
+  </q-img>
   <gradient-layout>
-  <q-page class="q-ml-xl">
+  <q-page class="q-ml-xl q-mt-md">
   <q-markdown>
-    # **Blog**
-
     Hi!, here is where I have my posts about tech and other things, hope you find useful any of them :beers: :
   </q-markdown>
 
     <div class="q-pa-md row items-start q-gutter-md">
 
       <q-card 
-        class="my-card p10"
+        class="my-card pulse-effect"
         v-for="blog in blogDataByDate"
         :key="blog.id"
       >
@@ -21,10 +29,12 @@
         <q-img
           :src="blog.image"
           :ratio="1"
-          img-class=""
+          class="blog-img"
         >
+        <q-chip class="blog-time" color="white" dense outline icon="fas fa-clock" :label="blog.readTime"/>
+
           <div
-          class="clickable-post absolute-bottom text-h6"
+          class="clickable-post absolute-bottom blog-title"
           >
             {{ blog.title }}
           </div>
@@ -33,7 +43,7 @@
 
         <q-card-section>
           {{ blog.description }}
-
+        <br>
         <q-chip
           dense
           clickable
@@ -45,6 +55,7 @@
           <!-- icon="event" -->
           {{ tag }}
         </q-chip>
+        <br>
 
         </q-card-section>
       </q-card>
@@ -55,7 +66,7 @@
     > -->
   </q-page>
   </gradient-layout>
-
+  </section>
 </template>
 
 <script>
@@ -83,17 +94,49 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+ .post-title {
+   position: absolute;
+   width: 100%;
+   height: auto;
+   bottom: 0;
+   font-size: 4vw;
+   font-family: "Anime";
+   text-align: center;
+   padding-bottom: 0;
+   background-color: transparent;
+ }
   .my-card {
     width: 100%;
-    max-width: 350px;
+    max-width: 21vw;
+    border-radius: 3%;
+    border: dashed 2px darkcyan;
+  }
+  .blog-img {
+    border-top-right-radius: 3%;
+    border-top-left-radius: 3%;
+
+  }
+  .blog-time {
+    position: absolute;
+    top: .2rem;
+    left: .2rem;
+    font-weight: bold;
+  }
+  .blog-title {
+    font-size: 1.2vw;
   }
   .clickable-post {
     cursor: pointer;
   }
 
-  .p10{
-		// background-image: url($image1);
-			// @include a(353px, 94px);
+  .pulse-effect {
+    &:hover{
+      transition: all 2s;
+      transition-timing-function: cubic-bezier(.14,1.13,0,.91);
+      transform: scale(1.02);
+    }
+  }
+  .corners-effect{
 			&:before, &:after{
 				content: '';
 				position: absolute;
@@ -103,11 +146,9 @@ export default {
 				border-style: solid;
         border-width: 0px;
         border-radius: 20%;
-				// @include transition(all .5s cubic-bezier(1,.2,.26,.7));
-        // @include transform(translate(0px, 0px) scale(.8));
-          transition: all .5s;
-          transition-timing-function: cubic-bezier(1,.2,.26,.7);
-					opacity: 1;
+        transition: all .5s;
+        transition-timing-function: cubic-bezier(1,.2,.26,.7);
+        opacity: 1;
 				opacity: 0;
 			}
 			&:before{
@@ -123,7 +164,6 @@ export default {
         border-right-width: 1px;
         z-index: 3;
 			}
-        // @include transition(all 2s cubic-bezier(.14,1.13,0,.91));
 			&:hover{
 				&:before, &:after{
           transition: all 2s;

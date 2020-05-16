@@ -134,8 +134,8 @@ export default {
       leftDrawerOpen: false,
       essentialLinks: [
         { 
-          title: this.$t('BLOG.LEFT_DRAWER.LINK_POSTS.TITLE'),
-          caption: this.$t('BLOG.LEFT_DRAWER.LINK_POSTS.CAPTION'),
+          title: this.$t('BLOG.LEFT_DRAWER.LINK_BLOG.TITLE'),
+          caption: this.$t('BLOG.LEFT_DRAWER.LINK_BLOG.CAPTION'),
           icon: 'fas fa-book',
           link: '/blog',
         },

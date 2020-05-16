@@ -4,8 +4,7 @@ import Birds from 'components/main-landscape/Birds'
 import Sea from 'components/main-landscape/Sea'
 import Sand from 'components/main-landscape/Sand'
 import LateralMenu from 'components/main-landscape/LateralMenu'
-
-// import Stones from './Stones';
+import { mapActions } from 'vuex'
 
 export default {
   name: 'MainLandscape',
@@ -15,18 +14,39 @@ export default {
     Sand,
     Birds,
     LateralMenu,
-    // Stones,
+  },
+  data() {
+    return {
+      lazyImages: {
+        sky: '',
+        sand: '',
+      },
+      lazyImagesLoaded: false,
+    }
+  },
+  methods: {
+    ...mapActions('ui', [
+      'toggleAnimationOn',
+    ]),
+    registerLoad(source) {
+      delete this.lazyImages[source]
+      if (!Object.keys(this.lazyImages).length) {
+        this.lazyImagesLoaded = true;
+        console.log('all images loaded')
+        this.toggleAnimationOn();
+      }
+    },
   },
 }
 </script>
 <template>
   <article class="main-layout">
-    <div  class="landscape-bg">
+    <div class="landscape-bg">
     </div>
-    <birds  class="birds"/>
-    <sky/>
-    <sea class="upside-down z-index-2"/>
-    <sand/>
+    <birds class="birds"/>
+    <sky v-if="true" @loaded="registerLoad('sky')"/>
+    <sea v-if="true" class="upside-down z-index-2"/>
+    <sand @loaded="registerLoad('sand')"/>
     <lateral-menu class="lateral-menu"/>
   </article>
 </template>

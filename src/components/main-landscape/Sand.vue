@@ -1,9 +1,13 @@
 <script>
 import { EventBus } from '../../store/event-bus.js';
+import AppImage from 'components/AppImage'
 import { mapGetters } from 'vuex'
 
 export default {
   name: 'Sand',
+  components: {
+    AppImage,
+  },
   mounted() {
     const yogaShadowAnimation = {
       targets: '.yoga',
@@ -32,7 +36,8 @@ export default {
 <template>
 <div>
   <div class="sand-main">
-    <img src="~assets/svg/sand.svg" alt="">
+    <!-- <img  v-if="false" src="statics/images/svg/sand.svg" alt=""> -->
+    <app-image v-if="true" @loaded="$emit('loaded')" lazy-src="statics/images/svg/sand.svg"/>
   </div>
   <div
     class="sea-shell-container"

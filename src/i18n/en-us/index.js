@@ -14,8 +14,8 @@ export default {
         TITLE: 'About',
         CAPTION: '',
       },
-      LINK_POSTS: {
-        TITLE: 'Posts',
+      LINK_BLOG: {
+        TITLE: 'Blog',
         CAPTION: '',
       },
       LINK_PROJECTS: {

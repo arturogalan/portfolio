@@ -150,7 +150,7 @@ export default {
   transition: background-color 0.8s cubic-bezier(0.25, 0.8, 0.5, 1),
     opacity 0.6s cubic-bezier(0.25, 0.8, 0.5, 1);
 }
-.bg-posts:before {
+.bg-blog:before {
   border-top: 3px dashed black;
   background-image: linear-gradient(
       45deg,

@@ -1,6 +1,10 @@
 <script>
+import AppImage from 'components/AppImage'
 export default {
   name: 'Sky',
+  components: {
+    AppImage,
+  },
   data() {
     return {
       svgSrc: 'sky',
@@ -13,7 +17,7 @@ export default {
 </script>
 <template>
   <div class="sky-style">
-    <img :src="`statics/images/svg/${svgSrc}.svg`" alt="">
+    <app-image @loaded="$emit('loaded')" :lazy-src="`statics/images/svg/${svgSrc}.svg`" alt="" width='100%'/>
   </div>
 </template>
 <style lang="scss" scoped>

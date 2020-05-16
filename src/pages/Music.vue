@@ -1,8 +1,17 @@
 <template>
+  <section>
+  <q-img
+    src="~assets/svg/bg-music.svg"
+    style="width: 100%; max-height: 10rem; color: none"
+    :img-style="{opacity: 0.3}"
+    :ratio="16/9">
+    <div class="post-title absolute-full text-subtitle2 flex flex-center text-black">
+      <p>Music</p>
+    </div>
+  </q-img>
   <gradient-layout>
-  <div class="q-ml-xl">
+  <div class="q-ml-xl q-mt-md">
   <q-markdown>
-    # **Music**
 
     Life without music have not sense at all. Since I was aware music has always helped me to overcome difficult times and enjoy the funny ones.
     # Influences
@@ -11,7 +20,7 @@
     Now I can say that I listen to a wide variety of styles includind classical music, emo, punk-rock, progressive metal and even dark music.
     
     # Records
-   I started playing guitar with eleven or twelve years old, and I recorded a couple of demo tapes with my two best friends both self produced at home and in the rehearsal room. Our band is called **`xInerzia`** The first demo was recorded in 2007 and the second one in 2015. They are available in [Spotify](https://open.spotify.com/artist/73ERX68cf82PuX4fdhLRq4?si=u6I72TZrSWeHcC0LToodqg).
+   I started playing guitar with eleven or twelve years old, and I recorded a couple of demo tapes with my two best friends, both records self produced at home and in the rehearsal room. Our band is called **`xInerzia`** The first demo was recorded in 2007 and the second one in 2015. They are available in [Spotify](https://open.spotify.com/artist/73ERX68cf82PuX4fdhLRq4?si=u6I72TZrSWeHcC0LToodqg).
   </q-markdown>
   <div class="row ">
     <div class="col-4">
@@ -30,6 +39,7 @@
   </q-markdown>
   </div>
   </gradient-layout>
+  </section>
 
 </template>
 <script>
@@ -47,4 +57,15 @@ export default {
   width: 20rem;
   height: 20rem;
 }
+ .post-title {
+   position: absolute;
+   width: 100%;
+   height: auto;
+   bottom: 0;
+   font-size: 4vw;
+   font-family: "Anime";
+   text-align: center;
+   padding-bottom: 0;
+   background-color: transparent;
+ }
 </style>
