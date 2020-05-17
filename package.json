@@ -1,8 +1,8 @@
 {
   "name": "arturo-portfolio",
   "version": "0.0.1",
-  "description": "Arturo Galán portfolio ade with Quasar",
-  "productName": "arturo-portfolio",
+  "description": "Arturo Galán portfolio site made with Vue.js, Quasar and Netlify",
+  "productName": "Arturo Galan Javascript developer portfolio site",
   "cordovaId": "org.cordova.quasar.app",
   "capacitorId": "",
   "author": "Arturo Galan <arturo.galan@gmail.com>",

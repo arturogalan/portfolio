@@ -36,7 +36,6 @@ const uiModule = {
       state.animationsOn = true;
     },
     setLeftDrawerOpened(state, value) {
-      debugger;
       state.leftDrawerOpened = value;
     },
   },
