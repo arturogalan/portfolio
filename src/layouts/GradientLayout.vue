@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-    <div v-if="!$q.platform.is.mobile" class="col-12 col-md-1 markdown-background-wrapper">
+    <div v-if="!$q.platform.is.mobile && !fetchLeftDrawerOpened" class="col-12 col-md-1 markdown-background-wrapper">
       <div class="markdown--background"></div>
     </div>
     <div
@@ -8,19 +8,23 @@
     >
       <slot/>
     </div>
-    <div v-if="!$q.platform.is.mobile" class="col-12 col-md-1 markdown-background-wrapper">
+    <div v-if="!$q.platform.is.mobile && !fetchLeftDrawerOpened" class="col-12 col-md-1 markdown-background-wrapper">
       <div class="markdown--background"></div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'GradientLayout',
   mounted() {
   },
   computed: {
+    ...mapGetters('ui', [
+      'fetchLeftDrawerOpened',
+    ]),
   },
   meta() {
   },

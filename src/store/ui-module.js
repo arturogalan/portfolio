@@ -4,6 +4,7 @@ const uiModule = {
   state: {
     lateralMenuOpened: false,
     animationsOn: false,
+    leftDrawerOpened: false,
   },
   getters: {
     fetchLateralMenuOpened(state) {
@@ -11,6 +12,9 @@ const uiModule = {
     },
     fetchAnimationsOn(state) {
       return state.animationsOn;
+    },
+    fetchLeftDrawerOpened(state) {
+      return state.leftDrawerOpened;
     },
   },
   actions: {
@@ -20,6 +24,9 @@ const uiModule = {
     toggleAnimationOn({ commit }) {
       commit('toggleAnimationOn')
     },
+    setLeftDrawerOpened({commit}, value) {
+      commit('setLeftDrawerOpened', value);
+    },
   },
   mutations: {
     toggleLateralMenuOpened(state) {
@@ -27,6 +34,10 @@ const uiModule = {
     },
     toggleAnimationOn(state) {
       state.animationsOn = true;
+    },
+    setLeftDrawerOpened(state, value) {
+      debugger;
+      state.leftDrawerOpened = value;
     },
   },
 }

@@ -121,6 +121,8 @@
 <script>
 import { openURL } from 'quasar'
 import EssentialLink from 'components/EssentialLink'
+import { mapActions } from 'vuex'
+
 export default {
   name: 'MainLayout',
 
@@ -173,6 +175,7 @@ export default {
   watch: {
     leftDrawerOpen(newValue, oldValue) {
       if(newValue !== oldValue) {
+        this.setLeftDrawerOpened(newValue);
         if (!this.firstTime) {
           this.timeline.reverse();
         } else if (!newValue){
@@ -184,6 +187,9 @@ export default {
     },
   },
   methods: {
+    ...mapActions('ui', [
+      'setLeftDrawerOpened',
+    ]),
     open(url) {
       openURL(url);
     },
