@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import VueAnime from 'vue-animejs'
 import blogModule from './blog-module'
 import uiModule from './ui-module'
+import projectModule from './project-module'
 
 // import example from './module-example'
 
@@ -22,6 +23,7 @@ export default function(/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
       blog: blogModule,
+      project: projectModule,
       ui: uiModule,
     },
 

@@ -187,6 +187,7 @@ export default {
     url("~assets/svg/bg-links.svg");
 }
 .bg-about:before {
+  opacity: .7;
   background-image: linear-gradient(
       -135deg,
       rgba(255, 98, 0, 0.44),

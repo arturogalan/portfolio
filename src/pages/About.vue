@@ -2,7 +2,7 @@
   <section>
   <q-img
     src="~assets/svg/bg-about.svg"
-    style="width: 100%; max-height: 10rem; color: none"
+    style="width: 100%; max-height: 10rem;"
     :img-style="{opacity: 0.3}"
     :ratio="16/9">
     <div class="post-title absolute-full text-subtitle2 flex flex-center text-black">
@@ -32,19 +32,19 @@
     ![](statics/images/common/profile.png "Arturo")
     #
     ##  
-    Hi! I'm Arturo Galán and I'm a Spanish developer. Currently I´m working as a frontend developer at Clarity.ai mainly with **Vue.js, Javascript and SCSS**. Interested in web technologies like Web Audio, SVG, D3 and CSS animations.
+    Hi! I'm 🦄**Arturo Galán**🦄 and I'm a Spanish developer. Currently I´m working as a frontend developer at Clarity.ai mainly with **Vue.js, Javascript and SCSS**. Interested in web technologies like Web Audio, SVG, D3 and CSS animations.
     #  
     #  
 
-    I've been working since 2000 with computers, coding in languages and libraries like Java, Java Swing, Jsp, JQuery, PL-SQL, Angular, Node.js etc... During my career I've been working under roles like Backender, Frontender, Analyst, Organic Analyst, Functional Analyst, Technical Referent, Architect, Technical Architect 💤... But... you know what? 
+    I've been working since 2000 with computers, coding in languages and libraries like Java, Java Swing, Jsp, JQuery, PL-SQL, Angular, Node.js etc... During my career I've been working under different roles: Backender, Frontender, Analyst, Organic Analyst, Functional Analyst, Technical Referent, Architect, Technical Architect 💤... But... you know what? 
     :::
     I've been always a **Developer**, nothing more and nothing less. A developer who enjoys coding, learning from other developers, using programming to build tools and mixing technology and art while doing it.
     :::
-    This last years I've been focused in web and frontend technologies and it's really exciting to see the ecosystem growing and the great tools that help us build better software. There’s no better time to be a JavaScript developer than today!
+    This last years I've been focused in web and frontend technologies and it's really exciting to see the ecosystem growing and the great tools that help us build better software. There’s no better time to be a **JavaScript** developer than today! 🤯
     #  
-    I´m also a **musician** and I love to play guitar, and some months ago I started to learn to play the violin. You can take a look to the Music section if you want to know more.
+    I´m also a **musician** and I love to play guitar 🎸, and some months ago I started to learn to play the violin 🎻. You can take a look to the [Music](#/music) section if you want to know more.
 
-    I also like Raspberry Pi and electronic projects, and I have made a couple of them, you can take a look at the posts I´m writing about this.
+    I also like Raspberry Pi and electronics, and I have made a couple of them, you can take a look at the posts I´ll be writing about this.
 
 
 
@@ -87,7 +87,7 @@ img[alt$="<"] {
    font-family: "Anime";
    text-align: center;
    padding-bottom: 0;
-   background-color: transparent;
+   background-color: transparent !important;
  }
  img[title$="Arturo"] {
    float: left;

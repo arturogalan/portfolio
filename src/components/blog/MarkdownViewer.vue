@@ -2,7 +2,7 @@
 <section class="markdown-section">
   <q-img
     :src="`statics/images/${id}/paralax.png`"
-    style="width: 100%; max-height: 15rem;"
+    style="width: 100%; max-height: 15rem; opacity: .8"
     :ratio="16/9"
     native-context-menu>
     <div class="post-title text-white text-bold"><p>{{ title }}</p></div>

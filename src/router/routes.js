@@ -1,4 +1,5 @@
 import BlogEntries from 'assets/data/blogs.json'
+import ProjectEntries from 'assets/data/projects.json'
 import Home from 'pages/Home.vue'
 import About from 'pages/About.vue'
 import Projects from 'pages/Projects.vue'
@@ -19,15 +20,19 @@ const blogRoutes = BlogEntries.map(child => ({
       title: child.title,
       image: child.image,
     },
-
-  // This if we want an intermediate view for each section
-  // return {
-  //   path: section,
-  //   name: section,
-  //   // component: () => import('../layouts/BlogLayout.vue'),
-  //   children,
-  // }
 }));
+const projectsRoutes = ProjectEntries.map(child => ({
+  path: `${child.id}`,
+  name: `${child.id}`,
+  component: MarkdownViewer,
+  props: { 
+    markdown: require(`../project-entries/${child.id}.md`).default,
+    id: child.id,
+    title: child.title,
+    image: child.image,
+  },
+}));
+
 const routes = [
   {
     path: '/',
@@ -67,8 +72,10 @@ const routes = [
     [
       {
         path: '',
-        component: Projects,
+        name: 'Projects',
+        component: () => import('pages/Projects.vue'),
       },
+      ...projectsRoutes,
     ],
   },
   {
@@ -79,7 +86,8 @@ const routes = [
     [
       {
         path: '',
-        component: Music,
+        name: 'Music',
+        component: () => import('pages/Music.vue'),
       },
     ],
   },        
@@ -91,7 +99,8 @@ const routes = [
     [
       {
         path: '',
-        component: Links,
+        name: 'Links',
+        component: () => import('pages/Links.vue'),
       },
     ],
   },

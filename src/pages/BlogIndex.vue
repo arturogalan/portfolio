@@ -52,7 +52,6 @@
           v-for="tag in blog.tags"
           :key="tag"
         >
-          <!-- icon="event" -->
           {{ tag }}
         </q-chip>
         <br>
@@ -60,10 +59,6 @@
         </q-card-section>
       </q-card>
     </div>
-    <!-- <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-full.svg"
-    > -->
   </q-page>
   </gradient-layout>
   </section>
@@ -114,7 +109,6 @@ export default {
   .blog-img {
     border-top-right-radius: 3%;
     border-top-left-radius: 3%;
-
   }
   .blog-time {
     position: absolute;

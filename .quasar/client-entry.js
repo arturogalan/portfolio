@@ -208,6 +208,12 @@ import qboot_Quasarquasarappextensionqmarkdownsrcbootregisterjs from '@quasar/qu
 
 
 
+Vue.config.devtools = true
+Vue.config.productionTip = false
+
+
+
+console.info('[Quasar] Running SPA.')
 
 
 
@@ -216,12 +222,6 @@ import qboot_Quasarquasarappextensionqmarkdownsrcbootregisterjs from '@quasar/qu
 async function start () {
   const { app, store, router } = await createApp()
 
-  
-  // prime the store with server-initialized state.
-  // the state is determined during SSR and inlined in the page markup.
-  if (window.__INITIAL_STATE__) {
-    store.replaceState(window.__INITIAL_STATE__)
-  }
   
 
   
@@ -267,14 +267,18 @@ async function start () {
   
 
   
-    const appInstance = new Vue(app)
 
-    // wait until router has resolved all async before hooks
-    // and async components...
-    router.onReady(() => {
-      
-      appInstance.$mount('#q-app')
-    })
+    
+
+    
+
+    
+      new Vue(app)
+    
+
+    
+
+    
 
   
 
