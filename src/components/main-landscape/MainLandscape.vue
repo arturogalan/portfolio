@@ -41,6 +41,11 @@ export default {
 </script>
 <template>
   <article class="main-layout">
+    <transition
+      name="fade-out"
+    >
+      <div v-if="!lazyImagesLoaded" class="curtain"></div>
+    </transition>
     <div class="landscape-bg">
     </div>
     <birds class="birds"/>
@@ -51,6 +56,13 @@ export default {
   </article>
 </template>
 <style scoped lang="scss">
+.curtain {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 3;
+}
 .main-layout {
   text-align: center;
 }
