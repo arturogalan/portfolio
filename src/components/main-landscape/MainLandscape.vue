@@ -106,7 +106,7 @@ export default {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #887434;
+  background: #f0cf61;
 }
 .lateral-menu {
   position: absolute;

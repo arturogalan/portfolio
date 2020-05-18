@@ -198,13 +198,14 @@ export default {
 <template>
 <div class="main-sea-style">
   <svg class="wave-foam-svg" :viewBox="size[platform].seaSvg">
-      <g transform="matrix(1,0,0,2,0,0)">
+    <g transform="matrix(1,0,0,2,0,0)">
     <path class="wave-foam-path"
     d="M-0.011,11.919C134.968,11.919 228.892,15.173 324.156,15.738C448.385,16.473 574.134,7.252 801.149,7.393C1087.75,7.393 1224.91,15.696 1385.92,17.529C1449.62,18.255 1517.89,11.925 1599.82,11.925L1600,198L0,198C0,198 -0.011,40.919 -0.011,11.919Z"
-    style="fill:url(#_Linear1);"/>
+    style="fill:url(#_LinearY);"/>
       </g>
       <defs>
-        <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.34527e-14,219.699,-219.699,1.34527e-14,800,-21.6992)"><stop offset="0" style="stop-color:rgb(28, 87, 90);stop-opacity:0.75"/><stop offset="1" style="stop-color:rgb(1,88,113);stop-opacity:1"/></linearGradient>
+        <linearGradient id="_LinearY" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.34527e-14,219.699,-219.699,1.34527e-14,800,-21.6992)"><stop offset="0" 
+        style="stop-color:rgb(28, 187, 190);stop-opacity:0.5"/><stop offset="1" style="stop-color:rgb(1,88,113);stop-opacity:1"/></linearGradient>
         <filter id="f1" x="0" y="0">
           <feGaussianBlur in="SourceGraphic" stdDeviation="155" />
         </filter>
@@ -214,16 +215,18 @@ export default {
       <g>
         <path
           class="wave-path"
-          d="M-0.011,11.919C26.578,11.919 51.55,11.961 75.24,12.037C109.27,12.147 140.652,12.328 170.373,12.56C214.235,12.903 254.477,13.357 294.268,13.856C329.425,14.296 364.229,14.771 400.867,15.235C443.268,15.773 488.124,16.295 538.824,16.732C581.957,17.103 629.319,17.413 682.997,17.616C719.532,17.755 758.993,17.845 802.037,17.872C856.546,17.872 905.646,17.761 950.532,17.57C994.438,17.384 1034.31,17.12 1071.27,16.808C1118.37,16.41 1160.74,15.933 1200.68,15.436C1242.4,14.916 1281.48,14.373 1320.54,13.874C1352.35,13.468 1384.15,13.091 1417.38,12.779C1448.21,12.489 1480.27,12.255 1514.69,12.106C1541.46,11.99 1569.66,11.925 1599.82,11.925L1600,198L0,198C0,198 -0.011,40.919 -0.011,11.919Z" style="fill:url(#_Linear1);"
+          d="M-0.011,11.919C26.578,11.919 51.55,11.961 75.24,12.037C109.27,12.147 140.652,12.328 170.373,12.56C214.235,12.903 254.477,13.357 294.268,13.856C329.425,14.296 364.229,14.771 400.867,15.235C443.268,15.773 488.124,16.295 538.824,16.732C581.957,17.103 629.319,17.413 682.997,17.616C719.532,17.755 758.993,17.845 802.037,17.872C856.546,17.872 905.646,17.761 950.532,17.57C994.438,17.384 1034.31,17.12 1071.27,16.808C1118.37,16.41 1160.74,15.933 1200.68,15.436C1242.4,14.916 1281.48,14.373 1320.54,13.874C1352.35,13.468 1384.15,13.091 1417.38,12.779C1448.21,12.489 1480.27,12.255 1514.69,12.106C1541.46,11.99 1569.66,11.925 1599.82,11.925L1600,198L0,198C0,198 -0.011,40.919 -0.011,11.919Z" 
+          style="fill:url(#_LinearZ);"
         />
       </g>
       <defs>
-        <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.34527e-14,219.699,-219.699,1.34527e-14,800,-21.6992)"><stop offset="0" style="stop-color:rgb(28, 87, 90);stop-opacity:0.75"/><stop offset="1" style="stop-color:rgb(1,88,113);stop-opacity:1"/></linearGradient>
+        <linearGradient id="_LinearZ" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.34527e-14,219.699,-219.699,1.34527e-14,800,-21.6992)"><stop offset="0" 
+        style="stop-color:rgb(28, 187, 190);stop-opacity:0.5"/><stop offset="1" style="stop-color:rgb(1,88,113);stop-opacity:1"/></linearGradient>
       </defs>
     </svg>
 
     <!-- at the same line as foam -->
-    <svg class="sea-svg" :viewBox="size[platform].seaSvg">
+    <svg class="sea-svg" v-if="true" :viewBox="size[platform].seaSvg">
       <g v-for="(waveLine, index) in seaAnimations.waveLines" :key="index" :transform="`matrix(1,0,0,${waveLine.magnification},0,${waveLine.topValue})`">
         <path
           :class="`sea-path-${((index + 1) * 2) - 1}`"
@@ -237,11 +240,11 @@ export default {
         />
       </g>
       <defs>
-        <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.34527e-14,219.699,-219.699,1.34527e-14,800,-21.6992)"><stop offset="0" style="stop-color:rgb(28, 87, 90);stop-opacity:0.1"/><stop offset="1" style="stop-color:rgb(59,200,243);stop-opacity:.3"/></linearGradient>
-        <linearGradient id="_Linear2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.34527e-14,219.699,-219.699,1.34527e-14,800,-21.6992)"><stop offset="0" style="stop-color:rgb(26, 80, 84);stop-opacity:0.75"/><stop offset="1" style="stop-color:rgb(59,200,243);stop-opacity:1"/></linearGradient>
-        <linearGradient id="_Linear3" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.34527e-14,219.699,-219.699,1.34527e-14,800,-21.6992)"><stop offset="0" style="stop-color:rgb(24, 74, 78);stop-opacity:0.75"/><stop offset="1" style="stop-color:rgb(59,200,243);stop-opacity:1"/></linearGradient>
-        <linearGradient id="_Linear4" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.34527e-14,219.699,-219.699,1.34527e-14,800,-21.6992)"><stop offset="0" style="stop-color:rgb(22, 68, 72);stop-opacity:0.75"/><stop offset="1" style="stop-color:rgb(59,200,243);stop-opacity:1"/></linearGradient>
-        <linearGradient id="_Linear5" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.34527e-14,219.699,-219.699,1.34527e-14,800,-21.6992)"><stop offset="0" style="stop-color:rgb(20, 60, 68);stop-opacity:0.75"/><stop offset="1" style="stop-color:rgb(59,200,243);stop-opacity:1"/></linearGradient>
+        <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.34527e-14,219.699,-219.699,1.34527e-14,800,-21.6992)"><stop offset="0" style="stop-color:rgb(28, 187, 190);stop-opacity:0.75"/><stop offset="1" style="stop-color:rgb(59,200,243);stop-opacity:1"/></linearGradient>
+        <linearGradient id="_Linear2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.34527e-14,219.699,-219.699,1.34527e-14,800,-21.6992)"><stop offset="0" style="stop-color:rgb(26, 180, 184);stop-opacity:0.75"/><stop offset="1" style="stop-color:rgb(59,200,243);stop-opacity:1"/></linearGradient>
+        <linearGradient id="_Linear3" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.34527e-14,219.699,-219.699,1.34527e-14,800,-21.6992)"><stop offset="0" style="stop-color:rgb(24, 174, 178);stop-opacity:0.75"/><stop offset="1" style="stop-color:rgb(59,200,243);stop-opacity:1"/></linearGradient>
+        <linearGradient id="_Linear4" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.34527e-14,219.699,-219.699,1.34527e-14,800,-21.6992)"><stop offset="0" style="stop-color:rgb(22, 148, 142);stop-opacity:0.75"/><stop offset="1" style="stop-color:rgb(59,200,243);stop-opacity:1"/></linearGradient>
+        <linearGradient id="_Linear5" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.34527e-14,219.699,-219.699,1.34527e-14,800,-21.6992)"><stop offset="0" style="stop-color:rgb(20, 120, 128);stop-opacity:0.75"/><stop offset="1" style="stop-color:rgb(59,200,243);stop-opacity:1"/></linearGradient>
       </defs>
     </svg>
 </div>
