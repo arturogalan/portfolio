@@ -16,9 +16,9 @@
     "date": "2020-05-01",
     "lasUpdated": "2020-05-01",
     "readTime": "10 min",
-    "tags": ["Webaudio", "vue"],
+    "tags": ["webaudio", "vue"],
     "title": "NoiseBox: A virtual guitar amp",
-    "description": "A Web Audio powered guitar amp made with Vue.js",
+    "description": "A Web Audio powered <strong>guitar amp</strong> made with Vue.js",
     "image": "statics/images/noise-box-first/preview.png"
   }
 ]

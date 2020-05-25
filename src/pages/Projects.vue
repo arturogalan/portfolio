@@ -39,8 +39,7 @@
         </router-link>
 
         <q-card-section>
-          {{ blog.description }}
-        <br>
+          <p v-html="blog.description"></p>
         <q-chip
           dense
           clickable

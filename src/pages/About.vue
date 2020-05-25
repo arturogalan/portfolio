@@ -47,8 +47,9 @@
     I also like Raspberry Pi and electronics, and I have made a couple of them, you can take a look at the posts I´ll be writing about this.
 
 
-
-    # Contact
+    Contact
+    ===
+    
 
     You can find me in [Twitter](https://twitter.com/turugalan), or you can send me just an [e-mail](mailto:arturo.galan@gmail.com).
 

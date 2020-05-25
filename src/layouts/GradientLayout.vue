@@ -1,4 +1,5 @@
 <template>
+  <section>
     <div class="row">
     <div v-if="!$q.platform.is.mobile && !fetchLeftDrawerOpened" class="col-12 col-md-1 markdown-background-wrapper">
       <div class="markdown--background"></div>
@@ -12,6 +13,14 @@
       <div class="markdown--background"></div>
     </div>
   </div>
+  <div class="row no-wrap justify-center items-center content-center">
+     <div
+      class="footer">
+    <span>Made with 💕 and 💪 by <strong>Arturo Galán</strong></span>
+    </div>
+
+  </div>
+</section>
 </template>
 
 <script>
@@ -34,7 +43,12 @@ export default {
 <style lang="scss" scoped>
   $c: grey; // #4B384C;
   $s: 3rem;
-
+  .footer {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 0 7px;
+    border: dashed darkblue 2px;
+  }
   .markdown {
     &-background-wrapper {
       position: relative;

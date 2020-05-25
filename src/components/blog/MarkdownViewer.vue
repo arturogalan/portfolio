@@ -5,7 +5,7 @@
     style="width: 100%; max-height: 15rem; opacity: .8"
     :ratio="16/9"
     native-context-menu>
-    <div class="post-title text-white text-bold"><p>{{ title }}</p></div>
+    <div class="post-viewer-title text-white text-bold"><p>{{ title }}</p></div>
   </q-img>
   <gradient-layout>
     <q-markdown :src="markdown" toc class="markdown-container"/>
@@ -49,8 +49,8 @@ export default {
   },
 }
 </script>
- <style lang="scss" scoped>
- .post-title {
+ <style lang="scss">
+ .post-viewer-title {
    position: absolute;
    width: 100%;
    height: auto;
@@ -60,6 +60,10 @@ export default {
    text-align: center;
    padding-bottom: 0;
  }
+ img[src*='#center'] { 
+    display: block;
+    margin: auto;
+}
   //  $c: grey; // #4B384C;
   //  $s: 3rem;
 
