@@ -17,7 +17,7 @@ export default {
       ],
       loop: true,
       easing: 'linear',
-      direction: 'normal',
+      direction: 'alternate',
     }
     this.$anime(yogaShadowAnimation)
   },
