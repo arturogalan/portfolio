@@ -2,7 +2,7 @@
   <section>
   <q-img
     src="~assets/svg/bg-projects.svg"
-    style="width: 100%; max-height: 10rem; color: none"
+    :class="$q.platform.is.mobile ? 'post-header post-header--mobile' : 'post-header post-header--desktop'"
     :img-style="{opacity: 0.3}"
     :ratio="16/9">
     <div class="post-title absolute-full text-subtitle2 flex flex-center text-black">
@@ -17,8 +17,9 @@
 
     <div class="q-pa-md row items-start q-gutter-md">
 
- <q-card 
-        class="my-card pulse-effect"
+    <q-card 
+        class="pulse-effect"
+        :class="$q.platform.is.mobile ? 'my-card my-card--mobile' : 'my-card my-card--desktop'"
         v-for="blog in projectDataByDate"
         :key="blog.id"
       >
@@ -31,7 +32,8 @@
           class="blog-img"
         >
           <div
-          class="clickable-post absolute-bottom blog-title"
+          class="clickable-post absolute-bottom"
+          :class="$q.platform.is.mobile ? 'blog-title blog-title--mobile' : 'blog-title blog-title--desktop'"
           >
             {{ blog.title }}
           </div>
@@ -87,23 +89,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
- .post-title {
-   position: absolute;
-   width: 100%;
-   height: auto;
-   bottom: 0;
-   font-size: 4vw;
-   font-family: "Anime";
-   text-align: center;
-   padding-bottom: 0;
-   background-color: transparent;
- }
-  .my-card {
-    width: 100%;
-    max-width: 21vw;
-    border-radius: 3%;
-    border: dashed 2px darkcyan;
-  }
   .blog-img {
     border-top-right-radius: 3%;
     border-top-left-radius: 3%;
@@ -114,13 +99,9 @@ export default {
     left: .2rem;
     font-weight: bold;
   }
-  .blog-title {
-    font-size: 1.2vw;
-  }
   .clickable-post {
     cursor: pointer;
   }
-
   .pulse-effect {
     &:hover{
       transition: all 2s;

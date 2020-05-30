@@ -9,7 +9,53 @@ export default {
   name: 'App',
 }
 </script>
-<style  lang="scss">
+<style lang="scss">
+// Common layouts styles
+ .post-header {
+   width: 100%;
+   color: none;
+    &--mobile {
+      max-height: 15vw;
+    }
+    &--desktop {
+      max-height: 10vw;
+    }
+ }
+ .post-title {
+   background-color: transparent !important;
+   position: absolute;
+   width: 100%;
+   height: auto;
+   bottom: 0;
+   font-size: 4vw;
+   font-family: "Anime";
+   text-align: center;
+   padding-bottom: 0;
+ }
+.blog-title {
+  text-align: center;
+  &--mobile {
+    font-size: 4vw;
+  }
+  &--desktop {
+    font-size: 1.2vw;
+  }
+}
+.my-card {
+  width: 100%;
+  border-radius: 3%;
+  border: dashed 2px darkcyan;
+  &--desktop {
+    max-width: 21vw;
+  }
+  &--mobile {
+    max-width: 80%;
+  } 
+}
+
+
+
+
 a:-webkit-any-link {
   text-decoration-color: white;
   color: white;

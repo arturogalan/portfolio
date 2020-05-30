@@ -2,7 +2,7 @@
   <section>
   <q-img
     src="~assets/svg/bg-music.svg"
-    style="width: 100%; max-height: 10rem; color: none"
+    :class="$q.platform.is.mobile ? 'post-header post-header--mobile' : 'post-header post-header--desktop'"
     :img-style="{opacity: 0.3}"
     :ratio="16/9">
     <div class="post-title absolute-full text-subtitle2 flex flex-center text-black">
@@ -64,15 +64,4 @@ export default {
   width: 20rem;
   height: 20rem;
 }
- .post-title {
-   position: absolute;
-   width: 100%;
-   height: auto;
-   bottom: 0;
-   font-size: 4vw;
-   font-family: "Anime";
-   text-align: center;
-   padding-bottom: 0;
-   background-color: transparent;
- }
 </style>

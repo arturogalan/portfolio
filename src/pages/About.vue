@@ -2,7 +2,7 @@
   <section>
   <q-img
     src="~assets/svg/bg-about.svg"
-    style="width: 100%; max-height: 10rem;"
+    :class="$q.platform.is.mobile ? 'post-header post-header--mobile' : 'post-header post-header--desktop'"
     :img-style="{opacity: 0.3}"
     :ratio="16/9">
     <div class="post-title absolute-full text-subtitle2 flex flex-center text-black">
@@ -27,7 +27,6 @@
     # Career in detail
     Now I can say that I'm really proud of being a full time frontend developer in a startup called Clarity.ai where we work with Vue.js to provide a nice tool for asset managers.
     Clarity has a clear mission: To provide a decision tool to understand and optimize the societal impact of invesment portfolios. -->
-
   
     ![](statics/images/common/profile.png "Arturo")
     #
@@ -79,19 +78,27 @@ img[alt$="<"] {
 .iframe-style {
   border: dashed 3px black;
 }
- .post-title {
-   position: absolute;
-   width: 100%;
-   height: auto;
-   bottom: 0;
-   font-size: 4vw;
-   font-family: "Anime";
-   text-align: center;
-   padding-bottom: 0;
-   background-color: transparent !important;
- }
+//  .post-title {
+//    position: absolute;
+//    width: 100%;
+//    height: auto;
+//    bottom: 0;
+//    font-size: 4vw;
+//    font-family: "Anime";
+//    text-align: center;
+//    padding-bottom: 0;
+//    background-color: transparent !important;
+//  }
  img[title$="Arturo"] {
    float: left;
-   margin-right: 1vw;
+  //  display: block;
+  //  max-width: 10px !important;
+  // width: 18%;
+  margin-right: 1vw;
+  height: auto;
+  margin-left : auto;
+  // min-width : auto;
+  width: 18%;
+  // max-width : 2rem;
  }
 </style>
