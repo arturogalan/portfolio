@@ -1,5 +1,8 @@
 import BlogEntries from 'assets/data/blogs.json'
 
+const filterDataByActive = (blogEntries)=> {
+  return blogEntries.filter(el=> el.active);
+}
 const mapDataByTag = (blogEntries)=> {
   const outputArray = [];
   blogEntries.forEach((el) => {
@@ -31,8 +34,8 @@ const blogModule = {
   },
   actions: {
     fetchBlogData({ commit }) {
-      commit('setBlogDataByDate', { data: mapDataByDate(BlogEntries) })
-      commit('setBlogDataByTag', { data: mapDataByTag(BlogEntries) })
+      commit('setBlogDataByDate', { data: mapDataByDate(filterDataByActive(BlogEntries)) })
+      commit('setBlogDataByTag', { data: mapDataByTag(filterDataByActive(BlogEntries)) })
     },
   },
   mutations: {

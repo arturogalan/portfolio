@@ -1,15 +1,5 @@
 [
-  {
-    "id": "nabaztag-first",
-    "type": "md",
-    "date": "2021-12-01",
-    "lasUpdated": "2020-05-01",
-    "readTime": "30 min",
-    "tags": ["nabaztag", "python", "raspberry"],
-    "title": "Raspberry powered rabbit robot (Nabaztag)",
-    "description": "Steps and working in progress of my small raspberry robot",
-    "image": "statics/images/nabaztag-first/preview.jpg"
-  },
+
   {
     "id": "noise-box-first",
     "type": "vmd",

@@ -135,6 +135,12 @@ export default {
       timeline: {},
       leftDrawerOpen: false,
       essentialLinks: [
+        {
+          title: this.$t('BLOG.LEFT_DRAWER.LINK_ABOUT.TITLE'),
+          caption: this.$t('BLOG.LEFT_DRAWER.LINK_ABOUT.CAPTION'),
+          icon: 'fas fa-portrait',
+          link: '/about',
+        },        
         { 
           title: this.$t('BLOG.LEFT_DRAWER.LINK_BLOG.TITLE'),
           caption: this.$t('BLOG.LEFT_DRAWER.LINK_BLOG.CAPTION'),
@@ -158,12 +164,6 @@ export default {
           caption: this.$t('BLOG.LEFT_DRAWER.LINK_LINKS.CAPTION'),
           icon: 'far fa-paper-plane',
           link: '/links',
-        },
-        {
-          title: this.$t('BLOG.LEFT_DRAWER.LINK_ABOUT.TITLE'),
-          caption: this.$t('BLOG.LEFT_DRAWER.LINK_ABOUT.CAPTION'),
-          icon: 'fas fa-portrait',
-          link: '/about',
         },
       ],
     }

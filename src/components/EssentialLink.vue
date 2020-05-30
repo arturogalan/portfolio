@@ -134,7 +134,7 @@ export default {
   }
 }
 .diagonal-box-selected {
-  height: 37.5%;
+  height: 37%;
   transition: height 0.3s;
   transition-timing-function: linear;
 }
@@ -151,7 +151,6 @@ export default {
     opacity 0.6s cubic-bezier(0.25, 0.8, 0.5, 1);
 }
 .bg-blog:before {
-  border-top: 3px dashed black;
   background-image: linear-gradient(
       45deg,
       rgba(250, 250, 250, 0.5),
@@ -187,7 +186,8 @@ export default {
     url("~assets/svg/bg-links.svg");
 }
 .bg-about:before {
-  opacity: .7;
+  border-top: 3px dashed black;
+  // opacity: .7;
   background-image: linear-gradient(
       -135deg,
       rgba(255, 98, 0, 0.44),

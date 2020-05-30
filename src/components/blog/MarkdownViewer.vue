@@ -64,6 +64,11 @@ export default {
     display: block;
     margin: auto;
 }
+img[src*='#middle'] { 
+    display: block;
+    margin: auto;
+    width: 50%;
+}
   //  $c: grey; // #4B384C;
   //  $s: 3rem;
 

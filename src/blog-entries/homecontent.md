@@ -16,7 +16,7 @@ You can visit my [Blog](#/blog) to see the stuff I'm interested in... -->
 &nbsp;
 I ENJOY MIXING MUSIC, JAVASCRIPT, SVG, CSS ANIMATIONS AND HTML ALTOGETHER IN MY NEVER FINISHED PET PROJECTS.
 &nbsp;
-YOU CAN VISIT MY [Blog](#/blog) TO SEE THE STUFF I'M INTERESTED IN. . .
+YOU CAN VISIT MY [Blog](#/blog) TO SEE THE STUFF I'M INTERESTED IN. . . OR READ MORE ABOUT [ME](#/about)
 
 
 

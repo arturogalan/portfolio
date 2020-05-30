@@ -13,7 +13,7 @@
   <div class="q-ml-xl q-mt-md">
   <q-markdown>
 
-    I'll put here interesting links about tech, design, talks etc...
+    Here I'll put interesting links about tech, design, interesting people to follow, talks etc...
     
   </q-markdown>
   </div>

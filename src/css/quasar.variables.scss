@@ -111,8 +111,8 @@ $z-index-10: 10;
   opacity: 0;
   animation-name: fadeOut;
   animation-iteration-count: 1;
-  animation-timing-function: ease-out;
-  animation-duration: 6s;
+  animation-timing-function: ease-in-out;
+  animation-duration: 2s;
 }
 // .fade-in-fast-enter-active {
 //   opacity: 1;
