@@ -4,9 +4,10 @@ import VueAnime from 'vue-animejs'
 import blogModule from './blog-module'
 import uiModule from './ui-module'
 import projectModule from './project-module'
+import analytics from "../helpers/analitycs";
 
 // import example from './module-example'
-
+analytics.init(window);
 Vue.use(Vuex)
 Vue.use(VueAnime)
 
