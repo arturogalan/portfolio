@@ -50,7 +50,7 @@ export default {
       icon="fab fa-linkedin-in"
       class="media-icon"
       :class="$q.platform.is.mobile ? 'media-icon--mobile' : 'media-icon--desktop'"
-      @click="open('https://quasar.dev/')"
+      @click="open('https://linkedin.com/in/arturo-galan')"
     ><span class="button-label">Linkedin</span>
     </q-btn>
     <q-btn

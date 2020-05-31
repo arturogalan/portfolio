@@ -47,7 +47,7 @@
           icon="fab fa-linkedin-in"
           aria-label="Menu"
           class="med-icon"
-          @click="open('https://www.linkedin.com/in/arturo-gal%C3%A1n-blanco-86b6a73a/')"
+          @click="open('https://linkedin.com/in/arturo-galan')"
         />
         <q-btn
           v-if="!$q.platform.is.mobile"
