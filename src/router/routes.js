@@ -8,8 +8,8 @@ import Links from 'pages/Links.vue'
 
 import MarkdownViewer from 'components/blog/MarkdownViewer.vue'
 
-// http://localhost:8080/#/blog/2020/entry
-// http://localhost:8080/#/blog/2020/my-first-entry
+// http://localhost:8080/blog/2020/entry
+// http://localhost:8080/blog/2020/my-first-entry
 const blogRoutes = BlogEntries.map(child => ({
     path: `${child.id}`,
     name: `${child.id}`,

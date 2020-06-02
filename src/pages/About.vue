@@ -41,7 +41,7 @@
     :::
     This last years I've been focused in web and frontend technologies and it's really exciting to see the ecosystem growing and the great tools that help us build better software. There’s no better time to be a **JavaScript** developer than today! 🤯
     #  
-    I´m also a **musician** and I love to play guitar 🎸, and some months ago I started to learn to play the violin 🎻. You can take a look to the [Music](#/music) section if you want to know more or visit my band [**xInerzia Spotify**](https://open.spotify.com/artist/73ERX68cf82PuX4fdhLRq4?si=0s2eN2yLRkORLjXej5-PKw).
+    I´m also a **musician** and I love to play guitar 🎸, and some months ago I started to learn to play the violin 🎻. You can take a look to the [Music](/music) section if you want to know more or visit my band [**xInerzia Spotify**](https://open.spotify.com/artist/73ERX68cf82PuX4fdhLRq4?si=0s2eN2yLRkORLjXej5-PKw).
 
     I also like Raspberry Pi and electronics, and I have made a couple of them, you can take a look at the posts I´ll be writing about this.
 

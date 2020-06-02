@@ -1,5 +1,5 @@
 
-[**NoiseBox**](https://www.noise-box.es/#/) is an online guitar amp made with Vue and web audio: **⚠️take care with the volume if you use it with headphones⚠️**
+[**NoiseBox**](https://www.noise-box.es/) is an online guitar amp made with Vue and web audio: **⚠️take care with the volume if you use it with headphones⚠️**
 
 Developed in several months as a pet project to merge two passions: Play guitar and Javascript. Webaudio ideas seeing talks and Github code accounts from great developers like [Sam Bellem](https://twitter.com/sambego?lang=es) and [Michel Buffa](https://twitter.com/micbuffa)
 
