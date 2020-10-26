@@ -34,3 +34,11 @@ yarn-error.log*
 
 /src-ssr
 .quasar/app.js
+
+src/.temp/config.js
+src/.temp/icons.js
+src/.temp/now.js
+src/.temp/plugins-server.js
+src/.temp/routes.js
+
+.cache
