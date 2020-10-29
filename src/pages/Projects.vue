@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <h1 class="text-2xl text-strong">
+    <h1 class="text-2xl text-strong mb-5">
       About us
     </h1>
     {{ $t('index.welcome') }}

@@ -6,8 +6,21 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = function (api) {
-  api.loadSource(({ addCollection }) => {
-    // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
+  api.loadSource(({ getCollection }) => {
+    // load the "BlogPost" collection
+    const posts = getCollection('BlogPost')
+
+    // go over every article and either remove it or prefix with "DRAFT: ", depending on NODE_ENV
+    const now = new Date()
+    posts.data().forEach(node => {
+      if (new Date(node.date) > now) {
+        if (process.env.NODE_ENV === 'production') {
+          posts.removeNode(node.id) // must remove by node id
+        } else {
+          node.title = `DRAFT: ${node.title}`
+        }
+      }
+    })
   })
 
   api.createPages(({ createPage }) => {
