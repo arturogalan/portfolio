@@ -42,3 +42,6 @@ src/.temp/plugins-server.js
 src/.temp/routes.js
 
 .cache
+.temp
+src/.temp/*
+src/.temp/now.js

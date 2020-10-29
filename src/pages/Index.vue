@@ -6,7 +6,7 @@
       width="135"
     />
 
-    <h1 class="text-2xl text-strong mt-8">
+    <h1 class="text-2xl text-strong mt-8 ">
       {{ $t('index.hello') }}
     </h1>
 
@@ -31,6 +31,72 @@
     >
       Primary
     </button>
+    <p
+      class="text-xl text-center"
+      v-html="$t('index.hello_paragraph1')"
+    >
+      <!-- {{ $t('index.hello_paragraph1') }} -->
+    </p>
+    <p
+      class="text-xl text-center"
+      v-html="$t('index.hello_paragraph1')"
+    >
+      <!-- {{ $t('index.hello_paragraph1') }} -->
+    </p>
+    <p
+      class="text-xl text-center"
+      v-html="$t('index.hello_paragraph1')"
+    >
+      <!-- {{ $t('index.hello_paragraph1') }} -->
+    </p>
+    <p
+      class="text-xl text-center"
+      v-html="$t('index.hello_paragraph1')"
+    >
+      <!-- {{ $t('index.hello_paragraph1') }} -->
+    </p>
+    <p
+      class="text-xl text-center"
+      v-html="$t('index.hello_paragraph1')"
+    >
+      <!-- {{ $t('index.hello_paragraph1') }} -->
+    </p>
+    <p
+      class="text-xl text-center"
+      v-html="$t('index.hello_paragraph1')"
+    >
+      <!-- {{ $t('index.hello_paragraph1') }} -->
+    </p>
+    <h2
+      id="projects"
+      class="font-bold mb-6"
+    >
+      My current projects
+    </h2>
+
+    <ul class="text-lg sm:text-xl">
+      <li class="checkmark mb-6">
+        <div>Nerdful Mind Newsletter</div><div class="text-lg text-copy-secondary">
+          <a
+            href="https://www.getrevue.co/profile/nerdfulmind"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Nerdful Mind</a> is a weekly curated newsletter with articles about mindfulness, psychology, and software engineering principles.
+        </div>
+      </li><li class="checkmark mb-6">
+        <div>This Blog</div><div class="text-lg text-copy-secondary">
+          Currently my main focus. I want to create something every day. From a whole blog post to some small improvements to this site.
+        </div>
+      </li><li class="checkmark mb-6">
+        <div>Software Engineering</div><div class="text-lg text-copy-secondary">
+          I currently work for <a
+            href="https://tresmo.de"
+            target="_blank"
+            rel="noopener noreferrer"
+          >tresmo GmbH</a> as an IoT cloud engineer.
+        </div>
+      </li>
+    </ul>
   </Layout>
 </template>
 

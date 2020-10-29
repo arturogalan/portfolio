@@ -15,11 +15,14 @@
     "@gridsome/transformer-remark": "^0.6.3",
     "gridsome": "^0.7.0",
     "gridsome-plugin-i18n": "^1.6.0",
+    "gridsome-plugin-netlify-cms": "^1.0.9",
     "gridsome-plugin-remark-shiki": "^0.4.0",
     "gsap": "^3.5.1",
+    "netlify-cms": "^2.10.66",
     "postcss": "^8.1.4",
     "tailwindcss": "^1.9.6",
-    "vue-material-design-icons": "^4.10.0"
+    "vue-material-design-icons": "^4.10.0",
+    "vue-scrollto": "^2.20.0"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^3.0.0",

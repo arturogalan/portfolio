@@ -28,6 +28,17 @@ module.exports = {
       creator: '@turugalan'
     }
   },
+  // Add markdown support to all file-system sources
+  transformers: {
+    remark: {
+      externalLinksTarget: '_blank',
+      externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+      anchorClassName: 'icon icon-link',
+      plugins: [
+        // ...global plugins
+      ]
+    }
+  },
   plugins: [
     {
       use: 'gridsome-plugin-i18n',
@@ -67,6 +78,12 @@ module.exports = {
             create: true
           }
         }
+      }
+    },
+    {
+      use: 'gridsome-plugin-netlify-cms',
+      options: {
+        publicPath: '/admin'
       }
     },
     {
