@@ -68,7 +68,7 @@
             />
           </li><li class="mr-8 mb-6 lg:mb-0 hover:text-gray-600">
             <g-link
-              to="/about/"
+              to="/"
             >
               About
             </g-link>

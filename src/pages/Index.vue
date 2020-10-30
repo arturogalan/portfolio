@@ -31,42 +31,6 @@
     >
       Primary
     </button>
-    <p
-      class="text-xl text-center"
-      v-html="$t('index.hello_paragraph1')"
-    >
-      <!-- {{ $t('index.hello_paragraph1') }} -->
-    </p>
-    <p
-      class="text-xl text-center"
-      v-html="$t('index.hello_paragraph1')"
-    >
-      <!-- {{ $t('index.hello_paragraph1') }} -->
-    </p>
-    <p
-      class="text-xl text-center"
-      v-html="$t('index.hello_paragraph1')"
-    >
-      <!-- {{ $t('index.hello_paragraph1') }} -->
-    </p>
-    <p
-      class="text-xl text-center"
-      v-html="$t('index.hello_paragraph1')"
-    >
-      <!-- {{ $t('index.hello_paragraph1') }} -->
-    </p>
-    <p
-      class="text-xl text-center"
-      v-html="$t('index.hello_paragraph1')"
-    >
-      <!-- {{ $t('index.hello_paragraph1') }} -->
-    </p>
-    <p
-      class="text-xl text-center"
-      v-html="$t('index.hello_paragraph1')"
-    >
-      <!-- {{ $t('index.hello_paragraph1') }} -->
-    </p>
     <h2
       id="projects"
       class="font-bold mb-6"

@@ -1,10 +1,8 @@
 const c1 = () => import(/* webpackChunkName: "page--src--templates--blog-post-vue" */ "/Users/turu/git/perso/portfolio/src/templates/BlogPost.vue")
 const c2 = () => import(/* webpackChunkName: "page--src--templates--tag-vue" */ "/Users/turu/git/perso/portfolio/src/templates/Tag.vue")
-const c3 = () => import(/* webpackChunkName: "page--src--pages--projects-vue" */ "/Users/turu/git/perso/portfolio/src/pages/Projects.vue")
-const c4 = () => import(/* webpackChunkName: "page--src--pages--blog-vue" */ "/Users/turu/git/perso/portfolio/src/pages/Blog.vue")
-const c5 = () => import(/* webpackChunkName: "page--src--pages--about-vue" */ "/Users/turu/git/perso/portfolio/src/pages/About.vue")
-const c6 = () => import(/* webpackChunkName: "page--node-modules--gridsome--app--pages--404-vue" */ "/Users/turu/git/perso/portfolio/node_modules/gridsome/app/pages/404.vue")
-const c7 = () => import(/* webpackChunkName: "page--src--pages--index-vue" */ "/Users/turu/git/perso/portfolio/src/pages/Index.vue")
+const c3 = () => import(/* webpackChunkName: "page--src--pages--blog-vue" */ "/Users/turu/git/perso/portfolio/src/pages/Blog.vue")
+const c4 = () => import(/* webpackChunkName: "page--node-modules--gridsome--app--pages--404-vue" */ "/Users/turu/git/perso/portfolio/node_modules/gridsome/app/pages/404.vue")
+const c5 = () => import(/* webpackChunkName: "page--src--pages--index-vue" */ "/Users/turu/git/perso/portfolio/src/pages/Index.vue")
 
 export default [
   {
@@ -113,43 +111,15 @@ export default [
     }
   },
   {
-    path: "/en/projects/",
-    component: c3,
-    meta: {
-      locale: "en-en"
-    }
-  },
-  {
-    path: "/es/projects/",
-    component: c3,
-    meta: {
-      locale: "es-es"
-    }
-  },
-  {
     path: "/en/blog/",
-    component: c4,
+    component: c3,
     meta: {
       locale: "en-en"
     }
   },
   {
     path: "/es/blog/",
-    component: c4,
-    meta: {
-      locale: "es-es"
-    }
-  },
-  {
-    path: "/en/about/",
-    component: c5,
-    meta: {
-      locale: "en-en"
-    }
-  },
-  {
-    path: "/es/about/",
-    component: c5,
+    component: c3,
     meta: {
       locale: "es-es"
     }
@@ -157,7 +127,7 @@ export default [
   {
     name: "404__en-en",
     path: "/en/404/",
-    component: c6,
+    component: c4,
     meta: {
       locale: "en-en"
     }
@@ -165,7 +135,7 @@ export default [
   {
     name: "404__es-es",
     path: "/es/404/",
-    component: c6,
+    component: c4,
     meta: {
       locale: "es-es"
     }
@@ -180,7 +150,7 @@ export default [
   {
     name: "__en_slug",
     path: "/en/:slug+",
-    component: c6,
+    component: c4,
     meta: {
       dataPath: "/en/_slug_plus.json",
       dynamic: true,
@@ -190,7 +160,7 @@ export default [
   {
     name: "__es_slug",
     path: "/es/:slug+",
-    component: c6,
+    component: c4,
     meta: {
       dataPath: "/es/_slug_plus.json",
       dynamic: true,
@@ -198,16 +168,9 @@ export default [
     }
   },
   {
-    path: "/projects/",
-    component: c3,
-    meta: {
-      locale: "en-en"
-    }
-  },
-  {
     name: "home__en-en",
     path: "/en/",
-    component: c7,
+    component: c5,
     meta: {
       locale: "en-en"
     }
@@ -215,21 +178,14 @@ export default [
   {
     name: "home__es-es",
     path: "/es/",
-    component: c7,
+    component: c5,
     meta: {
       locale: "es-es"
     }
   },
   {
     path: "/blog/",
-    component: c4,
-    meta: {
-      locale: "en-en"
-    }
-  },
-  {
-    path: "/about/",
-    component: c5,
+    component: c3,
     meta: {
       locale: "en-en"
     }
@@ -237,7 +193,7 @@ export default [
   {
     name: "404",
     path: "/404/",
-    component: c6,
+    component: c4,
     meta: {
       locale: "en-en"
     }
@@ -245,7 +201,7 @@ export default [
   {
     name: "home",
     path: "/",
-    component: c7,
+    component: c5,
     meta: {
       locale: "en-en"
     }
@@ -253,7 +209,7 @@ export default [
   {
     name: "*",
     path: "*",
-    component: c6,
+    component: c4,
     meta: {
       locale: "en-en"
     }
