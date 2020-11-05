@@ -5,7 +5,7 @@
       class="min-h-screen flex flex-col bg-default text-default transition-colors delay-100 ease-linear"
     >
       <nav class="container mx-auto flex flex-wrap justify-between items-center py-8">
-        <nav class="flex">
+        <nav class="flex items-center">
           <g-link to="/">
             <svg
               class="fill-current h-16 w-16 mr-2"
@@ -17,7 +17,7 @@
               xmlns:serif="http://www.serif.com/"
               style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
             >
-              <g transform="matrix(1,0,0,1,-36.395,-10.3637)">
+              <g transform="matrix(1.2,0,0,1.2,-33.395,-55)">
                 <g
                   id="path197"
                   transform="matrix(0.809698,0,0,0.681738,452.801,150.213)"
@@ -42,7 +42,7 @@
             </svg>
           </g-link>
           <g-link to="/">
-            <span class="font-semibold text-5xl tracking-tight">{{ $static.metadata.siteName }}</span>
+            <span class="font-semibold font-Ranchers text-4xl md:text-6xl tracking-wider">{{ $static.metadata.siteName }}</span>
           </g-link>
         </nav>
         <div
@@ -174,4 +174,5 @@ export default {
 .fade-enter {
   opacity: 0;
 }
+
 </style>

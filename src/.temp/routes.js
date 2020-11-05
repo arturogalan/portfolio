@@ -1,8 +1,8 @@
-const c1 = () => import(/* webpackChunkName: "page--src--templates--blog-post-vue" */ "/Users/turu/git/perso/portfolio/src/templates/BlogPost.vue")
-const c2 = () => import(/* webpackChunkName: "page--src--templates--tag-vue" */ "/Users/turu/git/perso/portfolio/src/templates/Tag.vue")
-const c3 = () => import(/* webpackChunkName: "page--src--pages--blog-vue" */ "/Users/turu/git/perso/portfolio/src/pages/Blog.vue")
-const c4 = () => import(/* webpackChunkName: "page--node-modules--gridsome--app--pages--404-vue" */ "/Users/turu/git/perso/portfolio/node_modules/gridsome/app/pages/404.vue")
-const c5 = () => import(/* webpackChunkName: "page--src--pages--index-vue" */ "/Users/turu/git/perso/portfolio/src/pages/Index.vue")
+const c1 = () => import(/* webpackChunkName: "page--src--templates--blog-post-vue" */ "/Users/turu/git/arturo-portfolio/src/templates/BlogPost.vue")
+const c2 = () => import(/* webpackChunkName: "page--src--templates--tag-vue" */ "/Users/turu/git/arturo-portfolio/src/templates/Tag.vue")
+const c3 = () => import(/* webpackChunkName: "page--src--pages--blog-vue" */ "/Users/turu/git/arturo-portfolio/src/pages/Blog.vue")
+const c4 = () => import(/* webpackChunkName: "page--node-modules--gridsome--app--pages--404-vue" */ "/Users/turu/git/arturo-portfolio/node_modules/gridsome/app/pages/404.vue")
+const c5 = () => import(/* webpackChunkName: "page--src--pages--index-vue" */ "/Users/turu/git/arturo-portfolio/src/pages/Index.vue")
 
 export default [
   {

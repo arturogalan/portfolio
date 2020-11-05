@@ -18,7 +18,7 @@ const postcssPlugins = [
 if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss(purgecssConfig))
 
 module.exports = {
-  siteName: 'Arturo Galán',
+  siteName: 'ARTURO GALAN',
   siteDescription: 'Blog about awesome lists, collections of resources around a specific technology.',
   siteUrl: process.env.DEPLOY_URL || 'https://arturogalan.com',
   metadata: {

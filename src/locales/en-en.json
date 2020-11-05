@@ -1,7 +1,8 @@
 {
   "index": {
     "welcome": "welcome this is my blog tataaaa",
-    "hello": "Hi there!",
-    "hello_paragraph1": "I’m 🦄 Arturo Galán 🦄 and I’m a Spanish developer.<br> Currently I´m working as a frontend developer at Clarity.ai mainly with Vue.js, Javascript and SCSS. Interested in web technologies like Web Audio, SVG, D3 and CSS animations."
+    "hello": "Hello!",
+    "hello_paragraph1": "I’m a 🦄  frontend 🦄 developer from Spain.",
+    "hello_paragraph2": "Interested in web technologies like Web Audio, SVG, D3 and CSS animations."
   }
 }

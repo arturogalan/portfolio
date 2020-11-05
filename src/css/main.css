@@ -7,6 +7,8 @@
   --color-text-soft: #A0AEC0;
   --color-text-default: #2d3748;
   --color-text-strong: #0E111A;
+
+  --color-icons-default: #526f30;
 }
 
 .theme-dark {
@@ -18,7 +20,17 @@
   --color-text-soft: #CBD5E0;
   --color-text-default: #E2E8F0;
   --color-text-strong: #ffffff;
+
+  --color-icons-default: #526f30;
+
 }
+
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
 
 .image-caption {
   @apply mb-5 text-soft text-sm;
@@ -27,8 +39,10 @@
   }
 }
 
-@tailwind base;
+.external-link {
+  @apply text-strong font-semibold text-red-500;
+}
 
-@tailwind components;
-
-@tailwind utilities;
+.color-icons {
+  color: var(--color-icons-default);
+}

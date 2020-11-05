@@ -19,7 +19,13 @@ module.exports = {
         softer: 'var(--color-bg-softer)',
         strong: 'var(--color-bg-strong)',
         'inline-code': 'var(--color-bg-inline-code)'
-      }
+      },
+      fontFamily: {
+        'Ranchers': ['Ranchers', 'sans-serif'],
+        'Comfortaa': ['Comfortaa', 'serif'],
+        'Nunito': ['Nunito Sans', 'serif'],
+        sans: ['Nunito Sans'],
+      },
     }
   },
   variants: {},
