@@ -3,15 +3,11 @@
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { config, library } from '@fortawesome/fontawesome-svg-core'
-import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { faUserSecret, faBullseye } from '@fortawesome/free-solid-svg-icons'
-
+import { faGithub, faTwitter, faLinkedin, faYoutube, faSpotify } from '@fortawesome/free-brands-svg-icons'
+import { faBullseye, faDotCircle, faSun, faMoon, faEnvelope, faRobot, faHeadphones, faLaptopCode, faFeather } from '@fortawesome/free-solid-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
-
-
 import DefaultLayout from '~/layouts/Default.vue'
 import VueScrollTo from 'vue-scrollto'
-
 import './css/main.css'
 
 const fontsCss =
@@ -149,7 +145,7 @@ const fontsCss =
 `
 
 config.autoAddCss = false;
-library.add(faGithub, faTwitter, faUserSecret, faBullseye)
+library.add(faGithub, faTwitter, faLinkedin, faYoutube, faSpotify, faEnvelope, faBullseye, faDotCircle, faSun, faMoon, faRobot, faHeadphones, faLaptopCode, faFeather)
 
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component

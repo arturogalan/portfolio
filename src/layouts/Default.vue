@@ -42,11 +42,11 @@
             </svg>
           </g-link>
           <g-link to="/">
-            <span class="font-semibold font-Ranchers text-4xl md:text-6xl tracking-wider">{{ $static.metadata.siteName }}</span>
+            <span class="font-semibold font-Ranchers text-5xl md:text-6xl tracking-wider ml-5">{{ $static.metadata.siteName }}</span>
           </g-link>
         </nav>
         <div
-          class="block lg:hidden"
+          class="block lg:hidden mr-4"
           @click="toggleMenu"
         >
           <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
@@ -58,13 +58,13 @@
           </button>
         </div>
         <ul
-          class="uppercase tracking-wide font-bold w-full block flex-grow lg:flex lg:flex-initial lg:w-auto items-center mt-8 lg:mt-0"
+          class="uppercase tracking-wide font-bold w-full block flex-grow lg:flex lg:flex-initial lg:w-auto items-center lg:mt-0 ml-5 md:ml-auto text-2xl md:text-base"
           :class="isMenuOpen ? 'block' : 'hidden lg:block'"
         >
           <li class="mr-8 mb-6 lg:mb-0">
             <theme-switcher
               :theme="theme"
-              @themeChanged="updateTheme"
+              @theme-changed="updateTheme"
             />
           </li><li class="mr-8 mb-6 lg:mb-0 hover:text-gray-600">
             <g-link
@@ -89,17 +89,103 @@
           </li>
         </ul>
       </nav>
-
-      <div class="container max-w-screen-md mx-auto px-5">
-        <transition
-          name="fade"
-          appear
-        >
-          <main>
-            <slot />
-          </main>
-        </transition>
+      <div class="flex-grow">
+        <div class="container max-w-screen-md mx-auto px-5">
+          <transition
+            name="fade"
+            appear
+          >
+            <main>
+              <slot />
+            </main>
+          </transition>
+        </div>
       </div>
+
+      <div
+        class="box-container fixed pt-4"
+        title="Yes...this is a ZX Spectrum tribute"
+      >
+        <div class="box bg-red-400" />
+        <div class="box bg-yellow-500 ml-1" />
+        <div class="box bg-orange-500 ml-1" />
+        <div class="box bg-blue-600 ml-1" />
+      </div>
+
+      <footer class="bg-green-800 text-white">
+        <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between py-5">
+          <div class="mb-8 lg:mb-0">
+            <div>Copyright {{ new Date().getFullYear() }}. All rights reserved.</div>
+            <div>
+              <a
+                href="/rss.xml"
+                class="text-white hover:text-gray-400 font-normal"
+              >RSS Feed</a> |
+              <a
+                href="/sitemap.xml"
+                class="text-white hover:text-gray-400 font-normal"
+              >Sitemap</a>
+            </div>
+          </div>
+          <ul class="flex items-center space-x-8">
+            <li>
+              <a
+                href="mailto:arturo.galan@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <font-awesome
+                  :icon="['fas', 'envelope']"
+                  transform="grow-10 left-4"
+                  class="cursor-pointer text-white transition duration-500 ease select-none hover:text-gray-400 focus:outline-none focus:shadow-outline"
+                />
+              </a>
+            </li>
+
+            <!-- <li>
+              <a
+                href="https://youtube.com/channel/UC6vWgeTUgRoxNCGLItm5gZQ"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <font-awesome
+                  :icon="['fab', 'youtube']"
+                  transform="grow-10 left-4"
+                  class="cursor-pointer text-white transition duration-500 ease select-none hover:text-gray-400 focus:outline-none focus:shadow-outline"
+                />
+              </a>
+            </li> -->
+
+            <li>
+              <a
+                href="http://github.com/arturogalan"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <font-awesome
+                  :icon="['fab', 'github']"
+                  transform="grow-10 left-4"
+                  class="cursor-pointer text-white transition duration-500 ease select-none hover:text-gray-400 focus:outline-none focus:shadow-outline"
+                />
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://twitter.com/turugalan"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <font-awesome
+                  :icon="['fab', 'twitter']"
+                  transform="grow-10 left-4"
+                  class="cursor-pointer text-white transition duration-500 ease select-none hover:text-gray-400 focus:outline-none focus:shadow-outline"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
     </div>
   </div>
 </template>
@@ -119,6 +205,7 @@ query {
 }
 </static-query>
 <script>
+import gsap from 'gsap'
 import ThemeSwitcher from '../components/ThemeSwitcher'
 
 export default {
@@ -136,6 +223,9 @@ export default {
     const defaultTheme = userPrefersDark ? 'theme-dark' : ''
     this.updateTheme(localStorage.getItem('theme') || defaultTheme)
     window.addEventListener('resize', this.closeMenu)
+
+    gsap.timeline()
+      .to('.box', { rotation: 27, skewY: '-=40', skewX: '-=10', skewZ: '-=10', duration: 4, opacity: 0.3 })
   },
   destroyed () {
     window.removeEventListener('resize', this.closeMenu)
@@ -172,6 +262,23 @@ export default {
 }
 
 .fade-enter {
+  opacity: 0;
+}
+
+.box-container {
+  bottom: -6rem;
+  right: -1rem;
+}
+.box {
+  width: 1rem;
+  height: 20rem;
+  position:relative;
+  border-radius:6px;
+  margin-top:4px;
+  display:inline-block;
+  line-height:50px;
+  text-align:center;
+  color:#333;
   opacity: 0;
 }
 

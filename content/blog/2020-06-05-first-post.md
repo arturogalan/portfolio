@@ -4,6 +4,10 @@ date: "2020-06-05"
 title: "Hipster Ipsum"
 tags: ["backend", "hipster"]
 summary: "Banh mi authentic fashion axe affogato shoreditch umami bicycle rights keytar put a bird on it drinking vinegar pitchfork taxidermy."
+image:
+  path: ../media/victor-garcia-R8C2nUoSMfc-unsplash.jpeg
+  alt: "A colorful building against a blue sky background"
+  caption: '<span>Photo by <a href="https://unsplash.com/@victor_g?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Victor Garcia</a> on <a href="https://unsplash.com/s/photos/macbook-color?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>'
 ---
 ## This should be a heading 2
 

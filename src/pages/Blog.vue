@@ -1,20 +1,25 @@
 <template>
   <Layout>
-    <h1 class="text-2xl text-strong mb-5">
-      Blog Posts
-    </h1>
+    <section
+      v-for="post in $page.posts.edges"
+      :key="post.path"
+    >
+      <g-link :to="post.node.path">
+        <h2 class="text-3xl font-bold">
+          {{ post.node.title }}
+        </h2>
 
-    <ul class="list-outside list-disc">
-      <li
-        v-for="post in $page.posts.edges"
-        :key="post.path"
-        class="mt-3"
-      >
-        <g-link :to="post.node.path">
-          {{ post.node.title }} – {{ post.node.date }}
-        </g-link>
-      </li>
-    </ul>
+        <div class="text-soft mb-4">
+          <span>November 6, 2020</span><span> · </span><span>2 min read</span>
+        </div>
+        <p class="mb-4">
+          {{ post.node.summary }}
+        </p>
+        <div class="font-bold uppercase mb-8 text-green-500 hover:text-green-200">
+          Go to post
+        </div>
+      </g-link>
+    </section>
   </Layout>
 </template>
 
@@ -24,6 +29,7 @@ query Posts {
     edges {
       node {
         title
+        summary
         date (format: "MMMM D, Y")
         path
       }
@@ -35,7 +41,7 @@ query Posts {
 <script>
 export default {
   metaInfo: {
-    title: 'Blog Posts'
+    title: 'Blog'
   }
 }
 </script>
