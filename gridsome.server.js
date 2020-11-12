@@ -21,6 +21,18 @@ module.exports = function (api) {
         }
       }
     })
+
+    const tagDescriptions = {
+      Tools: 'Useful things that I use in my day by day work or thing that I automated',
+      Mac: 'Articles related to Mac programs or development tools to use in MacOS',
+      Python: 'Articles related with Python programming language',
+      'Raspberry pi': 'Articles about Raspberry Pi projects, how to get some fun with this tiny computer'
+    }
+
+    const tags = getCollection('Tag')
+    tags.data().forEach((tag) => {
+      tag.description = tagDescriptions[tag.id]
+    })
   })
 
   api.createPages(({ createPage }) => {

@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <h1 class="text-2xl text-strong font-semibold mb-2">
+    <h1 class="leading-tight text-4xl font-bold text-strong mb-2">
       {{ $page.post.title }}
     </h1>
     <p class="font-light mb-4 text-gray-700">
@@ -19,12 +19,12 @@
     <!-- This is the figure element we added: -->
     <figure
       v-if="$page.post.image"
-      class="flex flex-col"
+      class="flex justify-center flex-col"
     >
       <g-image
         :alt="$page.post.image.alt"
         :src="$page.post.image.path"
-        class="mb-2"
+        class="mb-2 m-auto"
       />
       <figcaption
         class="image-caption self-center mb-15"
@@ -35,6 +35,14 @@
       class="mb-16 markdown"
       v-html="$page.post.content"
     />
+    <g-link
+      class="mt-2"
+      to="/blog"
+    >
+      <div class="font-bold uppercase mb-8 text-green-500 hover:text-green-200">
+        Return to blog
+      </div>
+    </g-link>
   </Layout>
 </template>
 
@@ -43,6 +51,7 @@ query Post ($path: String!) {
   post: blogPost (path: $path) {
     title
     date (format: "MMMM D, Y")
+    readtime
     content
     path
     summary

@@ -101,7 +101,7 @@ export default {
             Noise-box
           </div>
           <div class="text-lg">
-            Some audio projects made with Vue.js, Web Audio api and of course open source projects and ideas from other developers. Currently a Guitar Amp simulator and a Stylophone simulator. You can visit them at
+            Some audio projects made with Vue.js, vanilla Javascript, Web Audio api and of course open source projects and ideas from other developers. Currently a Guitar Amp simulator and a Stylophone simulator. You can visit them at
             <a
               href="https://www.noise-box.es"
               target="_blank"
@@ -144,7 +144,13 @@ export default {
             Blog
           </div>
           <div class="text-lg">
-            Articles in this site about the technologies I'm a fan of.
+            <g-link
+              to="/blog"
+              class="external-link hover:text-red-400 whitespace-no-wrap"
+            >
+              Articles
+            </g-link>
+            in this site about the technologies I'm a fan of.
           </div>
         </div>
       </li>
@@ -159,11 +165,11 @@ export default {
             Music
           </div>
           <div class="text-lg">
-            I play the guitar and years ago recorded a couple of albums in a Punk rock band called
+            I play the guitar and years ago recorded a couple of self-produced Punk rock albums with two friends in a band called
             <span class="text-xl text-strong"><mark>xInerzia</mark></span>
             &nbsp;
             <a
-              href="https://twitter.com/turugalan"
+              href="https://open.spotify.com/artist/73ERX68cf82PuX4fdhLRq4?si=XWBvIo0ZTnK7t0_n4XZQbw"
               target="_blank"
               rel="noopener noreferrer"
               title="xInerzia Spotify site"
@@ -177,7 +183,7 @@ export default {
               &nbsp;
             </a>
             <a
-              href="https://twitter.com/turugalan"
+              href="https://www.youtube.com/playlist?list=PLAEO4EnvXb7KPiUtIdwF0z8gUHEOLIVre"
               target="_blank"
               rel="noopener noreferrer"
               title="xInerzia Youtube site"
@@ -190,7 +196,7 @@ export default {
               &nbsp;
 
             </a>
-            <br>Now I'm also learning to play Violin and hopefully I'll record some more stuff...
+            <br>Now I'm also learning to play Violin and hopefully I'll record some more stuff soon...
           </div>
         </div>
       </li>
@@ -200,7 +206,7 @@ export default {
       Contact
     </h2>
     <p class="text-xl">
-      You can find me on this social networks
+      You can ping me on this social networks
     </p>
     <div class="mx-auto flex flex-wrap justify-center items-center mt-10">
       <a

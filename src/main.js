@@ -25,6 +25,32 @@ const fontsCss =
        url('/fonts/comfortaa-v29-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
        url('/fonts/comfortaa-v29-latin-regular.svg#Comfortaa') format('svg'); /* Legacy iOS */
 }
+/* comfortaa-regular - latin */
+@font-face {
+  font-family: 'Comfortaa';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/comfortaa-v29-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('/fonts/comfortaa-v29-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/fonts/comfortaa-v29-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/fonts/comfortaa-v29-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('/fonts/comfortaa-v29-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/fonts/comfortaa-v29-latin-regular.svg#Comfortaa') format('svg'); /* Legacy iOS */
+}
+/* comfortaa-700 - latin */
+@font-face {
+  font-family: 'Comfortaa';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/comfortaa-v29-latin-700.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('/fonts/comfortaa-v29-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/fonts/comfortaa-v29-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/fonts/comfortaa-v29-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('/fonts/comfortaa-v29-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/fonts/comfortaa-v29-latin-700.svg#Comfortaa') format('svg'); /* Legacy iOS */
+}
 /* ranchers-regular - latin */
 @font-face {
   font-family: 'Ranchers';

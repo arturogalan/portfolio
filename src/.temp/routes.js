@@ -6,105 +6,98 @@ const c5 = () => import(/* webpackChunkName: "page--src--pages--index-vue" */ "/
 
 export default [
   {
-    path: "/en/blog/2020/07/03/third-post/",
+    path: "/en/blog/write-ntfs-in-mac-part-1/",
     component: c1,
     meta: {
       locale: "en-en"
     }
   },
   {
-    path: "/es/blog/2020/07/03/third-post/",
-    component: c1,
-    meta: {
-      locale: "es-es"
-    }
-  },
-  {
-    path: "/en/blog/2020/06/05/first-post/",
-    component: c1,
-    meta: {
-      locale: "en-en"
-    }
-  },
-  {
-    path: "/en/blog/2030/01/30/fourth-post/",
-    component: c1,
-    meta: {
-      locale: "en-en"
-    }
-  },
-  {
-    path: "/es/blog/2020/06/05/first-post/",
+    path: "/es/blog/write-ntfs-in-mac-part-1/",
     component: c1,
     meta: {
       locale: "es-es"
     }
   },
   {
-    path: "/es/blog/2030/01/30/fourth-post/",
-    component: c1,
-    meta: {
-      locale: "es-es"
-    }
-  },
-  {
-    path: "/blog/:year/:month/:day/:slug/",
+    path: "/en/blog/raspberry-nabaztag-part1/",
     component: c1,
     meta: {
       locale: "en-en"
     }
   },
   {
-    path: "/en/tag/hipster/",
+    path: "/en/blog/raspberry-nabaztag-part2/",
+    component: c1,
+    meta: {
+      locale: "en-en"
+    }
+  },
+  {
+    path: "/es/blog/raspberry-nabaztag-part1/",
+    component: c1,
+    meta: {
+      locale: "es-es"
+    }
+  },
+  {
+    path: "/es/blog/raspberry-nabaztag-part2/",
+    component: c1,
+    meta: {
+      locale: "es-es"
+    }
+  },
+  {
+    path: "/en/tag/Mac/",
     component: c2,
     meta: {
       locale: "en-en"
     }
   },
   {
-    path: "/es/tag/hipster/",
+    path: "/en/tag/Python/",
+    component: c2,
+    meta: {
+      locale: "en-en"
+    }
+  },
+  {
+    path: "/en/tag/Raspberry%20pi/",
+    component: c2,
+    meta: {
+      locale: "en-en"
+    }
+  },
+  {
+    path: "/en/tag/Tools/",
+    component: c2,
+    meta: {
+      locale: "en-en"
+    }
+  },
+  {
+    path: "/es/tag/Mac/",
     component: c2,
     meta: {
       locale: "es-es"
     }
   },
   {
-    path: "/en/tag/future/",
-    component: c2,
-    meta: {
-      locale: "en-en"
-    }
-  },
-  {
-    path: "/es/tag/future/",
+    path: "/es/tag/Python/",
     component: c2,
     meta: {
       locale: "es-es"
     }
   },
   {
-    path: "/en/tag/design/",
-    component: c2,
-    meta: {
-      locale: "en-en"
-    }
-  },
-  {
-    path: "/es/tag/design/",
+    path: "/es/tag/Raspberry%20pi/",
     component: c2,
     meta: {
       locale: "es-es"
     }
   },
   {
-    path: "/en/tag/backend/",
-    component: c2,
-    meta: {
-      locale: "en-en"
-    }
-  },
-  {
-    path: "/es/tag/backend/",
+    path: "/es/tag/Tools/",
     component: c2,
     meta: {
       locale: "es-es"
@@ -143,6 +136,13 @@ export default [
   {
     path: "/tag/:id/",
     component: c2,
+    meta: {
+      locale: "en-en"
+    }
+  },
+  {
+    path: "/blog/:slug/",
+    component: c1,
     meta: {
       locale: "en-en"
     }

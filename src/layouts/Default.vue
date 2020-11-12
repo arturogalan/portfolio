@@ -225,7 +225,7 @@ export default {
     window.addEventListener('resize', this.closeMenu)
 
     gsap.timeline()
-      .to('.box', { rotation: 27, skewY: '-=40', skewX: '-=10', skewZ: '-=10', duration: 4, opacity: 0.3 })
+      .to('.box', { rotation: 27, skewY: '-=40', skewX: '-=10', duration: 4, opacity: 0.3 })
   },
   destroyed () {
     window.removeEventListener('resize', this.closeMenu)

@@ -94,7 +94,7 @@ module.exports = {
     }
   ],
   templates: {
-    BlogPost: '/blog/:year/:month/:day/:slug',
+    BlogPost: '/blog/:slug',
     // add the tags template
     Tag: '/tag/:id'
   },

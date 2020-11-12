@@ -10,7 +10,7 @@
         </h2>
 
         <div class="text-soft mb-4">
-          <span>November 6, 2020</span><span> · </span><span>2 min read</span>
+          <span>{{ post.node.date }}</span><span> · </span><span>{{ post.node.readtime }} read</span>
         </div>
         <p class="mb-4">
           {{ post.node.summary }}
@@ -19,6 +19,9 @@
           Go to post
         </div>
       </g-link>
+      <div
+        class="border-t-2 mt-6 mb-6 border-dashed"
+      />
     </section>
   </Layout>
 </template>
@@ -31,6 +34,7 @@ query Posts {
         title
         summary
         date (format: "MMMM D, Y")
+        readtime
         path
       }
     }
