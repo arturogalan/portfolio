@@ -35,7 +35,7 @@ I found a second hand Nabaztag and I bought all the required components and star
 Trought this interface you have to connect 2 ear encoders (with two wires each: 3.3v and ground), the volume control wheel (two wires: 3.3v and ground) and the ADS1115 (3.3v, ground, SCL and SDA) but the Raspberry/Google Hat original interface only gives you 1 pin for each (one 3.3v, one ground, one SCL and one SDA).
 To achieve this I soldered 4 rows of pins together (three rows with five pins and the other one with three pins) with an Elbow 40 Pin Header strip:
 
-![I2C](/images/nabaztag-first/PinStrip.jpg#small)
+![I2C](../media/nabaztag/pin_strip.jpg#small)
 
 ###### You can cut some five-pins pieces, put together the shortest sides of the elbows and solder them
 
