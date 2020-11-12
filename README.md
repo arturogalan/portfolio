@@ -1,30 +1,14 @@
-# arturo-portfolio (arturo-portfolio)
+# Default starter for Gridsome
 
-Arturo Galán portfolio ade with Quasar
+This is the project you get when you run `gridsome create new-project`.
 
-## Install the dependencies
-```bash
-npm install
-```
+### 1. Install Gridsome CLI tool if you don't have
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
-```bash
-quasar dev
-```
+`npm install --global @gridsome/cli`
 
-### Lint the files
-```bash
-npm run lint
-```
+### 2. Create a Gridsome project
 
-### Build the app for production
-```bash
-quasar build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
-changes
-### Customize the configuration
-See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
+1. `gridsome create my-gridsome-site` to install default starter
+2. `cd my-gridsome-site` to open the folder
+3. `gridsome develop` to start a local dev server at `http://localhost:8080`
+4. Happy coding 🎉🙌

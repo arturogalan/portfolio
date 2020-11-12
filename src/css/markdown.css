@@ -1,0 +1,67 @@
+@tailwind utilities;
+
+.markdown {
+  /* @apply font-Comfortaa text-lg leading-normal text-justify; */
+  @apply font-sans text-xl leading-normal text-justify;
+  & > * + *, & li > p + p {
+    @apply mt-6;
+  }
+  & li + li {
+    @apply mt-2;
+  }
+  /* & strong {
+    @apply text-strong font-bold;
+  } */
+  & a {
+    @apply text-teal-600 font-bold;
+  }
+  /* & strong a {
+    @apply font-bold;
+  } */
+  & h1 {
+    @apply leading-tight text-4xl font-bold text-strong mb-2 mt-10;
+  }
+  & h2 {
+    @apply leading-tight text-2xl font-semibold text-strong mb-2 mt-10;
+  }
+  & h3 {
+    @apply leading-tight text-xl font-semibold text-strong mt-8 mb-2;
+  }
+  & h6 {
+    @apply italic leading-tight text-base mb-2 flex justify-center;
+  }
+  & code {
+    @apply font-mono text-sm inline px-1;
+  }
+  /* only set bg on inline code */
+  & :not(pre) code {
+    @apply bg-inline-code;
+  }
+  & pre code {
+    @apply block p-4 rounded;
+  }
+  & pre {
+    @apply overflow-auto rounded;
+  }
+  & blockquote {
+    @apply border-l-4 border-gray-200 pl-4 italic;
+  }
+  & ul, & ol {
+    @apply list-outside list-disc;
+
+    & li {
+      @apply ml-6 pl-2;
+    }
+  }
+  & img { 
+    @apply w-11/12;
+    display: block;
+    margin: auto;
+   }  
+  /* & img[src*='#small'] { 
+   @apply w-2/3;
+  }
+  & img[src*='#big'] { 
+    @apply w-11/12;
+   } */
+}

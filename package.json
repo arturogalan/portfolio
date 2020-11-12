@@ -1,50 +1,43 @@
 {
-  "name": "arturo-portfolio",
-  "version": "0.0.1",
-  "description": "Arturo Galán portfolio site made with Vue.js, Quasar and Netlify",
-  "productName": "Arturo Galan Javascript developer portfolio site",
-  "cordovaId": "org.cordova.quasar.app",
-  "capacitorId": "",
-  "author": "Arturo Galan <arturo.galan@gmail.com>",
+  "name": "gridsome-portfolio",
   "private": true,
   "scripts": {
-    "lint": "eslint --fix --ext .js,.vue --ignore-path .gitignore ./",
-    "test": "echo \"No test specified\" && exit 0",
-    "serve": "quasar dev",
-    "start": "node index.js",
-    "build": "quasar build && cp _redirects dist/spa"
+    "build": "gridsome build",
+    "develop": "gridsome develop",
+    "explore": "gridsome explore",
+    "lint": "npx eslint --ext .js,.vue .",
+    "lint:fix": "npx eslint --ext .js,.vue --fix .",
+    "testPro": "yarn build && yarn serve dist"
   },
   "dependencies": {
-    "@quasar/extras": "^1.0.0",
-    "axios": "^0.18.1",
-    "dayjs": "^1.8.24",
-    "lozad": "^1.14.0",
-    "quasar": "^1.0.0",
-    "vue-animejs": "^2.1.1",
-    "vue-i18n": "^8.0.0"
+    "@gridsome/plugin-sitemap": "^0.4.0",
+    "@gridsome/source-filesystem": "^0.6.2",
+    "@gridsome/transformer-remark": "^0.6.3",
+    "gridsome": "^0.7.0",
+    "gridsome-plugin-i18n": "^1.6.0",
+    "gridsome-plugin-netlify-cms": "^1.0.9",
+    "gridsome-plugin-remark-shiki": "^0.4.0",
+    "gsap": "^3.5.1",
+    "netlify-cms": "^2.10.66",
+    "postcss": "^8.1.4",
+    "tailwindcss": "^1.9.6",
+    "vue-scrollto": "^2.20.0"
   },
   "devDependencies": {
-    "@quasar/app": "^1.0.0",
-    "@quasar/quasar-app-extension-qmarkdown": "^1.0.24",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^6.8.0",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-loader": "^3.0.3",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-node": "^11.0.0",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^6.1.2"
-  },
-  "engines": {
-    "node": ">= 10.18.1",
-    "npm": ">= 6.13.4",
-    "yarn": ">= 1.21.1"
-  },
-  "browserslist": [
-    "last 1 version, not dead, ie >= 11"
-  ],
-  "resolutions": {
-    "@babel/parser": "7.7.5"
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/vue-fontawesome": "^2.0.0",
+    "@fullhuman/postcss-purgecss": "^3.0.0",
+    "autoprefixer": "^9.0.0",
+    "eslint": "^7.12.1",
+    "eslint-config-standard": "^15.0.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.2",
+    "eslint-plugin-vue": "^7.1.0",
+    "postcss-nesting": "^7.0.1",
+    "serve": "^11.3.2"
   }
 }

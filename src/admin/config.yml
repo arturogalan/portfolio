@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: arturogalan/portfolio
+
+media_folder: "content/media"
+public_folder: "/content"
+
+collections:
+  - name: "posts"
+    label: "Posts"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Excerpt", name: "excerpt", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "date"}
+      - {label: "Tags", name: "tads", widget: "String"}
+      - {label: "Body", name: "body", widget: "markdown"}

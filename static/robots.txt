@@ -1,0 +1,5 @@
+Sitemap: https://arturo.galan/sitemap.xml
+
+User-agent:*
+Disallow: /legal
+Disallow: /privacy

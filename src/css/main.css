@@ -1,0 +1,48 @@
+:root {
+  --color-bg-default: #FFFFFF;
+  --color-bg-soft: #EDF2F7;
+  --color-bg-softer: #E2E8F0;
+  --color-bg-inline-code: #EDF2F7;
+
+  --color-text-soft: #A0AEC0;
+  --color-text-default: #2d3748;
+  --color-text-strong: #0E111A;
+
+  --color-icons-default: #526f30;
+}
+
+.theme-dark {
+  --color-bg-default: #1A202C;
+  --color-bg-soft: #4A5568;
+  --color-bg-softer: #718096;
+  --color-bg-inline-code: #4A5568;
+
+  --color-text-soft: #CBD5E0;
+  --color-text-default: #E2E8F0;
+  --color-text-strong: #ffffff;
+
+  --color-icons-default: #526f30;
+
+}
+
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.image-caption {
+  @apply mb-5 text-soft text-sm;
+  & a {
+    @apply font-bold;
+  }
+}
+
+.external-link {
+  @apply text-strong font-semibold text-red-500;
+}
+
+.color-icons {
+  color: var(--color-icons-default);
+}
