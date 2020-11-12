@@ -75,7 +75,7 @@ set diskType to do shell script "diskutil info -plist '" & lastVolumeAdded & "' 
 ```
 
 The next step is to figure out whether this volume is already in fstab file. We will use the grep command to look inside the file, and the sed command to avoid grep command to return a code greater than 0, that is interpreted as an error. We replace the possible spaces in the name with `\040` before searching
-```vue
+```shellscript
 set fstabSpace to "\\\\\\\\040"
 set spacing to " "
 set fstabVolumeName to replace_chars(lastVolumeAdded as string, spacing, fstabSpace)
@@ -87,14 +87,14 @@ set fstabVolumeName to replace_chars(lastVolumeAdded as string, spacing, fstabSp
 set response to do shell script "grep " & fstabVolumeName & " /etc/fstab | sed"
 ```
 3. If the volume is not present, then we are ready to do the steps defined before in the manual solution: Add the line to fstab, unmount and mount the disk, and open `/volumes` folder.
-```vue
+```shellscript
 do shell script "echo LABEL=" & fstabVolumeName & " none ntfs rw,auto,nobrowse >> /etc/fstab" with administrator privileges
 do shell script "diskutil unmount '" & lastVolumeAdded
 do shell script "diskutil mount '" & lastVolumeAdded
 open /Volumes
 ```
 4. But instead of just opening the `/Volumes` folder in Finder once we’ve mounted the drive, we are going to open `/Volumes` and right after we’ll open the volume attached in the same Finder window. With this trick we’ll enable the back button of Finder to get back to volumes folder if we wish
-```vue
+```shellscript
 tell application "Finder"
       activate
       open ("/Volumes" as POSIX file)
