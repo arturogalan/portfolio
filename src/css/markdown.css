@@ -31,14 +31,17 @@
     @apply italic leading-tight text-base mb-2 flex justify-center;
   }
   & code {
-    @apply font-mono text-base inline px-1;
+    @apply font-mono text-sm inline px-1;
   }
   /* only set bg on inline code */
   & :not(pre) code {
     @apply bg-inline-code;
   }
   & pre code {
-    @apply block p-4 rounded overflow-auto;
+    @apply block p-4 rounded;
+  }
+  & pre {
+    @apply overflow-auto rounded;
   }
   & blockquote {
     @apply border-l-4 border-gray-200 pl-4 italic;
@@ -51,14 +54,14 @@
     }
   }
   & img { 
-    @apply w-2/3;
+    @apply w-11/12;
     display: block;
     margin: auto;
    }  
-  & img[src*='#small'] { 
+  /* & img[src*='#small'] { 
    @apply w-2/3;
   }
   & img[src*='#big'] { 
     @apply w-11/12;
-   }
+   } */
 }

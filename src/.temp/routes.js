@@ -27,21 +27,7 @@ export default [
     }
   },
   {
-    path: "/en/blog/raspberry-nabaztag-part2/",
-    component: c1,
-    meta: {
-      locale: "en-en"
-    }
-  },
-  {
     path: "/es/blog/raspberry-nabaztag-part1/",
-    component: c1,
-    meta: {
-      locale: "es-es"
-    }
-  },
-  {
-    path: "/es/blog/raspberry-nabaztag-part2/",
     component: c1,
     meta: {
       locale: "es-es"
