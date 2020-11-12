@@ -14,7 +14,10 @@ module.exports = {
     'a',
     'g-image',
     'g-image--lazy',
-    'g-image--loaded'
+    'g-image--loaded',
+    'fa',
+    'fb',
+    'svg'
   ],
   defaultExtractor: content => {
     // Capture as liberally as possible, including things like `h-(screen-1.5)`

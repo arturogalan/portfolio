@@ -15,7 +15,7 @@ const postcssPlugins = [
   postcssNesting()
 ]
 
-if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss(purgecssConfig))
+// if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss(purgecssConfig))
 
 module.exports = {
   siteName: 'Arturo Galán',
