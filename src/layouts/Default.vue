@@ -4,11 +4,11 @@
     <div
       class="min-h-screen flex flex-col bg-default text-default transition-colors delay-100 ease-linear"
     >
-      <nav class="container mx-auto flex flex-wrap justify-between items-center py-8">
+      <nav class="container mx-auto flex flex-wrap justify-around items-center py-8 pr-3">
         <nav class="flex items-center">
           <g-link to="/">
             <svg
-              class="fill-current h-16 w-16 mr-2"
+              class="fill-current h-12 w-12 sm:h-16 sm:w-16 sm:mr-2"
               viewBox="0 0 571 644"
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
@@ -42,11 +42,11 @@
             </svg>
           </g-link>
           <g-link to="/">
-            <span class="font-semibold font-Ranchers text-5xl md:text-6xl tracking-wider ml-5">{{ $static.metadata.siteName }}</span>
+            <span class="font-semibold font-Ranchers text-4xl md:text-6xl tracking-wider ml-5">{{ $static.metadata.siteName }}</span>
           </g-link>
         </nav>
         <div
-          class="block lg:hidden mr-4"
+          class="block lg:hidden sm:mr-4"
           @click="toggleMenu"
         >
           <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
@@ -58,21 +58,21 @@
           </button>
         </div>
         <ul
-          class="uppercase tracking-wide font-bold w-full block flex-grow lg:flex lg:flex-initial lg:w-auto items-center lg:mt-0 ml-5 md:ml-auto text-2xl md:text-base"
+          class="uppercase tracking-wide font-bold w-full block flex-grow lg:flex lg:flex-initial lg:w-auto items-center mt-5 md:mt-0 ml-5 md:ml-auto p-3 md:p-0 text-2xl md:text-base border-red-400 border-dashed border-4 md:border-none text-right md:text-center"
           :class="isMenuOpen ? 'block' : 'hidden lg:block'"
         >
-          <li class="mr-8 mb-6 lg:mb-0">
+          <li class="md:mr-8 mb-6 lg:mb-0">
             <theme-switcher
               :theme="theme"
               @theme-changed="updateTheme"
             />
-          </li><li class="mr-8 mb-6 lg:mb-0 hover:text-gray-600">
+          </li><li class="md:mr-8 mb-6 lg:mb-0 hover:text-gray-600">
             <g-link
               to="/"
             >
               About
             </g-link>
-          </li><li class="mr-8 mb-6 lg:mb-0 hover:text-gray-600">
+          </li><li class="md:mr-8 mb-6 lg:mb-0 hover:text-gray-600">
             <g-link
               v-scroll-to="'#projects'"
               to="/#projects"
@@ -90,7 +90,7 @@
         </ul>
       </nav>
       <div class="flex-grow">
-        <div class="container max-w-screen-md mx-auto px-5">
+        <div class="container max-w-screen-md mx-auto px-2 sm:px-5">
           <transition
             name="fade"
             appear
