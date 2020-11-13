@@ -41,7 +41,7 @@ export default {
           width="140"
         />
       </div>
-      <div class="font-bold text-left ml-5">
+      <div class="font-bold sm:ml-5 mx-auto">
         <h1 class="text-4xl w-full sm:w-4/5">
           {{ $t('index.hello') }}
         </h1>
