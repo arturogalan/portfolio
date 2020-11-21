@@ -30,16 +30,18 @@ Then when I was about to forget the rabbit I found an incredible article in Hack
 I've never made anything so complex with electronics and soldering but I already had the [Google AIY Voice HAT](https://aiyprojects.withgoogle.com/voice-v1/), so this could be a funny way to start learning some basics.
 
 I found a second hand Nabaztag and I bought all the required components and started to solder and follow the steps in the article. I found everything nice explained except for the split of the **I2C interface** 
+As you can see in this image, the I2C interface has 5 pins: 5v, 3.3v, GND (ground), SCL and SDA
 
+![I2C](../media/nabaztag/google_aiy_voice_hat.jpeg)
 
-Trought this interface you have to connect 2 ear encoders (with two wires each: 3.3v and ground), the volume control wheel (two wires: 3.3v and ground) and the ADS1115 (3.3v, ground, SCL and SDA) but the Raspberry/Google Hat original interface only gives you 1 pin for each (one 3.3v, one ground, one SCL and one SDA).
-To achieve this I soldered 4 rows of pins together (three rows with five pins and the other one with three pins) with an Elbow 40 Pin Header strip:
+Trought this interface you have to connect 2 ear encoders (with two wires each: 3.3v and ground), the volume control wheel (two wires: 3.3v and GND) and the ADS1115 (3.3v, GND, SCL and SDA) but the Raspberry/Google Hat original interface only gives you 1 pin for each.  
+To achieve this I soldered 4 rows of pins together (three rows with five pins and the other one with three pins) with the help of an Elbow 40 Pin Header strip:
 
-![I2C](../media/nabaztag/pin_strip.jpg#small)
+![I2C](../media/nabaztag/pin_strip.jpg)
 
-###### You can cut some five-pins pieces, put together the shortest sides of the elbows and solder them
+###### You can cut some five-pins pieces, put together the shortest sides and solder them
 
-And once I had this piece I soldered it to the interface to have enought connections for all the required pins:
+Then I soldered this piece to the interface to have enought connections for all the required pins:  
 ![I2C](../media/nabaztag/I2C_one.png) 
 ![I2C](../media/nabaztag/I2C_two.png)
 

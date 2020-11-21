@@ -9,6 +9,8 @@
   --color-text-strong: #0E111A;
 
   --color-icons-default: #526f30;
+
+  --color-underline-default: #e6d44b;
 }
 
 .theme-dark {
@@ -23,6 +25,7 @@
 
   --color-icons-default: #526f30;
 
+  --color-underline-default: #e6624b;
 }
 
 
@@ -45,4 +48,23 @@
 
 .color-icons {
   color: var(--color-icons-default);
+}
+
+.custom-underline {
+  z-index: 0;
+}
+.custom-underline::before {
+  content: "";
+  position: absolute;
+  /* top: 65%; */
+  height: .6rem;
+  width: 100%;
+  bottom: 10%;
+  left: 0%;
+  z-index: -1;
+  transform: skewY(-3deg);
+  background-color: var(--color-underline-default) !important;
+}
+
+.box-b .custom-underline::after {
 }

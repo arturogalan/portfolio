@@ -166,7 +166,7 @@ export default {
           </div>
           <div class="text-lg">
             I play the guitar and years ago recorded a couple of self-produced Punk rock albums with two friends in a band called
-            <span class="text-xl text-strong"><mark>xInerzia</mark></span>
+            <span class="text-xl text-strong relative z-0"><span class="custom-underline">xInerzia</span></span>
             &nbsp;
             <a
               href="https://open.spotify.com/artist/73ERX68cf82PuX4fdhLRq4?si=XWBvIo0ZTnK7t0_n4XZQbw"

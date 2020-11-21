@@ -16,7 +16,7 @@
           {{ post.node.summary }}
         </p>
         <div class="font-bold uppercase mb-8 text-green-500 hover:text-green-200">
-          Go to post
+          Go to post !
         </div>
       </g-link>
       <div
