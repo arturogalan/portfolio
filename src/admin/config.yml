@@ -1,9 +1,11 @@
+site_url: https://arturogalan.com
+display_url: https://arturogalan.com
 backend:
   name: github
   repo: arturogalan/portfolio
 
-media_folder: "content/media"
-public_folder: "/content"
+media_folder: "content/media/uploads"
+public_folder: "/content/uploads"
 
 collections:
   - name: "posts"
@@ -13,8 +15,17 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Slug", name: "slug", widget: "string"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Excerpt", name: "excerpt", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "date"}
-      - {label: "Tags", name: "tads", widget: "String"}
+      - {label: "Read time", name: "date", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Summary", name: "summary", widget: "string"}
+      - label: "Image"
+        name: "image"
+        widget: "object"
+        collapsed: true
+        fields: 
+          - {label: "Path", name: "path", widget: "string"}
+          - {label: "Alt", name: "alt", widget: "string"}
+          - {label: "Caption", name: "caption", widget: "string"}      
       - {label: "Body", name: "body", widget: "markdown"}
