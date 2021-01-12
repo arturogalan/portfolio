@@ -16,7 +16,7 @@ collections:
     fields:
       - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "date"}
-      - {label: "Read time", name: "date", widget: "string"}
+      - {label: "Read time", name: "readtime", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Summary", name: "summary", widget: "string"}
@@ -25,7 +25,7 @@ collections:
         widget: "object"
         collapsed: true
         fields: 
-          - {label: "Path", name: "path", widget: "string"}
+          - {label: "Path", name: "path", widget: "string", hint: "../media/uploads/whatever.png"}
           - {label: "Alt", name: "alt", widget: "string"}
           - {label: "Caption", name: "caption", widget: "string"}      
       - {label: "Body", name: "body", widget: "markdown"}
