@@ -17,7 +17,7 @@
     "gridsome-plugin-i18n": "^1.6.0",
     "gridsome-plugin-netlify-cms": "^1.0.9",
     "gridsome-plugin-remark-shiki": "^0.4.0",
-    "gsap": "^3.5.1",
+    "gsap": "^3.6.0",
     "netlify-cms": "^2.10.66",
     "postcss": "^8.1.4",
     "tailwindcss": "^1.9.6",
