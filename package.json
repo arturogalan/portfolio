@@ -19,7 +19,7 @@
     "gridsome-plugin-remark-shiki": "^0.4.0",
     "gsap": "^3.5.1",
     "netlify-cms": "^2.10.66",
-    "postcss": "^8.1.4",
+    "postcss": "^8.2.10",
     "tailwindcss": "^1.9.6",
     "vue-scrollto": "^2.20.0"
   },
