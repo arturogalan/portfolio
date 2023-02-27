@@ -124,12 +124,12 @@ export default {
             Software Engineering
           </div>
           <div class="text-lg">
-            I currently work for <a
-              href="https://clarity.ai/"
+            I currently work at <a
+              href="https://modash.io/"
               target="_blank"
               rel="noopener noreferrer"
               class="external-link hover:text-red-400 whitespace-no-wrap"
-            >Clarity.ai</a> as a Senior frontend developer. We aim to provide societal impact tools to optimize investment portfolios.
+            >Modash.io</a> as a Senior fullstack developer. We’re working to help every creator earn a living.
           </div>
         </div>
       </li>
