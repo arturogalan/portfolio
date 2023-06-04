@@ -91,6 +91,14 @@ module.exports = {
       options: {
         exclude: ['/privacy', '/legal']
       }
+    },
+    {
+      use: 'gridsome-plugin-gtag',
+      options: {
+        config: {
+          id: process.env.GOOGLE_ANALYTICS_ID
+        }
+      }
     }
   ],
   templates: {
