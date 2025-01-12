@@ -11,13 +11,13 @@ export default {
         .from(['.profile-img1', '.word1', '.white_square'], { duration: 4, opacity: 1 })
         .from(['.profile-img1', '.word1', '.white_square'], { duration: 0.2, opacity: 0 })
         .from(['.profile-img1', '.word1', '.white_square'], { duration: 0.3, opacity: 1 })
-        .from(['.profile-img1', '.word1', '.white_square'], { duration: 0.4, opacity: 0 })
+        .from(['.profile-img1', '.word1', '.white_square'], { duration: 0.6, opacity: 0 })
         .from(['.profile-img1', '.word1', '.white_square'], { duration: 0.2, opacity: 1 })
         .from(['.profile-img1', '.word1', '.white_square'], { duration: 0.1, opacity: 0 })
 
       return t1
     }
-    var master = gsap.timeline({ repeat: 3, repeatDelay: 2 })
+    var master = gsap.timeline({ repeat: 3, repeatDelay: 3 })
     master
       .add(profileEffect())
       .add(profileEffect(), '+=3')
@@ -46,14 +46,14 @@ export default {
           {{ $t('index.hello') }}
         </h1>
         <div
-          class="text-2xl text-green-600 flex"
+          class="text-2xl text-green-300 flex"
         >
           <div class="whitespace-no-wrap">
             I’m a&nbsp;
           </div>
           <div class="relative">
             <div class="white_square" />
-            <span class="word1 absolute">frontend</span>
+            <span class="word1 absolute">Product</span>
             <span class="word2 text-2xl tracking-widest whitespace-no-wrap">
               <span class="text-red-500">u</span>
               <span class="text-red-900">n</span>
@@ -64,13 +64,17 @@ export default {
               <span class="text-pink-700">n</span>
             </span>
           </div>
-          <div>&nbsp;developer</div>
+          <div>Engineer</div>
           <div>&nbsp;from</div>
           <div>&nbsp;Spain. </div>
         </div>
         <p
           class="text-xl text-green-800"
           v-html="$t('index.hello_paragraph2')"
+        />
+        <p
+          class="text-md text-teal-400"
+          v-html="$t('index.hello_paragraph3')"
         />
       </div>
     </div>
@@ -80,7 +84,7 @@ export default {
     <h1
       class="text-lg sm:text-xl py-8"
     >
-      Welcome to my never-enough-updated site... A place where I can openly talk about anything and develop using <span class="italic">!important</span> and <span class="italic">z-index: 999999</span>.
+      Welcome to my digital playground — where I share my thoughts and occasionally break the rules of CSS with <span class="italic">!important</span> and <span class="italic">z-index: 999999</span>.
     </h1>
 
     <h2 class="text-4xl pb-4">
@@ -90,6 +94,26 @@ export default {
       id="projects"
       class="text-lg sm:text-xl"
     >
+      <li class="mb-6 flex text-2xl">
+        <font-awesome
+          :icon="['fas', 'laptop-code']"
+          size="lg"
+          class="color-icons leading-3 pr-2"
+        />
+        <div>
+          <div class="flex flex-row items-center ">
+            Software Engineering
+          </div>
+          <div class="text-lg">
+            I work at <a
+              href="https://modash.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="external-link hover:text-red-400 whitespace-no-wrap"
+            >Modash.io</a> as a Senior Product Engineer. We’re working to help every creator earn a living.
+          </div>
+        </div>
+      </li>
       <li class="mb-6 flex text-2xl">
         <font-awesome
           :icon="['fas', 'robot']"
@@ -113,26 +137,7 @@ export default {
           </div>
         </div>
       </li>
-      <li class="mb-6 flex text-2xl">
-        <font-awesome
-          :icon="['fas', 'laptop-code']"
-          size="lg"
-          class="color-icons leading-3 pr-2"
-        />
-        <div>
-          <div class="flex flex-row items-center ">
-            Software Engineering
-          </div>
-          <div class="text-lg">
-            I currently work at <a
-              href="https://modash.io/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="external-link hover:text-red-400 whitespace-no-wrap"
-            >Modash.io</a> as a Senior fullstack developer. We’re working to help every creator earn a living.
-          </div>
-        </div>
-      </li>
+
       <li class="mb-6 flex text-2xl">
         <font-awesome
           :icon="['fas', 'feather']"
@@ -222,18 +227,6 @@ export default {
         />
       </a>
       <a
-        href="https://twitter.com/turugalan"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="mr-20"
-      >
-        <font-awesome
-          :icon="['fab', 'twitter']"
-          transform="grow-40 left-4"
-          class="cursor-pointer text-green-500 transition duration-500 ease select-none hover:text-green-200 focus:outline-none focus:shadow-outline"
-        />
-      </a>
-      <a
         href="https://www.linkedin.com/in/arturo-galan"
         target="_blank"
         rel="noopener noreferrer"
@@ -264,10 +257,12 @@ export default {
 .white_square {
   position: absolute;
   background-color: var(--color-bg-default);
-  width: 100%;
+  width: 105%;
   height: 100%;
+  left: -3px;
 }
 .word2 {
   text-shadow: 1px 1px 3px rgb(160, 150, 31);
+  margin-left: -3px;
 }
 </style>

@@ -2,9 +2,9 @@
   "name": "gridsome-portfolio",
   "private": true,
   "scripts": {
-    "build": "gridsome build",
-    "develop": "gridsome develop",
-    "explore": "gridsome explore",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider gridsome build",
+    "develop": "NODE_OPTIONS=--openssl-legacy-provider gridsome develop",
+    "explore": "NODE_OPTIONS=--openssl-legacy-provider gridsome explore",
     "lint": "npx eslint --ext .js,.vue .",
     "lint:fix": "npx eslint --ext .js,.vue --fix .",
     "testPro": "yarn build && yarn serve dist"
