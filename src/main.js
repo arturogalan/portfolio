@@ -1,13 +1,14 @@
 // This is the main.js file. Import global CSS and scripts here.
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { config, library } from '@fortawesome/fontawesome-svg-core'
-import { faGithub, faTwitter, faLinkedin, faYoutube, faSpotify } from '@fortawesome/free-brands-svg-icons'
-import { faBullseye, faDotCircle, faSun, faMoon, faEnvelope, faRobot, faHeadphones, faLaptopCode, faFeather } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
 import '@fortawesome/fontawesome-svg-core/styles.css'
-import DefaultLayout from '~/layouts/Default.vue'
+import { faGithub, faLinkedin, faSpotify, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons'
+import { faBullseye, faDotCircle, faEnvelope, faFeather, faHeadphones, faLaptopCode, faMoon, faRobot, faSun } from '@fortawesome/free-solid-svg-icons'
 import VueScrollTo from 'vue-scrollto'
+import DefaultLayout from '~/layouts/Default.vue'
 import './css/main.css'
 
 const fontsCss =
@@ -170,12 +171,13 @@ const fontsCss =
 }
 `
 
-config.autoAddCss = false;
+config.autoAddCss = false
 library.add(faGithub, faTwitter, faLinkedin, faYoutube, faSpotify, faEnvelope, faBullseye, faDotCircle, faSun, faMoon, faRobot, faHeadphones, faLaptopCode, faFeather)
 
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
+  // eslint-disable-next-line vue/component-definition-name-casing
   Vue.component('font-awesome', FontAwesomeIcon)
 
   Vue.use(VueScrollTo, {

@@ -3,6 +3,7 @@
     "welcome": "welcome this is my blog tataaaa",
     "hello": "Hello!",
     "hello_paragraph1": "I’m a 🦄  frontend 🦄 developer from Spain.",
-    "hello_paragraph2": "Interested in web technologies like Web Audio, SVG, D3 and CSS animations."
+    "hello_paragraph2": "I work with the latest technologies and frameworks to build products that are both beautiful and functional.",
+    "hello_paragraph3": "Vue.js, Typescript, Node.js, Docker, AWS, etc."
   }
 }
